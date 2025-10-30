@@ -17,7 +17,8 @@ const allowedOrigins = [
   CLIENT_URL,
   "http://localhost:5173",
   "http://localhost:5174",
-  "https://dskinnovafdin.vercel.app"
+  "https://dskinnovafdin.vercel.app",
+  "https://dskinova-silk.vercel.app",
 ];
 
 app.use(
@@ -25,11 +26,11 @@ app.use(
     origin: function (origin, callback) {
       // Allow requests with no origin (like mobile apps or curl requests)
       if (!origin) return callback(null, true);
-      
+
       if (allowedOrigins.indexOf(origin) !== -1) {
         callback(null, true);
       } else {
-        callback(new Error('Not allowed by CORS'));
+        callback(new Error("Not allowed by CORS"));
       }
     },
     credentials: true,
@@ -136,9 +137,7 @@ async function generateUniqueSlug(baseSlug) {
 
 // Root route
 app.get("/", (req, res) => {
-  res.json({ message: "Dskinova server API is working",
-    status: "ok"
-   });
+  res.json({ message: "Dskinova server API is working", status: "ok" });
 });
 
 // Login route
@@ -497,7 +496,7 @@ app.delete("/api/news/:slug", async (req, res) => {
 export default app;
 
 // For local development
-if (process.env.NODE_ENV !== 'production') {
+if (process.env.NODE_ENV !== "production") {
   const PORT = process.env.PORT || 3002;
   connectDb()
     .then(() => {

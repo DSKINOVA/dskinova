@@ -1,13 +1,13 @@
-import express from 'express';
-import mongoose from 'mongoose';
-import cors from 'cors';
-import bcrypt from 'bcryptjs';
-import dotenv from 'dotenv';
-import multer from 'multer';
-import { v2 as cloudinary } from 'cloudinary';
-import { PassThrough } from 'stream';
-import Admin from './models/Admin.js';
-import News from './models/News.js';
+import express from "express";
+import mongoose from "mongoose";
+import cors from "cors";
+import bcrypt from "bcryptjs";
+import dotenv from "dotenv";
+import multer from "multer";
+import { v2 as cloudinary } from "cloudinary";
+import { PassThrough } from "stream";
+import Admin from "./models/Admin.js";
+import News from "./models/News.js";
 
 dotenv.config();
 
@@ -17,22 +17,25 @@ const allowedOrigins = [
   CLIENT_URL,
   "http://localhost:5173",
   "http://localhost:5174",
-  "https://dskinnovafdin.vercel.app"
+  "https://dskinnovafdin.vercel.app",
+  "https://dskinova-silk.vercel.app",
 ];
 
-app.use(cors({
-  origin: function (origin, callback) {
-    // Allow requests with no origin (like mobile apps or curl requests)
-    if (!origin) return callback(null, true);
-    
-    if (allowedOrigins.indexOf(origin) !== -1) {
-      callback(null, true);
-    } else {
-      callback(new Error('Not allowed by CORS'));
-    }
-  },
-  credentials: true,
-}));
+app.use(
+  cors({
+    origin: function (origin, callback) {
+      // Allow requests with no origin (like mobile apps or curl requests)
+      if (!origin) return callback(null, true);
+
+      if (allowedOrigins.indexOf(origin) !== -1) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
+    credentials: true,
+  })
+);
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -91,15 +94,18 @@ function slugify(text) {
     .toString()
     .toLowerCase()
     .trim()
-    .replace(/\s+/g, '-')
-    .replace(/[^\w\-]+/g, '')
-    .replace(/\-\-+/g, '-')
-    .replace(/^-+/, '')
-    .replace(/-+$/, '');
+    .replace(/\s+/g, "-")
+    .replace(/[^\w\-]+/g, "")
+    .replace(/\-\-+/g, "-")
+    .replace(/^-+/, "")
+    .replace(/-+$/, "");
 }
 
 async function generateUniqueSlug(baseSlug) {
-  const existing = await News.find({ slug: new RegExp(`^${baseSlug}(-\\d+)?$`) }, 'slug').lean();
+  const existing = await News.find(
+    { slug: new RegExp(`^${baseSlug}(-\\d+)?$`) },
+    "slug"
+  ).lean();
   if (existing.length === 0) return baseSlug;
 
   let max = 1;
@@ -124,15 +130,15 @@ app.use(async (req, res, next) => {
 });
 
 // Routes
-app.get('/', (req, res) => {
+app.get("/", (req, res) => {
   res.json({
     message: "Dskinova server API is working",
-    status: "ok"
+    status: "ok",
   });
 });
 
 // Admin login route
-app.post('/api/admin-login', async (req, res) => {
+app.post("/api/admin-login", async (req, res) => {
   try {
     const { username, password } = req.body || {};
     if (!username || !password) {
@@ -166,7 +172,7 @@ app.post('/api/admin-login', async (req, res) => {
 });
 
 // Get profile (username only)
-app.get('/api/admin/profile', async (req, res) => {
+app.get("/api/admin/profile", async (req, res) => {
   try {
     const admin = await Admin.findOne({});
     if (!admin)
@@ -181,7 +187,7 @@ app.get('/api/admin/profile', async (req, res) => {
 });
 
 // Change password
-app.post('/api/admin/change-password', async (req, res) => {
+app.post("/api/admin/change-password", async (req, res) => {
   try {
     const { currentPassword, newPassword } = req.body || {};
     if (!currentPassword || !newPassword) {
@@ -216,7 +222,7 @@ app.post('/api/admin/change-password', async (req, res) => {
 });
 
 // Change username
-app.post('/api/admin/change-username', async (req, res) => {
+app.post("/api/admin/change-username", async (req, res) => {
   try {
     const { password, newUsername } = req.body || {};
     if (!password || !newUsername) {
@@ -260,17 +266,17 @@ app.post('/api/admin/change-username', async (req, res) => {
 });
 
 // Logout (stateless – provided for completeness)
-app.post('/api/admin-logout', (req, res) => {
+app.post("/api/admin-logout", (req, res) => {
   return res.json({ success: true, message: "Logged out" });
 });
 
 // Health route
-app.get('/api/health', (req, res) => {
+app.get("/api/health", (req, res) => {
   res.json({ ok: true });
 });
 
 // News: list
-app.get('/api/news', async (req, res) => {
+app.get("/api/news", async (req, res) => {
   try {
     const items = await News.find({}).sort({ createdAt: -1 }).lean();
     res.json({ success: true, items });
@@ -281,7 +287,7 @@ app.get('/api/news', async (req, res) => {
 });
 
 // News: latest N (default 4) lightweight payload
-app.get('/api/news/latest', async (req, res) => {
+app.get("/api/news/latest", async (req, res) => {
   try {
     let limit = parseInt(req.query.limit, 10);
     if (Number.isNaN(limit) || limit <= 0) limit = 4;
@@ -302,7 +308,7 @@ app.get('/api/news/latest', async (req, res) => {
 });
 
 // News: get by slug
-app.get('/api/news/:slug', async (req, res) => {
+app.get("/api/news/:slug", async (req, res) => {
   try {
     const item = await News.findOne({ slug: req.params.slug }).lean();
     if (!item)
@@ -316,51 +322,51 @@ app.get('/api/news/:slug', async (req, res) => {
 
 // News: create (multipart form with optional images)
 app.post(
-  '/api/news',
+  "/api/news",
   upload.fields([
-    { name: 'cardImage', maxCount: 1 },
-    { name: 'contentImage', maxCount: 1 },
+    { name: "cardImage", maxCount: 1 },
+    { name: "contentImage", maxCount: 1 },
   ]),
   async (req, res) => {
     try {
       const {
-        title = '',
-        excerpt = '',
-        heroIntro = '',
-        contentIntro = '',
-        paragraphs = '[]',
-        tags = '[]',
-        popular = '[]',
+        title = "",
+        excerpt = "",
+        heroIntro = "",
+        contentIntro = "",
+        paragraphs = "[]",
+        tags = "[]",
+        popular = "[]",
       } = req.body || {};
 
       if (!title.trim()) {
         return res
           .status(400)
-          .json({ success: false, message: 'Title is required' });
+          .json({ success: false, message: "Title is required" });
       }
-      const baseSlug = slugify(title) || 'news';
+      const baseSlug = slugify(title) || "news";
 
       // Upload images if provided
-      let cardImageUrl = '';
-      let contentImageUrl = '';
+      let cardImageUrl = "";
+      let contentImageUrl = "";
       if (req.files?.cardImage?.[0]) {
         const result = await uploadToCloudinary(
           req.files.cardImage[0].buffer,
-          'dskinova/news'
+          "dskinova/news"
         );
         cardImageUrl = result.secure_url;
       }
       if (req.files?.contentImage?.[0]) {
         const result = await uploadToCloudinary(
           req.files.contentImage[0].buffer,
-          'dskinova/news'
+          "dskinova/news"
         );
         contentImageUrl = result.secure_url;
       }
 
-      const parsedParagraphs = JSON.parse(paragraphs || '[]');
-      const parsedTags = JSON.parse(tags || '[]');
-      const parsedPopular = JSON.parse(popular || '[]');
+      const parsedParagraphs = JSON.parse(paragraphs || "[]");
+      const parsedTags = JSON.parse(tags || "[]");
+      const parsedPopular = JSON.parse(popular || "[]");
       const basePayload = {
         title: title.trim(),
         excerpt,
@@ -390,25 +396,25 @@ app.post(
         throw e1;
       }
     } catch (err) {
-      console.error('Create news error:', err);
-      res.status(500).json({ success: false, message: 'Server error' });
+      console.error("Create news error:", err);
+      res.status(500).json({ success: false, message: "Server error" });
     }
   }
 );
 
 // News: update by slug (multipart optional images)
 app.put(
-  '/api/news/:slug',
+  "/api/news/:slug",
   upload.fields([
-    { name: 'cardImage', maxCount: 1 },
-    { name: 'contentImage', maxCount: 1 },
+    { name: "cardImage", maxCount: 1 },
+    { name: "contentImage", maxCount: 1 },
   ]),
   async (req, res) => {
     try {
       const slug = req.params.slug;
       const doc = await News.findOne({ slug });
       if (!doc) {
-        return res.status(404).json({ success: false, message: 'Not found' });
+        return res.status(404).json({ success: false, message: "Not found" });
       }
 
       const {
@@ -421,26 +427,26 @@ app.put(
         popular,
       } = req.body || {};
 
-      if (typeof title === 'string' && title.trim()) doc.title = title.trim();
-      if (typeof excerpt === 'string') doc.excerpt = excerpt;
-      if (typeof heroIntro === 'string') doc.heroIntro = heroIntro;
-      if (typeof contentIntro === 'string') doc.content.intro = contentIntro;
+      if (typeof title === "string" && title.trim()) doc.title = title.trim();
+      if (typeof excerpt === "string") doc.excerpt = excerpt;
+      if (typeof heroIntro === "string") doc.heroIntro = heroIntro;
+      if (typeof contentIntro === "string") doc.content.intro = contentIntro;
 
-      if (typeof paragraphs !== 'undefined') {
+      if (typeof paragraphs !== "undefined") {
         try {
-          const arr = JSON.parse(paragraphs || '[]');
+          const arr = JSON.parse(paragraphs || "[]");
           doc.content.paragraphs = Array.isArray(arr) ? arr : [];
         } catch {}
       }
-      if (typeof tags !== 'undefined') {
+      if (typeof tags !== "undefined") {
         try {
-          const arr = JSON.parse(tags || '[]');
+          const arr = JSON.parse(tags || "[]");
           doc.content.tags = Array.isArray(arr) ? arr : [];
         } catch {}
       }
-      if (typeof popular !== 'undefined') {
+      if (typeof popular !== "undefined") {
         try {
-          const arr = JSON.parse(popular || '[]');
+          const arr = JSON.parse(popular || "[]");
           doc.popular = Array.isArray(arr) ? arr : [];
         } catch {}
       }
@@ -448,14 +454,14 @@ app.put(
       if (req.files?.cardImage?.[0]) {
         const result = await uploadToCloudinary(
           req.files.cardImage[0].buffer,
-          'dskinova/news'
+          "dskinova/news"
         );
         doc.cardImage = result.secure_url;
       }
       if (req.files?.contentImage?.[0]) {
         const result = await uploadToCloudinary(
           req.files.contentImage[0].buffer,
-          'dskinova/news'
+          "dskinova/news"
         );
         doc.content.image = result.secure_url;
       }
@@ -463,23 +469,23 @@ app.put(
       await doc.save();
       res.json({ success: true, item: doc });
     } catch (err) {
-      console.error('Update news error:', err);
-      res.status(500).json({ success: false, message: 'Server error' });
+      console.error("Update news error:", err);
+      res.status(500).json({ success: false, message: "Server error" });
     }
   }
 );
 
 // News: delete by slug
-app.delete('/api/news/:slug', async (req, res) => {
+app.delete("/api/news/:slug", async (req, res) => {
   try {
     const result = await News.findOneAndDelete({ slug: req.params.slug });
     if (!result) {
-      return res.status(404).json({ success: false, message: 'Not found' });
+      return res.status(404).json({ success: false, message: "Not found" });
     }
-    res.json({ success: true, message: 'Deleted' });
+    res.json({ success: true, message: "Deleted" });
   } catch (err) {
-    console.error('Delete news error:', err);
-    res.status(500).json({ success: false, message: 'Server error' });
+    console.error("Delete news error:", err);
+    res.status(500).json({ success: false, message: "Server error" });
   }
 });
 
@@ -487,7 +493,7 @@ app.delete('/api/news/:slug', async (req, res) => {
 export default app;
 
 // For local development
-if (process.env.NODE_ENV !== 'production') {
+if (process.env.NODE_ENV !== "production") {
   const PORT = process.env.PORT || 3002;
   connectDb()
     .then(() => {
