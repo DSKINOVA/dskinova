@@ -13,6 +13,9 @@ import ExpertSkincare from "./ExpertSkincare.jsx";
 import GalleryCollection from "./GalleryCollection.jsx";
 import ConsultationBanner from "./ConsultationBanner.jsx";
 import LatestNews from "./LatestNews.jsx";
+import SkinSpecialistIntro from "./SkinSpecialistIntro.jsx";
+import SkinConcernsAndTreatments from "./SkinConcernsAndTreatments.jsx";
+import SkinSpecialistBenefits from "./SkinSpecialistBenefits.jsx";
 import FAQ from "./FAQ.jsx";
 import ExclusiveUpdate from "./ExclusiveUpdate.jsx";
 import Footer from "./Footer.jsx";
@@ -63,6 +66,9 @@ export default function HomePage() {
         justdialUrl="#"
       />
       <FAQ />
+      <SkinSpecialistIntro />
+      <SkinConcernsAndTreatments />
+      <SkinSpecialistBenefits />
       <LatestNews />
       <ExclusiveUpdate />
       <Footer />
