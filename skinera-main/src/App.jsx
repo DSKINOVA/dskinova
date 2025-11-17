@@ -25,7 +25,7 @@ export default function App() {
         />
         <Route path="/service/:id" element={<ServiceDetail />} />
         <Route path="/contact" element={<ContactPage />} />
-        <Route path="/news" element={<NewsArchive />} />
+        <Route path="/skin-doctor-in-jaipur" element={<NewsArchive />} />
         <Route path="/newstemplate" element={<NewsTemplate />} />
         <Route path="/news/:slug" element={<NewsTemplate />} />
         <Route path="/admin-login" element={<AdminLogin />} />

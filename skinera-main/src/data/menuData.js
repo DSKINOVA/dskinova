@@ -17,7 +17,7 @@ export const skinMenu = [
     href: "/service/skin-lightening-and-whitening",
   },
   { label: "Cryotherapy Fat Freezing", href: "/service/cryo-fat-freezing" },
-  { label: "Laser Tattoo Removal", href: "/service/laser-tattoo-removal" },
+  { label: "Laser Tattoo Removal", href: "/service/laser-tattoo-removal-jaipur" },
   {
     label: "Pigmentation Treatments",
     href: "/service/pigmentation-treatments",
@@ -84,7 +84,7 @@ export const hairMenu = [
   // { label: "Alopecia Areata", href: "/service/hair-gfc" },
     { label: "Hair Regrowth", href: "/service/regrowth" },
   { label: "Dandruff", href: "/service/dandruff" },
-  { label: "Laser Hair Removal", href: "/service/laser-hair-removal" },
+  { label: "Laser Hair Removal", href: "/service/laser-hair-removal-treatment-in-jaipur" },
   // { label: "Hair Transplant", href: "/service/hair-transplant" },
 ];
 

@@ -22,7 +22,9 @@ export default function ServiceDetail({ serviceId }) {
   const params = typeof useParams === "function" ? useParams() : {};
 
   const effectiveId =
-    serviceId || (params ? params.id : undefined) || "laser-hair-removal";
+    serviceId || (params ? params.id : undefined) || "laser-hair-removal-treatment-in-jaipur";
+
+
 
   const service =
     getExpandedService(effectiveId) || getServiceById(effectiveId);

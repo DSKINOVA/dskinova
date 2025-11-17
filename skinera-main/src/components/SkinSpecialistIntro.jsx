@@ -118,7 +118,7 @@ export default function SkinSpecialistIntro() {
             cosmetologists of Jaipur offer different services to skin and hair
             types with a combination of traditional and modern methods. That is
             why it is easy and satisfying to find a reliable{" "}
-            <Link to="/news" className="text-[#BE7F58]">
+            <Link to="/skin-doctor-in-jaipur" className="text-[#BE7F58]">
               cosmetologist in Jaipur.
             </Link>
           </p>

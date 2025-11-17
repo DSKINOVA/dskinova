@@ -110,7 +110,7 @@ export const servicesData = {
     excluded: ["Surgery", "Liposuction", "Anesthesia", "Implants"],
   },
   "laser-tattoo-removal": {
-    id: "laser-tattoo-removal",
+    id: "laser-tattoo-removal-jaipur",
     title: "Laser Tattoo Removal",
     price: 3500,
     currency: "₹",
@@ -126,6 +126,7 @@ export const servicesData = {
     included: ["Patch Test", "Laser Session", "Cooling", "Aftercare"],
     excluded: ["Anesthesia", "Scar Revision", "Cover-up Tattoo", "Medication"],
   },
+   
   "stretch-marks": {
     id: "stretch-marks",
     title: "Stretch Marks Treatment",
@@ -400,7 +401,7 @@ export const servicesData = {
     excluded: ["Peels", "Injectables", "Laser", "Dermaplaning"],
   },
   "laser-hair-removal": {
-    id: "laser-hair-removal",
+    id: "laser-hair-removal-treatment-in-jaipur",
     title: "Laser Hair Removal",
     price: 3500,
     currency: "₹",

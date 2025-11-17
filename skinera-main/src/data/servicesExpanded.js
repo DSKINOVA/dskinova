@@ -433,8 +433,8 @@ export const servicesExpanded = [
     excluded: ["Deep laser resurfacing"],
   },
   {
-  id: "laser-tattoo-removal",
-  title: "Laser tatoo Removal Treatment in Jaipur",
+  id: "laser-tattoo-removal-jaipur",
+  title: "Laser tatoo Removal  in Jaipur",
   short: "Safe, painless, and long-lasting laser hair removal treatment at Dskinova Jaipur.",
   overview: {
     title: "Laser tattoo Removal Treatment",
@@ -501,13 +501,13 @@ export const servicesExpanded = [
       "Laser tatto Removal Treatment in Jaipur | Smooth & Safe Results",
     meta_description:
       "Get smooth, hair-free skin with the best Laser Hair Removal Treatment in Jaipur at Dskinova. Limited slots available — book your session today!",
-    slug: "laser-hair-removal-treatment-in-jaipur",
+    slug: "laser-tattoo-removal-treatment-in-jaipur",
   },
 },
 
   {
-    id: "laser-hair-removal",
-    title: "Laser Hair Removal",
+    id: "laser-hair-removal-treatment-in-jaipur",
+    title: " Laser Hair Removal Treatment in Jaipur",
     short: "Permanent hair reduction using advanced laser technology.",
     overview: {
       title: "Laser Hair Removal Treatment",
