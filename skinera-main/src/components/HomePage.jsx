@@ -37,7 +37,7 @@ export default function HomePage() {
       <Header onBookAppointment={openAppointment} />
       {/* <Hero onBookAppointment={openAppointment} /> */}
       <NewHeroSlider onBookAppointment={openAppointment} />
-  <SecondSection onBookAppointment={openAppointment} />
+      <SecondSection onBookAppointment={openAppointment} />
       <OurService onBookAppointment={openAppointment} />
       <WhyChooseUs2 />
       <AboutUs />
@@ -67,9 +67,9 @@ export default function HomePage() {
       />
       <FAQ />
       <SkinSpecialistIntro />
-      <SkinConcernsAndTreatments />
+      {/* <SkinConcernsAndTreatments />
       <SkinSpecialistBenefits />
-      <LatestNews />
+      <LatestNews /> */}
       <ExclusiveUpdate />
       <Footer />
       <AppointmentModal
