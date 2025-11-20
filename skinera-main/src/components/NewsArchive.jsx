@@ -237,12 +237,12 @@
 //   );
 // }
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Header from "./Header.jsx";
 import Footer from "./Footer.jsx";
 import Hero from "./Hero.jsx";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async"; 
 import AppointmentModal from "./AppointmentModal.jsx";
 import skin from "../../public/Images/blogs/skin doctor in jaipur.jpg";
 import cosmo from "../../public/Images/cosmatic/Skin Specialist in Jaipur.jpg";
@@ -253,22 +253,66 @@ export default function NewsArchive() {
   // ===================== SEO =====================
   const seoMetaTitle = "Skin & Beauty Experts in Jaipur | Dskinova";
   const seoMetaDesc =
-    "Find the best Skin Specialist and Cosmetologist in Jaipur. Choose the right expert based on your skin & beauty needs.";
+    "Find the best Skin Doctor and Cosmetologist in Jaipur. Choose the right expert based on your skin & beauty needs.";
   const seoImage = skin;
+
+  // ===================== FORCE OVERRIDE =====================
+  useEffect(() => {
+    // Remove all existing meta description to avoid conflict
+    document
+      .querySelectorAll("meta[name='description']")
+      .forEach((m) => m.remove());
+
+    // Remove any old keywords also
+    document
+      .querySelectorAll("meta[name='keywords']")
+      .forEach((m) => m.remove());
+  }, []);
 
   return (
     <div className="min-h-screen bg-white">
-      {/* SEO TAGS */}
+
+      {/* ===================== SEO TAGS ===================== */}
       <Helmet>
         <title>{seoMetaTitle}</title>
-        <meta name="description" content={seoMetaDesc} />
+
+        <meta
+          name="description"
+          content={seoMetaDesc}
+          key="desc"
+          data-react-helmet="true"
+        />
+
         <meta
           name="keywords"
           content="skin doctor in Jaipur, cosmetologist in Jaipur, dermatologist Jaipur"
+          key="keywords"
+          data-react-helmet="true"
         />
-        <meta property="og:image" content={seoImage} />
+
+        <meta
+          property="og:title"
+          content={seoMetaTitle}
+          key="og:title"
+          data-react-helmet="true"
+        />
+
+        <meta
+          property="og:description"
+          content={seoMetaDesc}
+          key="og:description"
+          data-react-helmet="true"
+        />
+
+        <meta
+          property="og:image"
+          content={seoImage}
+          key="og:image"
+          data-react-helmet="true"
+        />
       </Helmet>
 
+      {/* ===================== HEADER + HERO ===================== */}
       <Header onBookAppointment={() => setAppointmentOpen(true)} />
       <Hero onBookAppointment={() => setAppointmentOpen(true)} />
 
@@ -280,69 +324,31 @@ export default function NewsArchive() {
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-            {/* CARD 1 – Skin Specialist */}
+            {/* CARD 1 */}
             <Link
               to="/skin-doctor-in-jaipur"
-              className="group block relative rounded-2xl overflow-hidden shadow-xl backdrop-blur-lg bg-white/30 border border-white/40 hover:-translate-y-2 transition-all duration-500 hover:shadow-2xl"
-              style={{ transformStyle: "preserve-3d" }}
+              className="group block relative rounded-2xl overflow-hidden shadow-xl"
             >
-              {/* Shine Effect */}
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100 transition duration-700 pointer-events-none" />
-
-              <img
-                src={skin}
-                alt="Skin Doctor in Jaipur"
-                className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
-              />
-
+              <img src={skin} alt="Skin Doctor in Jaipur" className="w-full h-64 object-cover" />
               <div className="p-6">
-                <h3 className="text-2xl font-bold text-gray-900 group-hover:text-[#BE7F58] transition-colors">
-                  Skin Doctor in Jaipur
-                </h3>
-
-                <p className="mt-3 text-gray-600 text-sm leading-relaxed">
-                  Advanced dermatology solutions for acne, pigmentation &
-                  glowing skin, provided by expert doctors.
+                <h3 className="text-2xl font-bold text-gray-900">Skin Doctor in Jaipur</h3>
+                <p className="mt-3 text-gray-600 text-sm">
+                  Advanced dermatology solutions for acne, pigmentation & glowing skin.
                 </p>
-
-                <div className="mt-5">
-                  <span className="inline-block bg-gradient-to-r from-[#BE7F58] to-[#d9a27b] text-white px-6 py-2 rounded-lg text-sm font-medium shadow-md group-hover:shadow-lg transition hover:scale-[1.02]">
-                    Explore →
-                  </span>
-                </div>
               </div>
             </Link>
 
-            {/* CARD 2 – Cosmetologist */}
+            {/* CARD 2 */}
             <Link
               to="/cosmeologist-in-jaipur"
-              className="group block relative rounded-2xl overflow-hidden shadow-xl backdrop-blur-lg bg-white/30 border border-white/40 hover:-translate-y-2 transition-all duration-500 hover:shadow-2xl"
-              style={{ transformStyle: "preserve-3d" }}
+              className="group block relative rounded-2xl overflow-hidden shadow-xl"
             >
-              {/* Shine Effect */}
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100 transition duration-700 pointer-events-none" />
-
-              <img
-                src={cosmo}
-                alt="Cosmetologist in Jaipur"
-                className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
-              />
-
+              <img src={cosmo} alt="Cosmetologist in Jaipur" className="w-full h-64 object-cover" />
               <div className="p-6">
-                <h3 className="text-2xl font-bold text-gray-900 group-hover:text-[#BE7F58] transition-colors">
-                  Cosmetologist in Jaipur
-                </h3>
-
-                <p className="mt-3 text-gray-600 text-sm leading-relaxed">
-                  Expert cosmetic treatments for glowing skin, improved beauty &
-                  hair care with advanced procedures.
+                <h3 className="text-2xl font-bold text-gray-900">Cosmetologist in Jaipur</h3>
+                <p className="mt-3 text-gray-600 text-sm">
+                  Expert cosmetic treatments for glowing skin & hair care.
                 </p>
-
-                <div className="mt-5">
-                  <span className="inline-block bg-gradient-to-r from-[#BE7F58] to-[#d9a27b] text-white px-6 py-2 rounded-lg text-sm font-medium shadow-md group-hover:shadow-lg transition hover:scale-[1.02]">
-                    Explore →
-                  </span>
-                </div>
               </div>
             </Link>
           </div>

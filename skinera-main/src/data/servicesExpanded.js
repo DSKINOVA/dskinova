@@ -432,112 +432,207 @@ export const servicesExpanded = [
     included: ["Skin type assessment", "Peel application", "Neutralization", "Aftercare products"],
     excluded: ["Deep laser resurfacing"],
   },
-  {
+ {
   id: "laser-tattoo-removal-jaipur",
-  title: "Laser tatoo Removal  in Jaipur",
-  short: "Safe, painless, and long-lasting laser hair removal treatment at Dskinova Jaipur.",
+
+  title: "Laser Tattoo Removal in Jaipur – Safe & Effective Treatment with Dskinova",
+
+  short:
+    "Safe, effective, modern Laser Tattoo Removal treatment in Jaipur — minimal pain, advanced technology, clear & smooth skin with Dskinova.",
+
   overview: {
-    title: "Laser tattoo Removal Treatment",
+    title: "Laser Tattoo Removal Treatment",
     description:
-      "Get smooth, hair-free skin with advanced laser technology at Dskinova Jaipur. Safe, painless, and suitable for all skin types.",
+      "Laser tattoo removal is a safe, modern, non-invasive treatment that uses advanced laser technology to break down ink particles under the skin, allowing your body to naturally eliminate them over time. Dskinova offers professional, effective, and comfortable tattoo removal in Jaipur.",
   },
+
   image: imgLaserHairRemoval,
 
   included: [
     "Consultation",
-    "Laser sessions as per hair type",
-    "Cooling gel treatment",
-    "Post-treatment care"
+    "Q-switched / PicoSure laser sessions",
+    "Cooling during treatment",
+    "Post-treatment care instructions"
   ],
+
   excluded: [
-    "Waxing, threading, bleaching 2 weeks before treatment",
-    "Hot showers immediately after session"
+    "Tanning or sunburn before session",
+    "Scratching or picking treated skin",
+    "Chemical peels immediately before"
   ],
 
-  mainh1:
-    "Laser tatto Removal Treatment in Jaipur – Say Goodbye to Unwanted Hair | Dskinova",
+  /* ------------------ MAIN H1 ------------------ */
+
+  mainh1: "Laser Tattoo Removal in Jaipur – Safe & Effective Treatment with Dskinova",
+
   mainh1data:
-    "Weary of forever shaving, waxing or threading? It is time to switch to a long-lasting solution. Laser hair removal treatment at Dskinova, Jaipur, is a safe, painless, and effective method to remove unwanted hair permanently. With advanced laser technology and professional dermatologists, Dskinova helps you achieve glowing, smooth skin without frequent salon visits.",
+    "Tattoos are a beautiful means of expression, and at times you do not wish them to reflect your style or story any more. It could be a long-lived design, a tarnished tattoo, or a case of regrets, which can be solved with the help of laser tattoo removal in Jaipur, which is a safe, contemporary, and effective method. We are Dskinova who deal in professional laser tattoo removal in Jaipur and are able to assist clients in achieving clear and smooth skin with minimum pain.",
 
-  firsth2: "What Is Laser tatoo Removal?",
+  /* ------------------ WHAT IS LASER TATTOO REMOVAL ------------------ */
+
+  firsth2: "What is Laser Tattoo Removal?",
+
   firsth2data:
-    "Laser tatto removal is a scientifically proven method that targets unwanted hair follicles using focused beams of light. The laser destroys the hair root, which slows hair growth naturally. Dskinova’s laser hair removal treatment in Jaipur offers long-lasting, smooth, and flawless skin with minimal discomfort. It is suitable for all skin types and can be performed on the face, arms, legs, underarms, bikini area, chest, and back.",
+    "Laser tattoo removal in Jaipur is an arduous treatment which is non-invasive and involves the usage of high laser light to fragment tattoo ink particles below the skin. The body is capable of getting rid of these tiny pieces of ink as time goes by thus fading away the tattoo. Laser tattoo removal is also accurate as compared to other techniques such as dermabrasion or chemical treatment and skin around the tattoo is not harmed which minimizes chances of scarring in Jaipur.",
 
-  sech2: "Why Choose Laser tatoo Removal in Jaipur?",
+  /* ------------------ HOW IT WORKS ------------------ */
+
+  sech2: "How Does the Procedure Work?",
+
   sech2data:
-    "Jaipur has become a leading destination for modern, permanent hair reduction treatments. At Dskinova, advanced FDA-approved lasers are operated by certified dermatologists to ensure maximum safety and precision. Whether you want smooth legs, a neat bikini area, or a hair-free back, Dskinova provides long-term, highly effective results with comfort and safety.",
+    "In Dskinova, we have the technology of Q-switched and PicoSure lasers which are used to target the pigments of tattoos. Laser pulses are directed into the skin during treatment so as to dispersed the ink into small particles. Many of these sessions are determined by the size, color and depth of tattoos and where the tattoo is placed. Multi colored tattoos and especially the green and blue inks may take more sessions before they are completely removed. The majority of patients only have mild discomfort, it is normally termed as snapping or tingling. The sessions are normally brief, of 15-45 minutes, depending on the size and the complexity of the tattoo.",
 
-  firsth3: "How the Treatment Works",
+  /* ------------------ BENEFITS ------------------ */
+
+  firsth3: "Benefits of Laser Tattoo Removal",
+
   firsth3data:
-    "Your laser tatto removal journey begins with a personalized consultation where experts assess your skin and hair type. Settings are customized for safe and effective results. During the session, the laser targets the hair roots without harming the surrounding skin. Depending on your growth pattern and thickness, multiple sessions may be required. Cooling is applied afterward to prevent irritation and leave your skin smooth and refreshed.",
+    "The decision to undergo laser tattoo removal in Jaipur at Dskinova is associated with a number of benefits:\n• Safe and non-invasive: No cutting or surgery is required.\n• Effective on multiple colors: Modern lasers can handle a variety of pigments.\n• Minimal scarring: Professional treatment ensures smooth, healthy skin.\n• Gradual fading: Tattoos lighten naturally over time for a better aesthetic result.",
 
-  sech3: "Benefits of Laser tatoo Removal Treatment In Jaipur",
+  /* ------------------ COST & CHOOSING CLINIC ------------------ */
+
+  sech3: "Cost and Choosing the Right Clinic",
+
   sech3data:
-    "• Permanent Hair Reduction: Long-lasting smooth skin with minimal touch-ups.\n• No Skin Damage: No cuts, bumps, or rashes like waxing or shaving.\n• Fast & Painless: Quick sessions with cooling technology.\n• Clear & Soft Skin: Reduces ingrown hair and improves texture.\n• Cost & Time Efficient: No more monthly salon bills or grooming hassle.",
+    "The prices of laser tattoo removal in Jaipur are dependent on the size, color and number of laser tattoo removal sessions. Small tattoos can begin at ₹2,000–3,000 per session, and bigger tattoos or multicolor ones can be more expensive. A certified clinic such as Dskinova would guarantee a safe and effective laser tattoo removal in Jaipur with lasting effects. With qualified dermatologists and advanced technology, we offer the best services in getting rid of your tattoos so that your tattoo removal experience can be safe and comfortable.",
 
-  thih3: "Why Choose Dskinova – The Best Laser Clinic in Jaipur",
+  /* ------------------ PRE & POST CARE ------------------ */
+
+  thih3: "Pre- and Post-Treatment Care",
+
   thih3data:
-    "Dskinova is one of the top centers in Jaipur for laser hair removal, equipped with advanced dermatology-grade devices handled by certified professionals. Every treatment plan is personalized according to your skin tone and hair type. Safety, hygiene, and visible results make Dskinova the preferred choice for permanent hair reduction.",
+    "Before and after-session proper care is the key to optimal outcomes. Prior to treatment, do not tan or sunburn, and adhere to skin preparation directions. Keep the area clean, moist, and protected from sunlight after the session. Complications may arise from scratching or picking the treated skin.",
 
-  fourh3: "Pre and Post-Treatment Care",
-  fourh3data:
-    "Preamble: Avoid waxing, threading, bleaching, or plucking for at least 2 weeks before treatment.\nPost-Treatment: Apply sunscreen regularly, avoid hot showers, and keep the skin moisturized.\nProper care ensures long-lasting results and maintains your post-laser glow.",
+  /* ------------------ CONCLUSION ------------------ */
 
-  fifthh3: "Cost of Laser Hair Removal in Jaipur",
-  fifthh3data:
-    "The cost varies based on the body area, hair thickness, growth cycle, and number of sessions required. Dskinova offers affordable packages for men and women, ensuring smooth and hair-free skin without financial burden.",
+  conclusionTitle: "Conclusion",
 
-  sixthh3: "Common Myths About Laser Hair Removal",
-  sixthh3data:
-    "Myth 1: Laser hair removal is painful.\nFact: Dskinova’s advanced cooling technology makes it nearly painless.\n\nMyth 2: Laser is only for women.\nFact: Many men choose laser for chest, back, and beard shaping.\n\nMyth 3: Laser damages the skin.\nFact: Dskinova ensures dermatologically safe, non-invasive, and clinically tested procedures.",
-
-  conclusionTitle: "Conclusion – Reveal Your Confidence with Dskinova",
   conclusionData:
-    "Unwanted hair should not stop you from looking and feeling your best. With Dskinova’s advanced laser hair removal treatment in Jaipur, achieve silky smooth skin, long-lasting results, and newfound confidence. Book your consultation today and let Dskinova redefine your beauty — one smooth session at a time.",
+    "In case you are willing to get rid of an unwanted tattoo, laser tattoo removal in Jaipur, Dskinova is the best and safest choice. Dskinova is the place where you can get a clear and tattoo-free skin with the help of the most advanced equipment of lasers, qualified experts, and individual approach. Get a step closer to smooth and clean skin and make an appointment at Dskinova to get your laser tattoos removed in Jaipur.",
+
+  /* ------------------ SEO ------------------ */
 
   seo: {
-    focus_keyphrase: "Laser tatto Removal Treatment in Jaipur",
-    meta_title:
-      "Laser tatto Removal Treatment in Jaipur | Smooth & Safe Results",
+    focus_keyphrase: "laser tattoo removal in jaipur",
+    meta_title: "Laser Tattoo Removal in Jaipur – Safe & Effective | Dskinova",
     meta_description:
-      "Get smooth, hair-free skin with the best Laser Hair Removal Treatment in Jaipur at Dskinova. Limited slots available — book your session today!",
-    slug: "laser-tattoo-removal-treatment-in-jaipur",
-  },
+      "Professional Laser Tattoo Removal in Jaipur with Q-switched & PicoSure technology. Safe, effective, minimal pain, and dermatologist-supervised treatments at Dskinova.",
+    slug: "laser-tattoo-removal-jaipur"
+  }
 },
+ {
+  id: "laser-hair-removal-treatment-in-jaipur",
 
-  {
-    id: "laser-hair-removal-treatment-in-jaipur",
-    title: " Laser Hair Removal Treatment in Jaipur",
-    short: "Permanent hair reduction using advanced laser technology.",
-    overview: {
-      title: "Laser Hair Removal Treatment",
-      description: "Safe and effective laser technology targets hair follicles to reduce unwanted hair growth, providing long-lasting smooth skin.",
-    },
-    image: imgLaserHairRemoval,
-    included: ["Consultation", "Laser sessions", "Skin cooling", "Post-treatment care"],
-    excluded: ["Waxing or shaving immediately before"],
-    mainh1 :"Laser Tattoo Removal in Jaipur – Safe & Effective Treatment with Dskinova",
-    mainh1data:"Tattoos are a beautiful means of expression, and at times you do not wish them to reflect your style or story any more. It could be a long-lived design, a tarnished tattoo, or a case of regrets which can be solved with the help of laser tattoo removal in Jaipur, which is a safe, contemporary, and effective method. We are Dskinova who deal in professional laser tattoo removal in Jaipur and are able to assist clients in achieving clear and smooth skin with minimum pain.",
-    firsth2:"What is Laser Tattoo Removal?",
-    firsth2data:"Laser tattoo removal in Jaipur is an arduous treatment which is non-invasive and involves theusage of high laser light to fragment tattoo ink particles below the skin. The body is capable of getting rid of these tiny pieces of ink as time goes by thus fading away the tattoo. Laser tattoo removal is also accurate as compared to other techniques such as dermabrasion or chemical treatment and skin around the tattoo is not harmed which minimizes chances of scarring in Jaipur",
-    sech2:"How Does the Procedure Work?",
-    sech2data:"In Dskinova, we have the technology of Q-switched and PicoSure lasers which are used to target the pigments of tattoos. Laser pulses are directed into the skin during treatment so as to dispersed the ink into small particles. Many of these sessions are determined by the size, color and depth of tattoos and where the tattoo is placed. Multi colored tattoos and especially the green and blue inks may take more sessions before they are completely removed. The majority of patients only have mild discomfort, it is normally termed as snapping or tingling. The sessions are normally brief, of 15-45 minutes, depending on the size and the complexity of the tattoo.",
-    firsth3:"Benefits of Laser Tattoo Removal",
-    firsth3data:"The decision to undergo laser tattoo removal in Jaipur at Dskinova is associated with a number of benefits: Safe and n-invasive: No cutting or surgery is required. Effective on multiple colors: Modern lasers can handle a variety of pigments. Minimal  carring: Professional treatment ensures smooth, healthy skin. Gradual fading: Tattoos lighten naturally over time for a better aesthetic result.",
-    sech3:"Cost and Choosing the Right Clinic",
-    sech3data:"The prices of laser tattoo removal in Jaipur are dependent on the size, color and number of laser tattoo removal session. Small tattoos can begin at ₹2,0003,000 per session, and bigger tattoos or multicolor ones can be more expensive. A certified clinic such as Dskinova would guarantee a safe and effective laser tattoo removal in Jaipur with lasting effects. With qualified dermatologists and advanced technology, we offer the best services in getting rid of your tattoos so that your tattoo removal experience can be safe and comfortable.",
-    thih3:"Pre- and Post-Treatment Care",
-    thih3data:"Before and after-session proper care is the key to optimal outcomes. Prior to treatment, do not tan or sunburn, and adhere to skin preparation directions. Have the area clean, moist and covered with sunlight after the session. Complications may arise from scratching or picking the treated skin.",
-    fourh3 :"Conclusion",
-    fourh3data:"In case you are willing to get rid of an unwanted tattoo, laser tattoo removal in Jaipur, Dskinova is the best and safest choice. Dskinova is the place where you can get a clear and tattoo-free skin with the help of the most advanced equipment of lasers, qualified experts, and individual approach. Get a step closer to smooth and clean skin and make an appointment at Dskinova to get your laser tattoos removed in Jaipur.",
-     seo: {
+  title: "Laser Hair Removal Treatment in Jaipur – Say Goodbye to Unwanted Hair | Dskinova",
+
+  short: "Permanent hair reduction using advanced laser technology, providing long-lasting smooth and hair-free skin.",
+
+  overview: {
+    title: "Laser Hair Removal Treatment",
+    description:
+      "Safe and effective laser technology targets hair follicles to reduce unwanted hair growth, providing long-lasting smooth skin without irritation.",
+  },
+
+  image: imgLaserHairRemoval,
+
+  included: [
+    "Consultation",
+    "Laser sessions",
+    "Skin cooling",
+    "Post-treatment care"
+  ],
+
+  excluded: [
+    "Waxing or shaving immediately before",
+    "Bleaching before treatment",
+    "Hot showers right after session"
+  ],
+
+  /* ------------------ MAIN HEADING ------------------ */
+
+  mainh1: "Experience Smooth, Hair-Free Skin Like Never Before",
+
+  mainh1data:
+    "Weary of forever shaving or waxing or threading? It is time to change to a more complex and long-lasting solution. Laser hair removal treatment at Dskinova, Jaipur, is a safe and painless and long term method of removing unwanted hair. Dskinova will bring up the glowing skin without the inconvenience of visiting the salon frequently with the help of high-quality laser technology and professional dermatological services.",
+
+  /* ------------------ WHAT IS LASER HAIR REMOVAL ------------------ */
+
+  firsth2: "What Is Laser Hair Removal?",
+
+  firsth2data:
+    "Laser hair removal is a procedure which is scientifically proven to be targeted at the hair follicles and with the use of focused energy of light. This light kills the root of unwanted hair hence growth is slowed in the long run. Dskinova’s laser hair removal treatment in Jaipur is the new method when compared to the conventional techniques, which leaves long lasting effects and produces soft and flawless skin with little discomfort at Dskinova Jaipur. It can be applied on the face, arms, legs, back, bikini region, and underarms as it is appropriate on all types of skin.",
+
+  /* ------------------ WHY CHOOSE LASER HAIR REMOVAL ------------------ */
+
+  sech2: "Why Choose Laser Hair Removal in Jaipur?",
+
+  sech2data:
+    "With the new technology in skincare and the use of qualified professionals, Jaipur is rapidly turning out to be a place where permanent hair removal surgeries are undertaken. Dskinova is one of the leading laser hair removal treatment in Jaipur with its combination of innovation, safety and the price. All the treatments are carried out under the care of the experts using the laser machines approved by the FDA which are comfortable and precise. Have you a need to have smooth legs or a back that is free of hair, Dskinova will give you confidence in the long term beauty.",
+
+  /* ------------------ HOW THE TREATMENT WORKS ------------------ */
+
+  sech20: "How the Treatment Works",
+
+  sech20data:
+    "It starts with the personalized consulting in which they test your skin and hair type. The professional staff in Dskinova Jaipur then tailors the lasers to be suitable to your comfort and efficiency. The laser is also applied during the session to hair roots only and does not cause damage to the surrounding skin. Depending on the thickness of your hair and its growth pattern, you might require several sessions in order to achieve maximum results. Cooling is done after the treatment so that there is no irritation and you are left with soft and rejuvenated skin.",
+
+  /* ------------------ BENEFITS ------------------ */
+
+  firsth3: "Benefits of Laser Hair Removal Treatment In Jaipur",
+
+  firsth3data:
+    "Permanent Hair Reduction: Experience permanent smoothing with minimal touch ups.\nNo Skin Damage: Lasers do not result in cuts and rashes like waxing and threading.\nFast and Non-Painful: Sessions are brief and almost painless.\nGetting Soft and Clear Skin: Removes ingrowth of hair and improves skin texture.\nTime and Cost Effective: No longer are there monthly salon bills to pay and regular grooming.",
+
+  /* ------------------ BEST LASER CLINIC ------------------ */
+
+  firstth30: "Why Choose Dskinova – The Best Laser Clinic in Jaipur",
+
+  firstth30data:
+    "Dskinova is considered to be among the top skincare and modern technology laser hair removal centers in Jaipur. Their certified dermatologists operate on the finest devices to provide safe, hygienic and result-oriented treatments. The clinic concentrates on individual treatment, which means every client receives an individual plan concerning his/her skin complexion and hair type. In Dskinova, comfort, safety and results can be seen come together to create an unparalleled experience.",
+
+  /* Duplicate HOW IT WORKS text removed? → NO! You said nothing should be removed. So we keep it. */
+
+ 
+  /* ------------------ PRE & POST CARE ------------------ */
+
+  firstth31: "Pre and Post-Treatment Care",
+
+  firstth31data:
+    "The tips to care about to maximize your laser hair removal treatment in Jaipur are:\nPreamble: Waxing, threading, bleaching: do not do it within two weeks before Treatment.\nPost-Treatment: Wear sunscreen, take care not to take hot showers and make sure that your skin is hydrated.\nThese few tips will keep giving long-lasting effects and keep your post treatment glow.",
+
+  /* ------------------ COST ------------------ */
+
+  sech3: "Cost of Laser Hair Removal in Jaipur",
+
+  sech3data:
+    "The prices of laser hair removal treatment in Jaipur are varying based on the location of the hair removal, the number of sessions needed, and your hair growing cycle. Dskinova has got good packages that cater to both men and women at a low cost. Their affordable packages are such that everyone can have a hassle-free, smooth, hair-free skin without emptying their pockets.",
+
+  /* ------------------ MYTHS ------------------ */
+
+  thih3: "Common Myths About Laser Hair Removal",
+
+  thih3data:
+    "Myth 1: Laser hair removal is painful.\n■ Fact: Dskinova’s laser technology is nearly painless with cooling sensations.\nMyth 2: It’s only for women.\n■ Fact: Many men in Jaipur choose laser treatment for chest, back, and beard shaping.\nMyth 3: It damages the skin.\n■ Fact: At Dskinova, treatments are safe, dermatologically tested, and non-invasive.",
+
+  /* ------------------ CONCLUSION ------------------ */
+
+  fourh3: "Conclusion – Reveal Your Confidence with Dskinova",
+
+  fourh3data:
+    "Extra hair should not be a reason to feel bad and not be a beauty. Through the laser hair removal treatment in Jaipur at Dskinova, you get the chance to have a silky-smooth skin, long lasting results and a new feeling of self. Finding the right balance between science and beauty with Dskinova, your preferred choice in permanent hair removal in Jaipur.\n■ Book your consultation today and let Dskinova redefine your beauty, one smooth session at a time.",
+
+  /* ------------------ SEO ------------------ */
+
+  seo: {
     focus_keyphrase: "laser hair removal in jaipur",
-    meta_title: "Laser hair Removal in Jaipur – Safe & Professional Treatment",
+    meta_title: "Laser Hair Removal in Jaipur – Safe & Professional Treatment",
     meta_description:
-      "Laser hair removal in Jaipur at Dskinova – safe, effective, and limited slots available. Book now for clear, tattoo-free skin!",
-    slug: "laser tattoo removal in jaipur",
-  },
-  },
+      "Laser hair removal in Jaipur at Dskinova – safe, effective, long-lasting, and dermatologist-supervised. Book your session today!",
+    slug: "laser-hair-removal-treatment-in-jaipur"
+  }
+}
+
+,
   {
   id: "eczema",
   title: "Eczema Treatment",
