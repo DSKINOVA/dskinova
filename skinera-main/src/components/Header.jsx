@@ -483,7 +483,7 @@ useEffect(() => {
               Gallery
             </Link>
             <Link
-              to="/skin-doctor-in-jaipur"
+              to="/news"
               className="text-gray-700 hover:text-[#c67c54] transition-colors font-bold"
             >
               Blogs

@@ -1,5 +1,5 @@
 import React from "react";
-import doctorImage from "../../public/Images/Doctor-img/1.jpeg";
+import doctorImage from "../../public/Images/Doctor-img/Skin Specialist in Jaipur.jpg";
 
 export default function FounderMessage() {
   return (

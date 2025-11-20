@@ -12,6 +12,8 @@ import ReviewsDemo from "./components/ReviewsDemo.jsx";
 import Wellness from "./components/Wellness.jsx";
 import SocialBar from "./components/SocialBar";   // ✅ added
 import TimedPopup from "./components/TimedPopup.jsx"; 
+import SkinDoctor from "./components/SkinDoctor.jsx";
+import Cosmatic from "./components/Cosmatic.jsx";
 
 export default function App() {
   return (
@@ -25,7 +27,7 @@ export default function App() {
         />
         <Route path="/service/:id" element={<ServiceDetail />} />
         <Route path="/contact" element={<ContactPage />} />
-        <Route path="/skin-doctor-in-jaipur" element={<NewsArchive />} />
+        <Route path="/news" element={<NewsArchive />} />
         <Route path="/newstemplate" element={<NewsTemplate />} />
         <Route path="/news/:slug" element={<NewsTemplate />} />
         <Route path="/admin-login" element={<AdminLogin />} />
@@ -33,11 +35,13 @@ export default function App() {
         <Route path="/gallery" element={<GalleryPage />} />
         <Route path="/reviews-demo" element={<ReviewsDemo />} />
         <Route path="/wellness" element={<Wellness />} />
+        <Route path='/skin-doctor-in-jaipur' element={<SkinDoctor />} />
+        <Route path="/cosmeologist-in-jaipur" element ={<Cosmatic />} />
       </Routes>
 {/* 🆕 The popup will now appear across all routes (except admin routes, which is good practice!) */}
       <TimedPopup /> 
     
-      <SocialBar />   {/* ✅ added */}
+      <SocialBar />   
     </Router>
   );
 }

@@ -67,9 +67,9 @@ export default function HomePage() {
       />
       <FAQ />
       <SkinSpecialistIntro />
-      {/* <SkinConcernsAndTreatments />
+      <SkinConcernsAndTreatments />
       <SkinSpecialistBenefits />
-      <LatestNews /> */}
+      <LatestNews />
       <ExclusiveUpdate />
       <Footer />
       <AppointmentModal
