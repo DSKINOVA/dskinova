@@ -291,13 +291,13 @@ export default function NewsArchive() {
 
               <img
                 src={skin}
-                alt="Skin Specialist in Jaipur"
+                alt="Skin Doctor in Jaipur"
                 className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
               />
 
               <div className="p-6">
                 <h3 className="text-2xl font-bold text-gray-900 group-hover:text-[#BE7F58] transition-colors">
-                  Skin Specialist in Jaipur
+                  Skin Doctor in Jaipur
                 </h3>
 
                 <p className="mt-3 text-gray-600 text-sm leading-relaxed">
