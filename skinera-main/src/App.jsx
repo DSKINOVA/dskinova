@@ -10,10 +10,11 @@ import { AdminLogin, Dashboard } from "./adminroutes/index.js";
 import GalleryPage from "./components/GalleryPage.jsx";
 import ReviewsDemo from "./components/ReviewsDemo.jsx";
 import Wellness from "./components/Wellness.jsx";
-import SocialBar from "./components/SocialBar";   // ✅ added
-import TimedPopup from "./components/TimedPopup.jsx"; 
+import SocialBar from "./components/SocialBar"; // ✅ added
+import TimedPopup from "./components/TimedPopup.jsx";
 import SkinDoctor from "./components/SkinDoctor.jsx";
 import Cosmatic from "./components/Cosmatic.jsx";
+import AntiAging from "./components/AntiAging.jsx";
 
 export default function App() {
   return (
@@ -35,13 +36,14 @@ export default function App() {
         <Route path="/gallery" element={<GalleryPage />} />
         <Route path="/reviews-demo" element={<ReviewsDemo />} />
         <Route path="/wellness" element={<Wellness />} />
-        <Route path='/skin-doctor-in-jaipur' element={<SkinDoctor />} />
-        <Route path="/cosmeologist-in-jaipur" element ={<Cosmatic />} />
+        <Route path="/skin-doctor-in-jaipur" element={<SkinDoctor />} />
+        <Route path="/cosmeologist-in-jaipur" element={<Cosmatic />} />
+        <Route path="/anti-aging-in-jaipur" element={<AntiAging />} />
       </Routes>
-{/* 🆕 The popup will now appear across all routes (except admin routes, which is good practice!) */}
-      <TimedPopup /> 
-    
-      <SocialBar />   
+      {/* 🆕 The popup will now appear across all routes (except admin routes, which is good practice!) */}
+      <TimedPopup />
+
+      <SocialBar />
     </Router>
   );
 }

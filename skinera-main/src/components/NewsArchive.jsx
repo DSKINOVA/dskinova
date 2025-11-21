@@ -246,6 +246,7 @@ import { Helmet } from "react-helmet-async";
 import AppointmentModal from "./AppointmentModal.jsx";
 import skin from "../../public/Images/blogs/skin doctor in jaipur.jpg";
 import cosmo from "../../public/Images/cosmatic/Skin Specialist in Jaipur.jpg";
+import girl from '../../public/Images/Thestory/girl.jpg'
 
 export default function NewsArchive() {
   const [appointmentOpen, setAppointmentOpen] = useState(false);
@@ -346,6 +347,20 @@ export default function NewsArchive() {
               <img src={cosmo} alt="Cosmetologist in Jaipur" className="w-full h-64 object-cover" />
               <div className="p-6">
                 <h3 className="text-2xl font-bold text-gray-900">Cosmetologist in Jaipur</h3>
+                <p className="mt-3 text-gray-600 text-sm">
+                  Expert cosmetic treatments for glowing skin & hair care.
+                </p>
+              </div>
+            </Link>
+
+            {/* card3 */}
+            <Link
+              to="/anti-aging-in-jaipur"
+              className="group block relative rounded-2xl overflow-hidden shadow-xl"
+            >
+              <img src={girl} alt="Cosmetologist in Jaipur" className="w-full h-64 object-cover" />
+              <div className="p-6">
+                <h3 className="text-2xl font-bold text-gray-900">Anti-Aging Treatment</h3>
                 <p className="mt-3 text-gray-600 text-sm">
                   Expert cosmetic treatments for glowing skin & hair care.
                 </p>
