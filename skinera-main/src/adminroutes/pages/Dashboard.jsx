@@ -49,7 +49,7 @@ export default function Dashboard() {
     // Load news from backend
     async function loadNews() {
       try {
-        const res = await fetch(import.meta.env.VITE_SERVER_URL + "/api/news");
+        const res = await fetch(import.meta.env.VITE_SERVER_URL + "/news");
         const data = await res.json();
         if (data?.success) {
           setNewsList(data.items || []);
@@ -73,7 +73,7 @@ export default function Dashboard() {
 
   const handleLogout = async () => {
     try {
-      await fetch(import.meta.env.VITE_SERVER_URL + "/api/admin-logout", {
+      await fetch(import.meta.env.VITE_SERVER_URL + "/admin-logout", {
         method: "POST",
       });
     } catch {}
@@ -143,7 +143,7 @@ export default function Dashboard() {
               onClick={async () => {
                 try {
                   const res = await fetch(
-                    `${import.meta.env.VITE_SERVER_URL}/api/news/${slug}`,
+                    `${import.meta.env.VITE_SERVER_URL}/news/${slug}`,
                     { method: "DELETE" }
                   );
                   const data = await res.json();
@@ -152,7 +152,7 @@ export default function Dashboard() {
                   // Refresh list
                   try {
                     const listRes = await fetch(
-                      import.meta.env.VITE_SERVER_URL + "/api/news"
+                      import.meta.env.VITE_SERVER_URL + "/news"
                     );
                     const listData = await listRes.json();
                     if (listData?.success) setNewsList(listData.items || []);
@@ -217,10 +217,10 @@ export default function Dashboard() {
       fd.append("contentImage", newsForm.content.image);
 
     try {
-      let url = import.meta.env.VITE_SERVER_URL + "/api/news";
+      let url = import.meta.env.VITE_SERVER_URL + "/news";
       let method = "POST";
       if (editingNews?.slug) {
-        url = `${import.meta.env.VITE_SERVER_URL}/api/news/${editingNews.slug}`;
+        url = `${import.meta.env.VITE_SERVER_URL}/news/${editingNews.slug}`;
         method = "PUT";
       }
       const res = await fetch(url, { method, body: fd });
@@ -236,7 +236,7 @@ export default function Dashboard() {
       // Refresh list
       try {
         const listRes = await fetch(
-          import.meta.env.VITE_SERVER_URL + "/api/news"
+          import.meta.env.VITE_SERVER_URL + "/news"
         );
         const listData = await listRes.json();
         if (listData?.success) setNewsList(listData.items || []);

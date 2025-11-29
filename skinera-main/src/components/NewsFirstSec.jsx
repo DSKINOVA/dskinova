@@ -94,7 +94,7 @@ export default function NewsFirstSec({ article }) {
     let abort = false;
     async function loadPopular() {
       try {
-        const res = await fetch(import.meta.env.VITE_SERVER_URL + "/api/news");
+        const res = await fetch(import.meta.env.VITE_SERVER_URL + "/news");
         const data = await res.json();
         if (data?.success && Array.isArray(data.items)) {
           const list = data.items

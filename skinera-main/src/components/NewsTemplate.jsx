@@ -21,7 +21,7 @@ export default function NewsTemplate() {
       try {
         const res = await fetch(
           import.meta.env.VITE_SERVER_URL +
-            "/api/news/" +
+            "/news/" +
             encodeURIComponent(slug)
         );
         if (res.status === 404) {

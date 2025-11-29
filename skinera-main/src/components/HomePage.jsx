@@ -22,6 +22,7 @@ import Footer from "./Footer.jsx";
 import AppointmentModal from "./AppointmentModal.jsx";
 import InstaReels from "./InstaReels.jsx";
 import YouTubeReels from "./YouTubeReels.jsx";
+import ElfsightGoogleReviews from "./ElfsightGoogleReviews.jsx";
 
 export default function HomePage() {
   const [appointmentOpen, setAppointmentOpen] = useState(false);
@@ -59,7 +60,8 @@ export default function HomePage() {
           "https://www.youtube.com/shorts/tBhBfmo2XQg",
         ]}
       />
-      <GoogleReviewsAutoSlider autoSlideInterval={4000} showControls={true} />
+      {/* <GoogleReviewsAutoSlider autoSlideInterval={4000} showControls={true} /> */}
+      <ElfsightGoogleReviews />
       <JustdialReviewsAutoSlider
         autoSlideInterval={4000}
         showControls={true}
