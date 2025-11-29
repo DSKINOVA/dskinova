@@ -16,7 +16,7 @@
 //       setLoading(true);
 //       try {
 //         const res = await fetch(
-//           (import.meta.env.VITE_SERVER_URL || "") + "/api/news"
+//           (import.meta.env.VITE_SERVER_URL || "") + "/news"
 //         );
 //         const data = await res.json();
 //         if (!abort && data?.success) {

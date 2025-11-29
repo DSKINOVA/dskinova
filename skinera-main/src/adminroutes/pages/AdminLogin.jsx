@@ -53,7 +53,7 @@ export default function AdminLogin() {
     try {
       // Call backend API
       const resp = await fetch(
-        import.meta.env.VITE_SERVER_URL + "/api/admin-login",
+        import.meta.env.VITE_SERVER_URL + "/admin-login",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -69,7 +69,7 @@ export default function AdminLogin() {
         // Optionally refresh stored profile username for UI
         try {
           const p = await fetch(
-            import.meta.env.VITE_SERVER_URL + "/api/admin/profile"
+            import.meta.env.VITE_SERVER_URL + "/admin/profile"
           );
           const pd = await p.json();
           if (p.ok && pd?.success && pd?.username) {

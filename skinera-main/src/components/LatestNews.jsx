@@ -9,7 +9,7 @@ export default function LatestNews() {
     async function load() {
       try {
         const res = await fetch(
-          (import.meta.env.VITE_SERVER_URL || "") + "/api/news/latest?limit=4"
+          (import.meta.env.VITE_SERVER_URL || "") + "/news/latest?limit=4"
         );
         const data = await res.json();
         if (!abort && data?.success) {

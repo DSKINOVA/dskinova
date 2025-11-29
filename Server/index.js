@@ -13,34 +13,50 @@ import { PassThrough } from "stream";
 // Basic Express app setup
 const app = express();
 const CLIENT_URL = process.env.CLIENT_URL || "http://localhost:5173";
-const allowedOrigins = [
-  CLIENT_URL,
-  "http://localhost:5173",
-  "http://localhost:5174",
-  "https://dskinnovafdin.vercel.app",
-  "https://dskinova-silk.vercel.app",
-];
+// const allowedOrigins = [
+//   CLIENT_URL,
+//   "http://localhost:5173",
+//   "http://localhost:5174",
+//   "https://dskinnovafdin.vercel.app",
+//   "https://dskinova-silk.vercel.app",
+// ];
+
+// app.use(
+//   cors({
+//     origin: function (origin, callback) {
+//       // Allow requests with no origin (like mobile apps or curl requests)
+//       if (!origin) return callback(null, true);
+
+//       if (allowedOrigins.indexOf(origin) !== -1) {
+//         callback(null, true);
+//       } else {
+//         callback(new Error("Not allowed by CORS"));
+//       }
+//     },
+//     credentials: true,
+//   })
+// );
 
 app.use(
   cors({
-    origin: function (origin, callback) {
-      // Allow requests with no origin (like mobile apps or curl requests)
-      if (!origin) return callback(null, true);
-
-      if (allowedOrigins.indexOf(origin) !== -1) {
-        callback(null, true);
-      } else {
-        callback(new Error("Not allowed by CORS"));
-      }
+    origin: (origin, callback) => {
+      callback(null, true); // allow all
     },
     credentials: true,
+    methods: "GET,POST,PUT,DELETE,OPTIONS",
+    allowedHeaders: "Content-Type, Authorization",
   })
 );
+
+
+
+
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // MongoDB connection (from env only)
-const { MONGO_URI } = process.env;
+const { MONGODB_URI } = process.env;
 
 // Global connection variable to avoid multiple connections
 let isConnected = false;
@@ -50,12 +66,12 @@ async function connectDb() {
     return;
   }
 
-  if (!MONGO_URI) {
-    throw new Error("MONGO_URI is not set in environment");
+  if (!MONGODB_URI) {
+    throw new Error("MONGODB_URI is not set in environment");
   }
 
   try {
-    await mongoose.connect(MONGO_URI, {
+    await mongoose.connect(MONGODB_URI, {
       // Serverless-friendly options
       maxPoolSize: 10,
       serverSelectionTimeoutMS: 5000,
@@ -142,6 +158,7 @@ app.get("/", (req, res) => {
 
 // Login route
 app.post("/api/admin-login", async (req, res) => {
+  console.log("Admin login hit");
   try {
     const { username, password } = req.body || {};
     if (!username || !password) {
@@ -269,12 +286,12 @@ app.post("/api/admin/change-username", async (req, res) => {
 });
 
 // Logout (stateless – provided for completeness)
-app.post("/api/admin-logout", (req, res) => {
+app.post("/admin-logout", (req, res) => {
   return res.json({ success: true, message: "Logged out" });
 });
 
 // Health route
-app.get("/api/health", (req, res) => {
+app.get("/health", (req, res) => {
   res.json({ ok: true });
 });
 
@@ -497,7 +514,7 @@ export default app;
 
 // For local development
 if (process.env.NODE_ENV !== "production") {
-  const PORT = process.env.PORT || 3002;
+  const PORT = process.env.PORT || 3000;
   connectDb()
     .then(() => {
       app.listen(PORT, () => {
