@@ -463,52 +463,52 @@ export const servicesExpanded = [
 
   /* ------------------ MAIN H1 ------------------ */
 
-  mainh1: "Laser Tattoo Removal in Jaipur – Safe & Effective Treatment with Dskinova",
+  // mainh1: "Laser Tattoo Removal in Jaipur – Safe & Effective Treatment with Dskinova",
 
-  mainh1data:
-    "Tattoos are a beautiful means of expression, and at times you do not wish them to reflect your style or story any more. It could be a long-lived design, a tarnished tattoo, or a case of regrets, which can be solved with the help of laser tattoo removal in Jaipur, which is a safe, contemporary, and effective method. We are Dskinova who deal in professional laser tattoo removal in Jaipur and are able to assist clients in achieving clear and smooth skin with minimum pain.",
+  // mainh1data:
+  //   "Tattoos are a beautiful means of expression, and at times you do not wish them to reflect your style or story any more. It could be a long-lived design, a tarnished tattoo, or a case of regrets, which can be solved with the help of laser tattoo removal in Jaipur, which is a safe, contemporary, and effective method. We are Dskinova who deal in professional laser tattoo removal in Jaipur and are able to assist clients in achieving clear and smooth skin with minimum pain.",
 
-  /* ------------------ WHAT IS LASER TATTOO REMOVAL ------------------ */
+  // /* ------------------ WHAT IS LASER TATTOO REMOVAL ------------------ */
 
-  firsth2: "What is Laser Tattoo Removal?",
+  // firsth2: "What is Laser Tattoo Removal?",
 
-  firsth2data:
-    "Laser tattoo removal in Jaipur is an arduous treatment which is non-invasive and involves the usage of high laser light to fragment tattoo ink particles below the skin. The body is capable of getting rid of these tiny pieces of ink as time goes by thus fading away the tattoo. Laser tattoo removal is also accurate as compared to other techniques such as dermabrasion or chemical treatment and skin around the tattoo is not harmed which minimizes chances of scarring in Jaipur.",
+  // firsth2data:
+  //   "Laser tattoo removal in Jaipur is an arduous treatment which is non-invasive and involves the usage of high laser light to fragment tattoo ink particles below the skin. The body is capable of getting rid of these tiny pieces of ink as time goes by thus fading away the tattoo. Laser tattoo removal is also accurate as compared to other techniques such as dermabrasion or chemical treatment and skin around the tattoo is not harmed which minimizes chances of scarring in Jaipur.",
 
-  /* ------------------ HOW IT WORKS ------------------ */
+  // /* ------------------ HOW IT WORKS ------------------ */
 
-  sech2: "How Does the Procedure Work?",
+  // sech2: "How Does the Procedure Work?",
 
-  sech2data:
-    "In Dskinova, we have the technology of Q-switched and PicoSure lasers which are used to target the pigments of tattoos. Laser pulses are directed into the skin during treatment so as to dispersed the ink into small particles. Many of these sessions are determined by the size, color and depth of tattoos and where the tattoo is placed. Multi colored tattoos and especially the green and blue inks may take more sessions before they are completely removed. The majority of patients only have mild discomfort, it is normally termed as snapping or tingling. The sessions are normally brief, of 15-45 minutes, depending on the size and the complexity of the tattoo.",
+  // sech2data:
+  //   "In Dskinova, we have the technology of Q-switched and PicoSure lasers which are used to target the pigments of tattoos. Laser pulses are directed into the skin during treatment so as to dispersed the ink into small particles. Many of these sessions are determined by the size, color and depth of tattoos and where the tattoo is placed. Multi colored tattoos and especially the green and blue inks may take more sessions before they are completely removed. The majority of patients only have mild discomfort, it is normally termed as snapping or tingling. The sessions are normally brief, of 15-45 minutes, depending on the size and the complexity of the tattoo.",
 
-  /* ------------------ BENEFITS ------------------ */
+  // /* ------------------ BENEFITS ------------------ */
 
-  firsth3: "Benefits of Laser Tattoo Removal",
+  // firsth3: "Benefits of Laser Tattoo Removal",
 
-  firsth3data:
-    "The decision to undergo laser tattoo removal in Jaipur at Dskinova is associated with a number of benefits:\n• Safe and non-invasive: No cutting or surgery is required.\n• Effective on multiple colors: Modern lasers can handle a variety of pigments.\n• Minimal scarring: Professional treatment ensures smooth, healthy skin.\n• Gradual fading: Tattoos lighten naturally over time for a better aesthetic result.",
+  // firsth3data:
+  //   "The decision to undergo laser tattoo removal in Jaipur at Dskinova is associated with a number of benefits:\n• Safe and non-invasive: No cutting or surgery is required.\n• Effective on multiple colors: Modern lasers can handle a variety of pigments.\n• Minimal scarring: Professional treatment ensures smooth, healthy skin.\n• Gradual fading: Tattoos lighten naturally over time for a better aesthetic result.",
 
-  /* ------------------ COST & CHOOSING CLINIC ------------------ */
+  // /* ------------------ COST & CHOOSING CLINIC ------------------ */
 
-  sech3: "Cost and Choosing the Right Clinic",
+  // sech3: "Cost and Choosing the Right Clinic",
 
-  sech3data:
-    "The prices of laser tattoo removal in Jaipur are dependent on the size, color and number of laser tattoo removal sessions. Small tattoos can begin at ₹2,000–3,000 per session, and bigger tattoos or multicolor ones can be more expensive. A certified clinic such as Dskinova would guarantee a safe and effective laser tattoo removal in Jaipur with lasting effects. With qualified dermatologists and advanced technology, we offer the best services in getting rid of your tattoos so that your tattoo removal experience can be safe and comfortable.",
+  // sech3data:
+  //   "The prices of laser tattoo removal in Jaipur are dependent on the size, color and number of laser tattoo removal sessions. Small tattoos can begin at ₹2,000–3,000 per session, and bigger tattoos or multicolor ones can be more expensive. A certified clinic such as Dskinova would guarantee a safe and effective laser tattoo removal in Jaipur with lasting effects. With qualified dermatologists and advanced technology, we offer the best services in getting rid of your tattoos so that your tattoo removal experience can be safe and comfortable.",
 
-  /* ------------------ PRE & POST CARE ------------------ */
+  // /* ------------------ PRE & POST CARE ------------------ */
 
-  thih3: "Pre- and Post-Treatment Care",
+  // thih3: "Pre- and Post-Treatment Care",
 
-  thih3data:
-    "Before and after-session proper care is the key to optimal outcomes. Prior to treatment, do not tan or sunburn, and adhere to skin preparation directions. Keep the area clean, moist, and protected from sunlight after the session. Complications may arise from scratching or picking the treated skin.",
+  // thih3data:
+  //   "Before and after-session proper care is the key to optimal outcomes. Prior to treatment, do not tan or sunburn, and adhere to skin preparation directions. Keep the area clean, moist, and protected from sunlight after the session. Complications may arise from scratching or picking the treated skin.",
 
-  /* ------------------ CONCLUSION ------------------ */
+  // /* ------------------ CONCLUSION ------------------ */
 
-  conclusionTitle: "Conclusion",
+  // conclusionTitle: "Conclusion",
 
-  conclusionData:
-    "In case you are willing to get rid of an unwanted tattoo, laser tattoo removal in Jaipur, Dskinova is the best and safest choice. Dskinova is the place where you can get a clear and tattoo-free skin with the help of the most advanced equipment of lasers, qualified experts, and individual approach. Get a step closer to smooth and clean skin and make an appointment at Dskinova to get your laser tattoos removed in Jaipur.",
+  // conclusionData:
+  //   "In case you are willing to get rid of an unwanted tattoo, laser tattoo removal in Jaipur, Dskinova is the best and safest choice. Dskinova is the place where you can get a clear and tattoo-free skin with the help of the most advanced equipment of lasers, qualified experts, and individual approach. Get a step closer to smooth and clean skin and make an appointment at Dskinova to get your laser tattoos removed in Jaipur.",
 
   /* ------------------ SEO ------------------ */
 

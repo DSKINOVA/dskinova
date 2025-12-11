@@ -10,11 +10,12 @@ import { AdminLogin, Dashboard } from "./adminroutes/index.js";
 import GalleryPage from "./components/GalleryPage.jsx";
 import ReviewsDemo from "./components/ReviewsDemo.jsx";
 import Wellness from "./components/Wellness.jsx";
-import SocialBar from "./components/SocialBar"; // ✅ added
+import SocialBar from "./components/SocialBar";
 import TimedPopup from "./components/TimedPopup.jsx";
 import SkinDoctor from "./components/SkinDoctor.jsx";
 import Cosmatic from "./components/Cosmatic.jsx";
 import AntiAging from "./components/AntiAging.jsx";
+import LazerTattoo from './components/LazerTattoo.jsx'
 
 export default function App() {
   return (
@@ -39,6 +40,7 @@ export default function App() {
         <Route path="/skin-doctor-in-jaipur" element={<SkinDoctor />} />
         <Route path="/cosmeologist-in-jaipur" element={<Cosmatic />} />
         <Route path="/anti-aging-in-jaipur" element={<AntiAging />} />
+        <Route path="/lazer-tattoo-removal-in-jaipur" element={<LazerTattoo />} />
       </Routes>
       {/* 🆕 The popup will now appear across all routes (except admin routes, which is good practice!) */}
       <TimedPopup />

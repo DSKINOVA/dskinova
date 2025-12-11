@@ -242,11 +242,12 @@ import { Link } from "react-router-dom";
 import Header from "./Header.jsx";
 import Footer from "./Footer.jsx";
 import Hero from "./Hero.jsx";
-import { Helmet } from "react-helmet-async"; 
+import { Helmet } from "react-helmet-async";
 import AppointmentModal from "./AppointmentModal.jsx";
 import skin from "../../public/Images/blogs/skin doctor in jaipur.jpg";
 import cosmo from "../../public/Images/cosmatic/Skin Specialist in Jaipur.jpg";
-import girl from '../../public/Images/Thestory/girl.jpg'
+import girl from "../../public/Images/Thestory/girl.jpg";
+import girl1 from '../../public/Images/Services/hair-regrowth-laser.jpg'
 
 export default function NewsArchive() {
   const [appointmentOpen, setAppointmentOpen] = useState(false);
@@ -272,7 +273,6 @@ export default function NewsArchive() {
 
   return (
     <div className="min-h-screen bg-white">
-
       {/* ===================== SEO TAGS ===================== */}
       <Helmet>
         <title>{seoMetaTitle}</title>
@@ -330,11 +330,18 @@ export default function NewsArchive() {
               to="/skin-doctor-in-jaipur"
               className="group block relative rounded-2xl overflow-hidden shadow-xl"
             >
-              <img src={skin} alt="Skin Doctor in Jaipur" className="w-full h-64 object-cover" />
+              <img
+                src={skin}
+                alt="Skin Doctor in Jaipur"
+                className="w-full h-64 object-cover"
+              />
               <div className="p-6">
-                <h3 className="text-2xl font-bold text-gray-900">Skin Doctor in Jaipur</h3>
+                <h3 className="text-2xl font-bold text-gray-900">
+                  Skin Doctor in Jaipur
+                </h3>
                 <p className="mt-3 text-gray-600 text-sm">
-                  Advanced dermatology solutions for acne, pigmentation & glowing skin.
+                  Advanced dermatology solutions for acne, pigmentation &
+                  glowing skin.
                 </p>
               </div>
             </Link>
@@ -344,9 +351,15 @@ export default function NewsArchive() {
               to="/cosmeologist-in-jaipur"
               className="group block relative rounded-2xl overflow-hidden shadow-xl"
             >
-              <img src={cosmo} alt="Cosmetologist in Jaipur" className="w-full h-64 object-cover" />
+              <img
+                src={cosmo}
+                alt="Cosmetologist in Jaipur"
+                className="w-full h-64 object-cover"
+              />
               <div className="p-6">
-                <h3 className="text-2xl font-bold text-gray-900">Cosmetologist in Jaipur</h3>
+                <h3 className="text-2xl font-bold text-gray-900">
+                  Cosmetologist in Jaipur
+                </h3>
                 <p className="mt-3 text-gray-600 text-sm">
                   Expert cosmetic treatments for glowing skin & hair care.
                 </p>
@@ -358,9 +371,35 @@ export default function NewsArchive() {
               to="/anti-aging-in-jaipur"
               className="group block relative rounded-2xl overflow-hidden shadow-xl"
             >
-              <img src={girl} alt="Cosmetologist in Jaipur" className="w-full h-64 object-cover" />
+              <img
+                src={girl}
+                alt="Cosmetologist in Jaipur"
+                className="w-full h-64 object-cover"
+              />
               <div className="p-6">
-                <h3 className="text-2xl font-bold text-gray-900">Anti-Aging Treatment</h3>
+                <h3 className="text-2xl font-bold text-gray-900">
+                  Anti-Aging Treatment
+                </h3>
+                <p className="mt-3 text-gray-600 text-sm">
+                  Expert cosmetic treatments for glowing skin & hair care.
+                </p>
+              </div>
+            </Link>
+
+            {/* card4 */}
+            <Link
+              to="/lazer-tattoo-removal-in-jaipur"
+              className="group block relative rounded-2xl overflow-hidden shadow-xl"
+            >
+              <img
+                src={girl1}
+                alt="Cosmetologist in Jaipur"
+                className="w-full h-64 object-cover"
+              />
+              <div className="p-6">
+                <h3 className="text-2xl font-bold text-gray-900">
+                  Lazer-Tattoo Removal Treatment
+                </h3>
                 <p className="mt-3 text-gray-600 text-sm">
                   Expert cosmetic treatments for glowing skin & hair care.
                 </p>
