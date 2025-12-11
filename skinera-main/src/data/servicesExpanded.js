@@ -548,80 +548,80 @@ export const servicesExpanded = [
     "Hot showers right after session"
   ],
 
-  /* ------------------ MAIN HEADING ------------------ */
+  // /* ------------------ MAIN HEADING ------------------ */
 
-  mainh1: "Experience Smooth, Hair-Free Skin Like Never Before",
+  // mainh1: "Experience Smooth, Hair-Free Skin Like Never Before",
 
-  mainh1data:
-    "Weary of forever shaving or waxing or threading? It is time to change to a more complex and long-lasting solution. Laser hair removal treatment at Dskinova, Jaipur, is a safe and painless and long term method of removing unwanted hair. Dskinova will bring up the glowing skin without the inconvenience of visiting the salon frequently with the help of high-quality laser technology and professional dermatological services.",
+  // mainh1data:
+  //   "Weary of forever shaving or waxing or threading? It is time to change to a more complex and long-lasting solution. Laser hair removal treatment at Dskinova, Jaipur, is a safe and painless and long term method of removing unwanted hair. Dskinova will bring up the glowing skin without the inconvenience of visiting the salon frequently with the help of high-quality laser technology and professional dermatological services.",
 
-  /* ------------------ WHAT IS LASER HAIR REMOVAL ------------------ */
+  // /* ------------------ WHAT IS LASER HAIR REMOVAL ------------------ */
 
-  firsth2: "What Is Laser Hair Removal?",
+  // firsth2: "What Is Laser Hair Removal?",
 
-  firsth2data:
-    "Laser hair removal is a procedure which is scientifically proven to be targeted at the hair follicles and with the use of focused energy of light. This light kills the root of unwanted hair hence growth is slowed in the long run. Dskinova’s laser hair removal treatment in Jaipur is the new method when compared to the conventional techniques, which leaves long lasting effects and produces soft and flawless skin with little discomfort at Dskinova Jaipur. It can be applied on the face, arms, legs, back, bikini region, and underarms as it is appropriate on all types of skin.",
+  // firsth2data:
+  //   "Laser hair removal is a procedure which is scientifically proven to be targeted at the hair follicles and with the use of focused energy of light. This light kills the root of unwanted hair hence growth is slowed in the long run. Dskinova’s laser hair removal treatment in Jaipur is the new method when compared to the conventional techniques, which leaves long lasting effects and produces soft and flawless skin with little discomfort at Dskinova Jaipur. It can be applied on the face, arms, legs, back, bikini region, and underarms as it is appropriate on all types of skin.",
 
-  /* ------------------ WHY CHOOSE LASER HAIR REMOVAL ------------------ */
+  // /* ------------------ WHY CHOOSE LASER HAIR REMOVAL ------------------ */
 
-  sech2: "Why Choose Laser Hair Removal in Jaipur?",
+  // sech2: "Why Choose Laser Hair Removal in Jaipur?",
 
-  sech2data:
-    "With the new technology in skincare and the use of qualified professionals, Jaipur is rapidly turning out to be a place where permanent hair removal surgeries are undertaken. Dskinova is one of the leading laser hair removal treatment in Jaipur with its combination of innovation, safety and the price. All the treatments are carried out under the care of the experts using the laser machines approved by the FDA which are comfortable and precise. Have you a need to have smooth legs or a back that is free of hair, Dskinova will give you confidence in the long term beauty.",
+  // sech2data:
+  //   "With the new technology in skincare and the use of qualified professionals, Jaipur is rapidly turning out to be a place where permanent hair removal surgeries are undertaken. Dskinova is one of the leading laser hair removal treatment in Jaipur with its combination of innovation, safety and the price. All the treatments are carried out under the care of the experts using the laser machines approved by the FDA which are comfortable and precise. Have you a need to have smooth legs or a back that is free of hair, Dskinova will give you confidence in the long term beauty.",
 
-  /* ------------------ HOW THE TREATMENT WORKS ------------------ */
+  // /* ------------------ HOW THE TREATMENT WORKS ------------------ */
 
-  sech20: "How the Treatment Works",
+  // sech20: "How the Treatment Works",
 
-  sech20data:
-    "It starts with the personalized consulting in which they test your skin and hair type. The professional staff in Dskinova Jaipur then tailors the lasers to be suitable to your comfort and efficiency. The laser is also applied during the session to hair roots only and does not cause damage to the surrounding skin. Depending on the thickness of your hair and its growth pattern, you might require several sessions in order to achieve maximum results. Cooling is done after the treatment so that there is no irritation and you are left with soft and rejuvenated skin.",
+  // sech20data:
+  //   "It starts with the personalized consulting in which they test your skin and hair type. The professional staff in Dskinova Jaipur then tailors the lasers to be suitable to your comfort and efficiency. The laser is also applied during the session to hair roots only and does not cause damage to the surrounding skin. Depending on the thickness of your hair and its growth pattern, you might require several sessions in order to achieve maximum results. Cooling is done after the treatment so that there is no irritation and you are left with soft and rejuvenated skin.",
 
-  /* ------------------ BENEFITS ------------------ */
+  // /* ------------------ BENEFITS ------------------ */
 
-  firsth3: "Benefits of Laser Hair Removal Treatment In Jaipur",
+  // firsth3: "Benefits of Laser Hair Removal Treatment In Jaipur",
 
-  firsth3data:
-    "Permanent Hair Reduction: Experience permanent smoothing with minimal touch ups.\nNo Skin Damage: Lasers do not result in cuts and rashes like waxing and threading.\nFast and Non-Painful: Sessions are brief and almost painless.\nGetting Soft and Clear Skin: Removes ingrowth of hair and improves skin texture.\nTime and Cost Effective: No longer are there monthly salon bills to pay and regular grooming.",
+  // firsth3data:
+  //   "Permanent Hair Reduction: Experience permanent smoothing with minimal touch ups.\nNo Skin Damage: Lasers do not result in cuts and rashes like waxing and threading.\nFast and Non-Painful: Sessions are brief and almost painless.\nGetting Soft and Clear Skin: Removes ingrowth of hair and improves skin texture.\nTime and Cost Effective: No longer are there monthly salon bills to pay and regular grooming.",
 
-  /* ------------------ BEST LASER CLINIC ------------------ */
+  // /* ------------------ BEST LASER CLINIC ------------------ */
 
-  firstth30: "Why Choose Dskinova – The Best Laser Clinic in Jaipur",
+  // firstth30: "Why Choose Dskinova – The Best Laser Clinic in Jaipur",
 
-  firstth30data:
-    "Dskinova is considered to be among the top skincare and modern technology laser hair removal centers in Jaipur. Their certified dermatologists operate on the finest devices to provide safe, hygienic and result-oriented treatments. The clinic concentrates on individual treatment, which means every client receives an individual plan concerning his/her skin complexion and hair type. In Dskinova, comfort, safety and results can be seen come together to create an unparalleled experience.",
+  // firstth30data:
+  //   "Dskinova is considered to be among the top skincare and modern technology laser hair removal centers in Jaipur. Their certified dermatologists operate on the finest devices to provide safe, hygienic and result-oriented treatments. The clinic concentrates on individual treatment, which means every client receives an individual plan concerning his/her skin complexion and hair type. In Dskinova, comfort, safety and results can be seen come together to create an unparalleled experience.",
 
-  /* Duplicate HOW IT WORKS text removed? → NO! You said nothing should be removed. So we keep it. */
+  // /* Duplicate HOW IT WORKS text removed? → NO! You said nothing should be removed. So we keep it. */
 
  
-  /* ------------------ PRE & POST CARE ------------------ */
+  // /* ------------------ PRE & POST CARE ------------------ */
 
-  firstth31: "Pre and Post-Treatment Care",
+  // firstth31: "Pre and Post-Treatment Care",
 
-  firstth31data:
-    "The tips to care about to maximize your laser hair removal treatment in Jaipur are:\nPreamble: Waxing, threading, bleaching: do not do it within two weeks before Treatment.\nPost-Treatment: Wear sunscreen, take care not to take hot showers and make sure that your skin is hydrated.\nThese few tips will keep giving long-lasting effects and keep your post treatment glow.",
+  // firstth31data:
+  //   "The tips to care about to maximize your laser hair removal treatment in Jaipur are:\nPreamble: Waxing, threading, bleaching: do not do it within two weeks before Treatment.\nPost-Treatment: Wear sunscreen, take care not to take hot showers and make sure that your skin is hydrated.\nThese few tips will keep giving long-lasting effects and keep your post treatment glow.",
 
-  /* ------------------ COST ------------------ */
+  // /* ------------------ COST ------------------ */
 
-  sech3: "Cost of Laser Hair Removal in Jaipur",
+  // sech3: "Cost of Laser Hair Removal in Jaipur",
 
-  sech3data:
-    "The prices of laser hair removal treatment in Jaipur are varying based on the location of the hair removal, the number of sessions needed, and your hair growing cycle. Dskinova has got good packages that cater to both men and women at a low cost. Their affordable packages are such that everyone can have a hassle-free, smooth, hair-free skin without emptying their pockets.",
+  // sech3data:
+  //   "The prices of laser hair removal treatment in Jaipur are varying based on the location of the hair removal, the number of sessions needed, and your hair growing cycle. Dskinova has got good packages that cater to both men and women at a low cost. Their affordable packages are such that everyone can have a hassle-free, smooth, hair-free skin without emptying their pockets.",
 
-  /* ------------------ MYTHS ------------------ */
+  // /* ------------------ MYTHS ------------------ */
 
-  thih3: "Common Myths About Laser Hair Removal",
+  // thih3: "Common Myths About Laser Hair Removal",
 
-  thih3data:
-    "Myth 1: Laser hair removal is painful.\n■ Fact: Dskinova’s laser technology is nearly painless with cooling sensations.\nMyth 2: It’s only for women.\n■ Fact: Many men in Jaipur choose laser treatment for chest, back, and beard shaping.\nMyth 3: It damages the skin.\n■ Fact: At Dskinova, treatments are safe, dermatologically tested, and non-invasive.",
+  // thih3data:
+  //   "Myth 1: Laser hair removal is painful.\n■ Fact: Dskinova’s laser technology is nearly painless with cooling sensations.\nMyth 2: It’s only for women.\n■ Fact: Many men in Jaipur choose laser treatment for chest, back, and beard shaping.\nMyth 3: It damages the skin.\n■ Fact: At Dskinova, treatments are safe, dermatologically tested, and non-invasive.",
 
-  /* ------------------ CONCLUSION ------------------ */
+  // /* ------------------ CONCLUSION ------------------ */
 
-  fourh3: "Conclusion – Reveal Your Confidence with Dskinova",
+  // fourh3: "Conclusion – Reveal Your Confidence with Dskinova",
 
-  fourh3data:
-    "Extra hair should not be a reason to feel bad and not be a beauty. Through the laser hair removal treatment in Jaipur at Dskinova, you get the chance to have a silky-smooth skin, long lasting results and a new feeling of self. Finding the right balance between science and beauty with Dskinova, your preferred choice in permanent hair removal in Jaipur.\n■ Book your consultation today and let Dskinova redefine your beauty, one smooth session at a time.",
+  // fourh3data:
+  //   "Extra hair should not be a reason to feel bad and not be a beauty. Through the laser hair removal treatment in Jaipur at Dskinova, you get the chance to have a silky-smooth skin, long lasting results and a new feeling of self. Finding the right balance between science and beauty with Dskinova, your preferred choice in permanent hair removal in Jaipur.\n■ Book your consultation today and let Dskinova redefine your beauty, one smooth session at a time.",
 
-  /* ------------------ SEO ------------------ */
+  // /* ------------------ SEO ------------------ */
 
   seo: {
     focus_keyphrase: "laser hair removal in jaipur",

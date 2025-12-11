@@ -7,7 +7,7 @@ import Hero from "./Hero";
 import AppointmentModal from "./AppointmentModal";
 import girl1 from '../../public/Images/Services/hair-regrowth-laser.jpg'
 
-const AntiAging = () => {
+const LazerTattoo = () => {
   const [appointmentOpen, setAppointmentOpen] = useState(false);
   
   // seo data
@@ -224,4 +224,4 @@ const AntiAging = () => {
   );
 };
 
-export default AntiAging;
+export default LazerTattoo;

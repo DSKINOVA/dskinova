@@ -16,6 +16,7 @@ import SkinDoctor from "./components/SkinDoctor.jsx";
 import Cosmatic from "./components/Cosmatic.jsx";
 import AntiAging from "./components/AntiAging.jsx";
 import LazerTattoo from './components/LazerTattoo.jsx'
+import LazerHair from './components/LazerHair.jsx'
 
 export default function App() {
   return (
@@ -41,6 +42,7 @@ export default function App() {
         <Route path="/cosmeologist-in-jaipur" element={<Cosmatic />} />
         <Route path="/anti-aging-in-jaipur" element={<AntiAging />} />
         <Route path="/lazer-tattoo-removal-in-jaipur" element={<LazerTattoo />} />
+        <Route path="/laser-hair-removal-treatment-in-jaipur" element={<LazerHair />} />
       </Routes>
       {/* 🆕 The popup will now appear across all routes (except admin routes, which is good practice!) */}
       <TimedPopup />

@@ -247,7 +247,8 @@ import AppointmentModal from "./AppointmentModal.jsx";
 import skin from "../../public/Images/blogs/skin doctor in jaipur.jpg";
 import cosmo from "../../public/Images/cosmatic/Skin Specialist in Jaipur.jpg";
 import girl from "../../public/Images/Thestory/girl.jpg";
-import girl1 from '../../public/Images/Services/hair-regrowth-laser.jpg'
+import girl1 from "../../public/Images/Services/hair-regrowth-laser.jpg";
+import girl2 from '../../public/Images/Doctor-img/Skin Specialist in Jaipur.jpg';
 
 export default function NewsArchive() {
   const [appointmentOpen, setAppointmentOpen] = useState(false);
@@ -399,6 +400,27 @@ export default function NewsArchive() {
               <div className="p-6">
                 <h3 className="text-2xl font-bold text-gray-900">
                   Lazer-Tattoo Removal Treatment
+                </h3>
+                <p className="mt-3 text-gray-600 text-sm">
+                  Expert cosmetic treatments for glowing skin & hair care.
+                </p>
+              </div>
+            </Link>
+
+            {/* card5 */}
+
+            <Link
+              to="/laser-hair-removal-treatment-in-jaipur"
+              className="group block relative rounded-2xl overflow-hidden shadow-xl"
+            >
+              <img
+                src={girl2}
+                alt="Cosmetologist in Jaipur"
+                className="w-full h-64 object-cover"
+              />
+              <div className="p-6">
+                <h3 className="text-2xl font-bold text-gray-900">
+                  Lazer-Hair Removal Treatment
                 </h3>
                 <p className="mt-3 text-gray-600 text-sm">
                   Expert cosmetic treatments for glowing skin & hair care.
