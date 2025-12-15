@@ -248,7 +248,8 @@ import skin from "../../public/Images/blogs/skin doctor in jaipur.jpg";
 import cosmo from "../../public/Images/cosmatic/Skin Specialist in Jaipur.jpg";
 import girl from "../../public/Images/Thestory/girl.jpg";
 import girl1 from "../../public/Images/Services/hair-regrowth-laser.jpg";
-import girl2 from '../../public/Images/Doctor-img/Skin Specialist in Jaipur.jpg';
+import girl2 from "../../public/Images/Doctor-img/Skin Specialist in Jaipur.jpg";
+import pigme from "../../public/Images/Pigmentation/pigmentation treatment doctor in jaipur.png";
 
 export default function NewsArchive() {
   const [appointmentOpen, setAppointmentOpen] = useState(false);
@@ -367,6 +368,10 @@ export default function NewsArchive() {
               </div>
             </Link>
 
+
+
+            
+
             {/* card3 */}
             <Link
               to="/anti-aging-in-jaipur"
@@ -382,7 +387,7 @@ export default function NewsArchive() {
                   Anti-Aging Treatment
                 </h3>
                 <p className="mt-3 text-gray-600 text-sm">
-                  Expert cosmetic treatments for glowing skin & hair care.
+                  Anti-Aging Treatment Doctor in Jaipur – Expert Care at Dskinova.
                 </p>
               </div>
             </Link>
@@ -399,16 +404,15 @@ export default function NewsArchive() {
               />
               <div className="p-6">
                 <h3 className="text-2xl font-bold text-gray-900">
-                  Lazer-Tattoo Removal Treatment
+                  Laser-Tattoo Removal Treatment
                 </h3>
                 <p className="mt-3 text-gray-600 text-sm">
-                  Expert cosmetic treatments for glowing skin & hair care.
+                 Laser-Tattoo Removal Treatment Doctor in Jaipur – Expert Care at Dskinova.
                 </p>
               </div>
             </Link>
 
             {/* card5 */}
-
             <Link
               to="/laser-hair-removal-treatment-in-jaipur"
               className="group block relative rounded-2xl overflow-hidden shadow-xl"
@@ -420,10 +424,32 @@ export default function NewsArchive() {
               />
               <div className="p-6">
                 <h3 className="text-2xl font-bold text-gray-900">
-                  Lazer-Hair Removal Treatment
+                  Laser-Hair Removal Treatment
                 </h3>
                 <p className="mt-3 text-gray-600 text-sm">
-                  Expert cosmetic treatments for glowing skin & hair care.
+                  Laser-Hair Removal Treatment Doctor in Jaipur – Expert Care at
+                  Dskinova.
+                </p>
+              </div>
+            </Link>
+
+            {/* card6 */}
+            <Link
+              to="/pigmentation-treatment-doctor-in-jaipur"
+              className="group block relative rounded-2xl overflow-hidden shadow-xl"
+            >
+              <img
+                src={pigme}
+                alt="Cosmetologist in Jaipur"
+                className="w-full h-64 object-cover"
+              />
+              <div className="p-6">
+                <h3 className="text-2xl font-bold text-gray-900">
+                  Pigmentation Treatment Doctor in Jaipur
+                </h3>
+                <p className="mt-3 text-gray-600 text-sm">
+                  Pigmentation Treatment Doctor in Jaipur – Expert Care at
+                  Dskinova.
                 </p>
               </div>
             </Link>
