@@ -249,7 +249,7 @@ import cosmo from "../../public/Images/cosmatic/Skin Specialist in Jaipur.jpg";
 import girl from "../../public/Images/Thestory/girl.jpg";
 import girl1 from "../../public/Images/Services/hair-regrowth-laser.jpg";
 import girl2 from "../../public/Images/Doctor-img/Skin Specialist in Jaipur.jpg";
-import pigme from "../../public/Images/Pigmentation/pigmentation treatment doctor in jaipur.png";
+import pigme from "../../public/Images/Pigmentation/pigmentation treatment doctor in Jaipur.png";
 
 export default function NewsArchive() {
   const [appointmentOpen, setAppointmentOpen] = useState(false);
