@@ -6,7 +6,7 @@ import Footer from "./Footer";
 import Hero from "./Hero";
 import AppointmentModal from "./AppointmentModal";
 import girl2 from "../../public/Images/Doctor-img/Skin Specialist in Jaipur.jpg";
-import pigme from "../../public/Images/Pigmentation/pigmentation treatment doctor in jaipur.png";
+import pigme from "../../public/Images/Pigmentation/pigmentation treatment doctor in Jaipur.png";
 
 const Pigmentation = () => {
   const [appointmentOpen, setAppointmentOpen] = useState(false);
