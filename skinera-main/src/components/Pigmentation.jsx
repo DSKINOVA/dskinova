@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import skin from "../../public/Images/cosmatic/Skin Specialist in Jaipur.jpg";
 import { Helmet } from "react-helmet-async";
 import Header from "./Header";
@@ -65,7 +66,13 @@ const Pigmentation = () => {
             <div className="w-24 h-1 bg-[#BE7F58] mx-auto rounded-full mb-6"></div>
 
             <p className="text-gray-600 text-lg sm:text-xl max-w-3xl mx-auto leading-relaxed">
-              Skin pigmentation is a common concern, especially in Jaipur, where
+            <Link
+                  to="/service/pigmentation-treatments"
+                  className="font-medium text-gray-800 hover:text-[#BE7F58]"
+                >
+                  Skin pigmentation
+                </Link>
+                {" "}is a common concern, especially in Jaipur, where
               strong sunlight and heat can worsen dark spots, melasma, and
               uneven skin tone. If you are looking for a trusted pigmentation
               treatment doctor in Jaipur, Dskinova offers advanced
@@ -205,8 +212,14 @@ const Pigmentation = () => {
               </ol>
 
               <p className="text-gray-600 text-lg max-w-3xl mx-auto leading-relaxed">
-                At <span className="font-medium text-gray-800">Dskinova</span>,
-                patients receive transparent guidance, customized treatment
+                At{" "}
+                <Link
+                  to="/"
+                  className="font-medium text-gray-800 hover:text-[#BE7F58]"
+                >
+                  Dskinova
+                </Link>
+                , patients receive transparent guidance, customized treatment
                 plans, and expert care from certified dermatologists.
               </p>
             </div>
