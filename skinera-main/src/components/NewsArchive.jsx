@@ -250,6 +250,7 @@ import girl from "../../public/Images/Thestory/girl.jpg";
 import girl1 from "../../public/Images/Services/hair-regrowth-laser.jpg";
 import girl2 from "../../public/Images/Doctor-img/Skin Specialist in Jaipur.jpg";
 import pigme from "../../public/Images/Pigmentation/pigmentation treatment doctor in Jaipur.png";
+import SkinCli from '../../public/Images/SkinClinic/skin-clinic-in-jaipur.jpg'
 
 export default function NewsArchive() {
   const [appointmentOpen, setAppointmentOpen] = useState(false);
@@ -368,10 +369,6 @@ export default function NewsArchive() {
               </div>
             </Link>
 
-
-
-            
-
             {/* card3 */}
             <Link
               to="/anti-aging-in-jaipur"
@@ -387,7 +384,8 @@ export default function NewsArchive() {
                   Anti-Aging Treatment
                 </h3>
                 <p className="mt-3 text-gray-600 text-sm">
-                  Anti-Aging Treatment Doctor in Jaipur – Expert Care at Dskinova.
+                  Anti-Aging Treatment Doctor in Jaipur – Expert Care at
+                  Dskinova.
                 </p>
               </div>
             </Link>
@@ -407,7 +405,8 @@ export default function NewsArchive() {
                   Laser-Tattoo Removal Treatment
                 </h3>
                 <p className="mt-3 text-gray-600 text-sm">
-                 Laser-Tattoo Removal Treatment Doctor in Jaipur – Expert Care at Dskinova.
+                  Laser-Tattoo Removal Treatment Doctor in Jaipur – Expert Care
+                  at Dskinova.
                 </p>
               </div>
             </Link>
@@ -450,6 +449,26 @@ export default function NewsArchive() {
                 <p className="mt-3 text-gray-600 text-sm">
                   Pigmentation Treatment Doctor in Jaipur – Expert Care at
                   Dskinova.
+                </p>
+              </div>
+            </Link>
+
+            {/* card7 */}
+            <Link
+              to="/skin-clinic-in-jaipur"
+              className="group block relative rounded-2xl overflow-hidden shadow-xl"
+            >
+              <img
+                src={SkinCli}
+                alt="Cosmetologist in Jaipur"
+                className="w-full h-64 object-cover"
+              />
+              <div className="p-6">
+                <h3 className="text-2xl font-bold text-gray-900">
+                  Skin clinic in Jaipur
+                </h3>
+                <p className="mt-3 text-gray-600 text-sm">
+                  Skin clinic Doctor in Jaipur – Expert Care at Dskinova.
                 </p>
               </div>
             </Link>
