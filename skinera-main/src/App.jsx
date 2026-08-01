@@ -19,6 +19,7 @@ import LazerTattoo from './components/LazerTattoo.jsx'
 import LazerHair from './components/LazerHair.jsx'
 import Pigmentation from './components/Pigmentation.jsx'
 import SkinClinic from "./components/SkinClinic.jsx";
+import NotFound from "./components/NotFound.jsx";
 
 export default function App() {
   return (
@@ -44,6 +45,8 @@ export default function App() {
         <Route path='/skin-clinic-in-jaipur' element={<SkinClinic />} />
         {/* Service pages - must be LAST so specific routes match first */}
         <Route path="/:id" element={<ServiceDetail />} />
+        {/* 404 Page - Catch all unmatched routes */}
+        <Route path="*" element={<NotFound />} />
       </Routes>
       {/* 🆕 The popup will now appear across all routes (except admin routes, which is good practice!) */}
       <TimedPopup />

@@ -11,6 +11,7 @@ import bgFlower from "../../public/Images/Our-Service/bg-Flower-png-Use-It-InLar
 import ServiceExtras from "./ServiceExtras.jsx";
 import ClientFaq from "./ClientFaq.jsx";
 import { getBeforeAfterImage } from "../data/beforeAfterImages";
+import NotFound from "./NotFound.jsx";
 
 export default function ServiceDetail({ serviceId }) {
   const [appointmentOpen, setAppointmentOpen] = useState(false);
@@ -26,7 +27,7 @@ export default function ServiceDetail({ serviceId }) {
   const service = getExpandedService(effectiveId) || getServiceById(effectiveId);
 
   if (!service) {
-    return <div className="text-center py-20">Service not found</div>;
+    return <NotFound />;
   }
 
   const beforeAfterImg = getBeforeAfterImage(effectiveId);
