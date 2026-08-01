@@ -164,7 +164,7 @@ export default function Footer() {
                   href="mailto:dskinova@gmail.com"
                   className="hover:text-white"
                 >
-                  dskinova@gmail.com
+                  dskinova(@)gmail.com
                 </a>
               </li>
               <li className="flex items-start gap-3">
