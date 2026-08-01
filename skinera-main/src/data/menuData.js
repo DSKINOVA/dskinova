@@ -2,63 +2,63 @@
 // Keep href as '#' for now; images reference filenames from Images/ if you later want to show thumbnails.
 
 export const skinMenu = [
-  { label: "Acne Scar", href: "/service/laser-skin-therapy" },
+  { label: "Acne Scar", href: "/laser-skin-therapy" },
   {
     label: "Anti Aging",
-    href: "/service/anti-aging",
+    href: "/anti-aging",
     children: [
-      { label: "Korean Facial", href: "/service/korean-facial" },
-      { label: "Vampire Facial", href: "/service/vampire-facial" },
-      { label: "SRF", href: "/service/srf" },
+      { label: "Korean Facial", href: "/korean-facial" },
+      { label: "Vampire Facial", href: "/vampire-facial" },
+      { label: "SRF", href: "/srf" },
     ],
   },
   {
     label: "Skin Lightening & Whitening",
-    href: "/service/skin-lightening-and-whitening",
+    href: "/skin-lightening-and-whitening",
   },
-  { label: "Cryotherapy Fat Freezing", href: "/service/cryo-fat-freezing" },
-  { label: "Laser Tattoo Removal", href: "/service/laser-tattoo-removal-jaipur" },
+  { label: "Cryotherapy Fat Freezing", href: "/cryo-fat-freezing" },
+  { label: "Laser Tattoo Removal", href: "/laser-tattoo-removal-jaipur" },
   {
     label: "Pigmentation Treatments",
-    href: "/service/pigmentation-treatments",
+    href: "/pigmentation-treatments",
     children: [
-      { label: "Chemical Peel Treatments", href: "/service/deep-peelings" },
-      { label: "Laser Toning Treatments", href: "/service/laser-skin-therapy" },
-      { label: "Mesotherapy", href: "/service/mesotherapy" },
-      { label: "Microdermabrasion", href: "/service/microdermabrasion" },
-      { label: "Carbon Laser Facial", href: "/service/laser-skin-therapy" },
+      { label: "Chemical Peel Treatments", href: "/deep-peelings" },
+      { label: "Laser Toning Treatments", href: "/laser-skin-therapy" },
+      { label: "Mesotherapy", href: "/mesotherapy" },
+      { label: "Microdermabrasion", href: "/microdermabrasion" },
+      { label: "Carbon Laser Facial", href: "/laser-skin-therapy" },
     ],
   },
   {
     label: "Medical Spa Facials",
-    href: "/service/medical-spa-facials",
+    href: "/medical-spa-facials",
     children: [
-      { label: "Oxygeneo Facial", href: "/service/oxygeneo-facial" },
-      { label: "Carbon Facial", href: "/service/carbon-facial" },
-      { label: "Photo Facial", href: "/service/photo-facial" },
-      { label: "Korean Facial", href: "/service/korean-facial" },
-      { label: "Hydrafacial", href: "/service/hydrafacial" },
-      { label: "Microdermabrasion", href: "/service/microdermabrasion" },
+      { label: "Oxygeneo Facial", href: "/oxygeneo-facial" },
+      { label: "Carbon Facial", href: "/carbon-facial" },
+      { label: "Photo Facial", href: "/photo-facial" },
+      { label: "Korean Facial", href: "/korean-facial" },
+      { label: "Hydrafacial", href: "/hydrafacial" },
+      { label: "Microdermabrasion", href: "/microdermabrasion" },
     ],
   },
  
-  { label: "Stretch Marks", href: "/service/stretch-marks" },
-  { label: "Pre Bridal Specials", href: "/service/pre-bridal-specials" },
+  { label: "Stretch Marks", href: "/stretch-marks" },
+  { label: "Pre Bridal Specials", href: "/pre-bridal-specials" },
 ];
 
 export const skinNested = {
   "Acne Scar": {
     children: [
-      { label: "Micro Needling with PRP", href: "/service/micro-needling-prp" },
-      { label: "MNRF", href: "/service/mnrf" },
-      { label: "Chemical Peel", href: "/service/chemical-peel" },
+      { label: "Micro Needling with PRP", href: "/micro-needling-prp" },
+      { label: "MNRF", href: "/mnrf" },
+      { label: "Chemical Peel", href: "/chemical-peel" },
     ],
   },
   "Anti Aging": {
     children: [
-      { label: "Korean Facial", href: "/service/korean-facial" },
-      { label: "Vampire Facial", href: "/service/vampire-facial" },
-      { label: "SRF", href: "/service/srf" },
+      { label: "Korean Facial", href: "/korean-facial" },
+      { label: "Vampire Facial", href: "/vampire-facial" },
+      { label: "SRF", href: "/srf" },
     ],
   },
 };
@@ -66,38 +66,38 @@ export const skinNested = {
 export const hairMenu = [
   {
     label: "Hairfall / Hair Thininig",
-    href: "/service/hairfall",
+    href: "/hairfall",
     children: [
       {
         label: "Intralesional Injection",
-        href: "/service/intralesional-injection",
+        href: "/intralesional-injection",
       },
-      { label: "Hair PRP/GFC Therapy", href: "/service/hair-prp" },
-      { label: "Mesotherapy", href: "/service/mesotherapy" },
+      { label: "Hair PRP/GFC Therapy", href: "/hair-prp" },
+      { label: "Mesotherapy", href: "/mesotherapy" },
       {
         label: "Low Light Laser Therapy",
-        href: "/service/hair-regrowth-laser",
+        href: "/hair-regrowth-laser",
       },
-      // { label: "Hair GFC Therapy", href: "/service/hair-gfc-therapy" },
+      // { label: "Hair GFC Therapy", href: "/hair-gfc-therapy" },
     ],
   },
-  // { label: "Alopecia Areata", href: "/service/hair-gfc" },
-    { label: "Hair Regrowth", href: "/service/regrowth" },
-  { label: "Dandruff", href: "/service/dandruff" },
-  { label: "Laser Hair Removal", href: "/service/laser-hair-removal-treatment-in-jaipur" },
-  // { label: "Hair Transplant", href: "/service/hair-transplant" },
+  // { label: "Alopecia Areata", href: "/hair-gfc" },
+    { label: "Hair Regrowth", href: "/regrowth" },
+  { label: "Dandruff", href: "/dandruff" },
+  { label: "Laser Hair Removal", href: "/laser-hair-removal-treatment-in-jaipur" },
+  // { label: "Hair Transplant", href: "/hair-transplant" },
 ];
 
 export const hemopathicMenu = [
-  { label: "Skin Allergy", href: "/service/skin-allergy" },
-  { label: "Psoriasis", href: "/service/psoriasis" },
-  { label: "Eczema", href: "/service/eczema" },
-  { label: "Scales", href: "/service/scales" },
-  { label: "Urticaria", href: "/service/urticaria" },
-  { label: "Fungal", href: "/service/fungal" },
-  { label: "Scabies", href: "/service/scabies" },
-  { label: "Vitiligo White Spot", href: "/service/vitiligo-white-spot" },
-  { label: "Alopecia Areata", href: "/service/alopecia-areata" },
+  { label: "Skin Allergy", href: "/skin-allergy" },
+  { label: "Psoriasis", href: "/psoriasis" },
+  { label: "Eczema", href: "/eczema" },
+  { label: "Scales", href: "/scales" },
+  { label: "Urticaria", href: "/urticaria" },
+  { label: "Fungal", href: "/fungal" },
+  { label: "Scabies", href: "/scabies" },
+  { label: "Vitiligo White Spot", href: "/vitiligo-white-spot" },
+  { label: "Alopecia Areata", href: "/alopecia-areata" },
 ];
 
 // Utility to get nested items for a given label

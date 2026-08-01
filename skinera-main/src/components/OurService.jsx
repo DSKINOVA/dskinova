@@ -6,7 +6,7 @@ import bgFlower from "../../public/Images/Our-Service/bg-Flower-png-Use-It-InLar
 // We'll map services from expanded data; fallback images already in dataset
 import { servicesExpanded } from "../data/servicesExpanded";
 
-const Card = ({ img, title, onBook, linkTo = "/service/anti-aging" }) => (
+const Card = ({ img, title, onBook, linkTo = "/anti-aging" }) => (
   <div className="relative">
     <img
       src={img}
@@ -97,7 +97,7 @@ export default function OurService({ onBookAppointment }) {
                 img={svc.image}
                 title={svc.title}
                 onBook={onBookAppointment}
-                linkTo={`/service/${id}`}
+                linkTo={`/${id}`}
               />
             );
           })}

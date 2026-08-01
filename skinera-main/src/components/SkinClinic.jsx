@@ -125,7 +125,7 @@ const SkinClinic = () => {
                 <span
                   className="cursor-pointer text-black text-bold"
                   onClick={() =>
-                    navigat("/service/skin-lightening-and-whitening")
+                    navigat("/skin-lightening-and-whitening")
                   }
                 >
                   skin clinic in Jaipur

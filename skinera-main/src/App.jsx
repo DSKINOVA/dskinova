@@ -26,11 +26,6 @@ export default function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/about" element={<AboutUsPage />} />
-        <Route
-          path="/service"
-          element={<ServiceDetail serviceId="anti-aging" />}
-        />
-        <Route path="/service/:id" element={<ServiceDetail />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/news" element={<NewsArchive />} />
         <Route path="/newstemplate" element={<NewsTemplate />} />
@@ -45,8 +40,10 @@ export default function App() {
         <Route path="/anti-aging-in-jaipur" element={<AntiAging />} />
         <Route path="/lazer-tattoo-removal-in-jaipur" element={<LazerTattoo />} />
         <Route path="/laser-hair-removal-treatment-in-jaipur" element={<LazerHair />} />
-        <Route path ='/pigmentation-treatment-doctor-in-jaipur' element={<Pigmentation />} />
-        <Route path ='/skin-clinic-in-jaipur' element={<SkinClinic />} />
+        <Route path='/pigmentation-treatment-doctor-in-jaipur' element={<Pigmentation />} />
+        <Route path='/skin-clinic-in-jaipur' element={<SkinClinic />} />
+        {/* Service pages - must be LAST so specific routes match first */}
+        <Route path="/:id" element={<ServiceDetail />} />
       </Routes>
       {/* 🆕 The popup will now appear across all routes (except admin routes, which is good practice!) */}
       <TimedPopup />

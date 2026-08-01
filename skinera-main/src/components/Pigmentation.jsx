@@ -67,7 +67,7 @@ const Pigmentation = () => {
 
             <p className="text-gray-600 text-lg sm:text-xl max-w-3xl mx-auto leading-relaxed">
             <Link
-                  to="/service/pigmentation-treatments"
+                  to="/pigmentation-treatments"
                   className="font-medium text-gray-800 hover:text-[#BE7F58]"
                 >
                   Skin pigmentation

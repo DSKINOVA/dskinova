@@ -186,26 +186,26 @@ export default function Footer() {
             <ul className="grid grid-cols-2 gap-y-2 gap-x-6 text-white/95 text-sm max-w-xs">
               <li>
                 <Link
-                  to="/service/laser-hair-removal"
+                  to="/laser-hair-removal"
                   className="hover:text-white"
                 >
                   Laser hair removal
                 </Link>
               </li>
               <li>
-                <Link to="/service/facials" className="hover:text-white">
+                <Link to="/facials" className="hover:text-white">
                   Facials
                 </Link>
               </li>
              
               <li>
-                <Link to="/service/deep-peelings" className="hover:text-white">
+                <Link to="/deep-peelings" className="hover:text-white">
                   Deep peelings
                 </Link>
               </li>
               <li>
                 <Link
-                  to="/service/microdermabrasion"
+                  to="/microdermabrasion"
                   className="hover:text-white"
                 >
                   Microdermabrasion
@@ -213,7 +213,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  to="/service/skin-tightening"
+                  to="/skin-tightening"
                   className="hover:text-white"
                 >
                   Skin tightening
