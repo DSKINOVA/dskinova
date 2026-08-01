@@ -130,7 +130,7 @@ useEffect(() => {
                 <path d="M1.5 6.75A2.25 2.25 0 0 1 3.75 4.5h16.5A2.25 2.25 0 0 1 22.5 6.75v10.5A2.25 2.25 0 0 1 20.25 19.5H3.75A2.25 2.25 0 0 1 1.5 17.25V6.75Zm2.4-.75a.75.75 0 0 0-.525 1.287l7.2 6.75a.75.75 0 0 0 1.05 0l7.2-6.75A.75.75 0 0 0 18.6 6H3.9Z" />
               </svg>
               <span className="truncate max-w-[8rem] sm:max-w-none">
-                dskinova@gmail.com
+                dskinova(@)gmail.com
               </span>
             </a>
             <div
