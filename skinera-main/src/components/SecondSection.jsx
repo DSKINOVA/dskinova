@@ -40,16 +40,16 @@ export default function SecondSection({ onBookAppointment }) {
           <div className="text-center lg:text-left space-y-6">
             
             {/* Title 1: GLOW WITH CONFIDENCE (Larger, Bolder) */}
-            <h1 className={`text-5xl sm:text-6xl md:text-7xl font-serif font-bold tracking-tight leading-none ${TEXT_COLOR}`}>
+            <h2 className={`text-5xl sm:text-6xl md:text-7xl font-serif font-bold tracking-tight leading-none ${TEXT_COLOR}`}>
               GLOW WITH 
               <br />
               CONFIDENCE
-            </h1>
+            </h2>
 
             {/* Title 2: Your Skin Deserves the Best! (Italic) */}
-            <h2 className={`text-2xl sm:text-3xl font-serif italic font-normal ${TEXT_COLOR}`}>
+            <h3 className={`text-2xl sm:text-3xl font-serif italic font-normal ${TEXT_COLOR}`}>
               Your Skin Deserves the Best!
-            </h2>
+            </h3>
 
             {/* Description Text */}
             <p className={`text-base sm:text-lg leading-relaxed font-light pt-2 ${TEXT_COLOR} max-w-xl mx-auto lg:mx-0`}>

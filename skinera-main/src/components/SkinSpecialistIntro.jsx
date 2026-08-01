@@ -151,9 +151,9 @@ export default function SkinSpecialistIntro() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main Heading */}
         <div className="text-center mb-12">
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-domine font-medium text-[#BE7F58] mb-6 leading-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-domine font-medium text-[#BE7F58] mb-6 leading-tight">
             Skin Specialist in Jaipur – Expert Care for Radiant Skin at Dskinova
-          </h1>
+          </h2>
           <p className="text-gray-600 text-base sm:text-lg leading-relaxed max-w-4xl mx-auto">
             A well-placed self-image and an outer image are positive skin that
             is healthy and radiant. Nevertheless, due to hot weather, increasing
