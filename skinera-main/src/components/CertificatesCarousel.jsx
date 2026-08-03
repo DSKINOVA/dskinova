@@ -5,17 +5,25 @@ const SERVER_URL = import.meta.env.VITE_SERVER_URL || "";
 export default function CertificatesCarousel() {
   const [certificates, setCertificates] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
   const [current, setCurrent] = useState(0);
   const autoPlayRef = useRef(null);
 
   useEffect(() => {
     async function fetchCertificates() {
       try {
-        const res = await fetch(`${SERVER_URL}/api/certificates`);
+        const url = SERVER_URL
+          ? `${SERVER_URL}/api/certificates`
+          : "/api/certificates";
+        const res = await fetch(url);
         const data = await res.json();
-        if (data?.success) setCertificates(data.items || []);
+        if (data?.success) {
+          setCertificates(data.items || []);
+        } else {
+          setError(true);
+        }
       } catch {
-        // fail silently
+        setError(true);
       } finally {
         setLoading(false);
       }
@@ -64,8 +72,6 @@ export default function CertificatesCarousel() {
     if (total <= visible) return;
     autoPlayRef.current = setInterval(next, 2800);
   };
-
-  if (!loading && total === 0) return null;
 
   const itemWidth = 100 / visible;
 
@@ -129,7 +135,8 @@ export default function CertificatesCarousel() {
       `}</style>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Heading */}
+
+        {/* ── Heading ── */}
         <div className="text-center mb-12">
           <p className="text-[#BE7F58] text-sm uppercase tracking-widest mb-3 font-medium">
             Our Achievements
@@ -144,7 +151,7 @@ export default function CertificatesCarousel() {
           </p>
         </div>
 
-        {/* Skeleton */}
+        {/* ── Loading Skeleton ── */}
         {loading && (
           <div
             className="grid gap-6"
@@ -156,7 +163,7 @@ export default function CertificatesCarousel() {
           </div>
         )}
 
-        {/* Carousel */}
+        {/* ── Carousel (has data) ── */}
         {!loading && total > 0 && (
           <>
             <div
@@ -206,7 +213,6 @@ export default function CertificatesCarousel() {
               </button>
             </div>
 
-            {/* Dots */}
             {total > visible && (
               <div className="flex justify-center gap-2 mt-7">
                 {Array.from({ length: maxIndex + 1 }).map((_, i) => (
@@ -221,6 +227,22 @@ export default function CertificatesCarousel() {
             )}
           </>
         )}
+
+        {/* ── Empty State (no certificates yet) ── */}
+        {!loading && total === 0 && (
+          <div className="flex flex-col items-center justify-center py-16 gap-4">
+            <div
+              className="w-20 h-20 rounded-full flex items-center justify-center"
+              style={{ background: "linear-gradient(135deg,#fdf0e7,#f5dcc8)" }}
+            >
+              <i className="fas fa-award text-3xl text-[#c98963] opacity-60" />
+            </div>
+            <p className="text-gray-400 text-sm tracking-wide">
+              Certificates coming soon&hellip;
+            </p>
+          </div>
+        )}
+
       </div>
     </section>
   );
