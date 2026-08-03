@@ -7,6 +7,7 @@ import DashboardHeader from "../components/DashboardHeader.jsx";
 import AccountManagerModal from "../components/AccountManagerModal.jsx";
 import NewsManager from "../components/NewsManager.jsx";
 import NewsList from "../components/NewsList.jsx";
+import CertificateManager from "../components/CertificateManager.jsx";
 
 export default function Dashboard() {
   const navigate = useNavigate();
@@ -479,6 +480,11 @@ export default function Dashboard() {
               onPrevPage={handlePrevPage}
               onNextPage={handleNextPage}
             />
+          )}
+
+          {/* ── Certificates Management ── */}
+          {!showNewsManager && (
+            <CertificateManager />
           )}
         </div>
       </main>

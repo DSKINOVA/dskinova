@@ -23,6 +23,7 @@ import AppointmentModal from "./AppointmentModal.jsx";
 import InstaReels from "./InstaReels.jsx";
 import YouTubeReels from "./YouTubeReels.jsx";
 import ElfsightGoogleReviews from "./ElfsightGoogleReviews.jsx";
+import CertificatesCarousel from "./CertificatesCarousel.jsx";
 
 export default function HomePage() {
   const [appointmentOpen, setAppointmentOpen] = useState(false);
@@ -45,6 +46,7 @@ export default function HomePage() {
       <FounderMessage />
       <ExpertSkincare />
       <GalleryCollection />
+      <CertificatesCarousel />
       <ConsultationBanner onBookAppointment={openAppointment} />
       <InstaReels />
       <YouTubeReels

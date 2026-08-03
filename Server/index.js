@@ -6,6 +6,7 @@ import Admin from "./models/Admin.js";
 import dotenv from "dotenv";
 dotenv.config();
 import News from "./models/News.js";
+import Certificate from "./models/Certificate.js";
 import multer from "multer";
 import { v2 as cloudinary } from "cloudinary";
 import { PassThrough } from "stream";
@@ -505,6 +506,81 @@ app.delete("/api/news/:slug", async (req, res) => {
     res.json({ success: true, message: "Deleted" });
   } catch (err) {
     console.error("Delete news error:", err);
+    res.status(500).json({ success: false, message: "Server error" });
+  }
+});
+
+// ─── Certificates ────────────────────────────────────────────────────────────
+
+// Get all certificates (sorted by order)
+app.get("/api/certificates", async (req, res) => {
+  try {
+    const items = await Certificate.find({}).sort({ order: 1, createdAt: 1 }).lean();
+    res.json({ success: true, items });
+  } catch (err) {
+    console.error("List certificates error:", err);
+    res.status(500).json({ success: false, message: "Server error" });
+  }
+});
+
+// Create certificate (with Cloudinary image upload)
+app.post(
+  "/api/certificates",
+  upload.fields([{ name: "image", maxCount: 1 }]),
+  async (req, res) => {
+    try {
+      if (!req.files?.image?.[0]) {
+        return res.status(400).json({ success: false, message: "Image is required" });
+      }
+      const result = await uploadToCloudinary(
+        req.files.image[0].buffer,
+        "dskinova/certificates"
+      );
+      const order = parseInt(req.body.order, 10) || 0;
+      const doc = await Certificate.create({ imageUrl: result.secure_url, order });
+      res.json({ success: true, item: doc });
+    } catch (err) {
+      console.error("Create certificate error:", err);
+      res.status(500).json({ success: false, message: "Server error" });
+    }
+  }
+);
+
+// Update certificate (optionally replace image)
+app.put(
+  "/api/certificates/:id",
+  upload.fields([{ name: "image", maxCount: 1 }]),
+  async (req, res) => {
+    try {
+      const doc = await Certificate.findById(req.params.id);
+      if (!doc) return res.status(404).json({ success: false, message: "Not found" });
+      if (req.files?.image?.[0]) {
+        const result = await uploadToCloudinary(
+          req.files.image[0].buffer,
+          "dskinova/certificates"
+        );
+        doc.imageUrl = result.secure_url;
+      }
+      if (typeof req.body.order !== "undefined") {
+        doc.order = parseInt(req.body.order, 10) || 0;
+      }
+      await doc.save();
+      res.json({ success: true, item: doc });
+    } catch (err) {
+      console.error("Update certificate error:", err);
+      res.status(500).json({ success: false, message: "Server error" });
+    }
+  }
+);
+
+// Delete certificate
+app.delete("/api/certificates/:id", async (req, res) => {
+  try {
+    const result = await Certificate.findByIdAndDelete(req.params.id);
+    if (!result) return res.status(404).json({ success: false, message: "Not found" });
+    res.json({ success: true, message: "Deleted" });
+  } catch (err) {
+    console.error("Delete certificate error:", err);
     res.status(500).json({ success: false, message: "Server error" });
   }
 });
