@@ -144,14 +144,14 @@ export default function Footer() {
         {/* Divider */}
         <div className="mt-8 md:mt-10 border-t border-white/20" />
 
-        {/* Extra menus like screenshot: Get In Touch + Quicklinks */}
-        <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-8 md:gap-12">
+        {/* Extra menus: Get In Touch, Quicklinks, and Treatments */}
+        <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-12 gap-8 md:gap-6 lg:gap-12 relative z-10">
           {/* Get In Touch */}
-          <div className="sm:col-span-1">
+          <div className="md:col-span-4">
             <h3 className="text-lg font-semibold mb-4">Get In Touch</h3>
             <ul className="space-y-3 text-white/95 text-sm">
               <li className="flex items-start gap-3">
-                <PinIcon className="w-5 h-5 mt-0.5 text-white" />
+                <PinIcon className="w-5 h-5 mt-0.5 text-white flex-shrink-0" />
                 <span>
                   2nd Floor, A-2, Mall Rd, opposite MAHESHWARI GIRLS PUBLIC
                   SCHOOL, Sector-3, Ambabari, Naya Khera, Vidyadhar Nagar,
@@ -159,54 +159,53 @@ export default function Footer() {
                 </span>
               </li>
               <li className="flex items-start gap-3">
-                <MailIcon className="w-5 h-5 mt-0.5 text-white" />
+                <MailIcon className="w-5 h-5 mt-0.5 text-white flex-shrink-0" />
                 <a
                   href="mailto:dskinova@gmail.com"
                   className="hover:text-white"
                 >
-                  dskinova(@)gmail.com
+                  dskinova@gmail.com
                 </a>
               </li>
               <li className="flex items-start gap-3">
-                <PhoneIcon className="w-5 h-5 mt-0.5 text-white" />
+                <PhoneIcon className="w-5 h-5 mt-0.5 text-white flex-shrink-0" />
                 <a href="tel:+917878867379" className="hover:text-white">
                   +91 78788 67379
                 </a>
               </li>
               <li className="flex items-start gap-3">
-                <ClockIcon className="w-5 h-5 mt-0.5 text-white" />
+                <ClockIcon className="w-5 h-5 mt-0.5 text-white flex-shrink-0" />
                 <span>09.00 AM - 17.00 PM</span>
               </li>
             </ul>
           </div>
 
-          {/* Quicklinks - Services */}
-          <div className="sm:col-span-1">
+          {/* Quicklinks */}
+          <div className="md:col-span-3">
             <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
-            <ul className="grid grid-cols-2 gap-y-2 gap-x-6 text-white/95 text-sm max-w-xs">
+            <ul className="flex flex-col gap-y-2 text-white/95 text-sm">
               <li>
                 <Link
                   to="/laser-hair-removal"
-                  className="hover:text-white"
+                  className="hover:text-white transition-colors"
                 >
                   Laser hair removal
                 </Link>
               </li>
               <li>
-                <Link to="/facials" className="hover:text-white">
+                <Link to="/facials" className="hover:text-white transition-colors">
                   Facials
                 </Link>
               </li>
-             
               <li>
-                <Link to="/deep-peelings" className="hover:text-white">
+                <Link to="/deep-peelings" className="hover:text-white transition-colors">
                   Deep peelings
                 </Link>
               </li>
               <li>
                 <Link
                   to="/microdermabrasion"
-                  className="hover:text-white"
+                  className="hover:text-white transition-colors"
                 >
                   Microdermabrasion
                 </Link>
@@ -214,10 +213,53 @@ export default function Footer() {
               <li>
                 <Link
                   to="/skin-tightening"
-                  className="hover:text-white"
+                  className="hover:text-white transition-colors"
                 >
                   Skin tightening
                 </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Treatments */}
+          <div className="md:col-span-5">
+            <h3 className="text-lg font-semibold mb-4">Treatments</h3>
+            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-y-2 gap-x-4 text-white/95 text-sm">
+              <li>
+                <Link to="/hair-gfc-therapy" className="hover:text-white transition-colors">Hair GFC</Link>
+              </li>
+              <li>
+                <Link to="/mesotherapy" className="hover:text-white transition-colors">Hair Mesotherapy</Link>
+              </li>
+              <li>
+                <Link to="/hair-prp" className="hover:text-white transition-colors">Hair PRP</Link>
+              </li>
+              <li>
+                <Link to="/regrowth" className="hover:text-white transition-colors">Hair Treatment</Link>
+              </li>
+              <li>
+                <Link to="/mnrf" className="hover:text-white transition-colors">MNRF</Link>
+              </li>
+              <li>
+                <Link to="/micro-needling-prp" className="hover:text-white transition-colors">Microneedling</Link>
+              </li>
+              <li>
+                <Link to="/chemical-peel" className="hover:text-white transition-colors">Chemical Peel</Link>
+              </li>
+              <li>
+                <Link to="/pigmentation-solutions" className="hover:text-white transition-colors">Pigmentation</Link>
+              </li>
+              <li>
+                <Link to="/acne-scar" className="hover:text-white transition-colors">Acne Scar</Link>
+              </li>
+              <li>
+                <Link to="/vampire-facial" className="hover:text-white transition-colors">Vampire Facial</Link>
+              </li>
+              <li>
+                <Link to="/carbon-facial" className="hover:text-white transition-colors">Carbon Facial</Link>
+              </li>
+              <li>
+                <Link to="/hydrafacial" className="hover:text-white transition-colors">Hydrafacial</Link>
               </li>
             </ul>
           </div>
