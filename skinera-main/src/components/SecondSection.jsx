@@ -22,7 +22,7 @@ export default function SecondSection({ onBookAppointment }) {
       <div className="pointer-events-none absolute -left-20 top-1/4 h-72 w-72 rounded-full bg-yellow-200/40 blur-3xl" />
       <div className="pointer-events-none absolute -right-20 bottom-10 h-80 w-80 rounded-full bg-orange-200/40 blur-3xl" />
 
-      <div className="relative max-w-7xl mx-auto px-6 lg:px-12 py-16 lg:py-24">
+      <div className="relative max-w-7xl mx-auto px-4 lg:px-12 py-10 sm:py-14 lg:py-24">
         
         {/* KEPT: Grid layout with 2 columns */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
@@ -40,14 +40,14 @@ export default function SecondSection({ onBookAppointment }) {
           <div className="text-center lg:text-left space-y-6">
             
             {/* Title 1: GLOW WITH CONFIDENCE (Larger, Bolder) */}
-            <h2 className={`text-5xl sm:text-6xl md:text-7xl font-serif font-bold tracking-tight leading-none ${TEXT_COLOR}`}>
+            <h2 className={`text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-serif font-bold tracking-tight leading-none ${TEXT_COLOR}`}>
               GLOW WITH 
               <br />
               CONFIDENCE
             </h2>
 
             {/* Title 2: Your Skin Deserves the Best! (Italic) */}
-            <h3 className={`text-2xl sm:text-3xl font-serif italic font-normal ${TEXT_COLOR}`}>
+            <h3 className={`text-lg sm:text-2xl md:text-3xl font-serif italic font-normal ${TEXT_COLOR}`}>
               Your Skin Deserves the Best!
             </h3>
 

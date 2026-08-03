@@ -37,11 +37,11 @@ export default function LatestNews() {
     }
   };
   return (
-    <section className="bg-white py-16 sm:py-20 lg:py-24">
+    <section className="bg-white py-10 sm:py-16 lg:py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-12">
-          <h2 className="text-4xl sm:text-5xl font-domine font-medium text-[#BE7F58] mb-4">
+          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-domine font-medium text-[#BE7F58] mb-3">
             Latest in Cosmetology
           </h2>
           <p className="text-gray-600 text-base max-w-2xl mx-auto">

@@ -8,14 +8,14 @@ import clinicImage from "../../public/Images/WhyChooseUs/1.png";
 */
 export default function WhyChooseUs2() {
   return (
-    <section className="bg-[#fdf6f4] py-16 sm:py-20 lg:py-24">
+    <section className="bg-[#fdf6f4] py-10 sm:py-16 lg:py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
         {/* Left Content */}
         <div className="lg:col-span-6">
-          <p className="text-3xl font-medium tracking-wide text-gray-600 mb-4">
+          <p className="text-xl sm:text-2xl lg:text-3xl font-medium tracking-wide text-gray-600 mb-2 sm:mb-4">
             Why Choose DSkinova Clinic for
           </p>
-          <h2 className="font-domine font-medium text-[#4d1f1a] text-4xl sm:text-5xl leading-tight mb-6">
+          <h2 className="font-domine font-medium text-[#4d1f1a] text-2xl sm:text-4xl lg:text-5xl leading-tight mb-4 sm:mb-6">
               Skin, Hair, and Cosmetic{" "}
             <br className="hidden sm:block" /> Treatments?
           </h2>

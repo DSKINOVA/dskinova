@@ -51,7 +51,7 @@ export default function OurService({ onBookAppointment }) {
         className="pointer-events-none select-none hidden md:block absolute right-0 top-6 h-[520px] w-auto opacity-60 filter brightness-75 contrast-125 -scale-x-100"
       />
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16 lg:py-24">
         {/* Heading */}
         <div className="text-center max-w-3xl mx-auto">
           <h2 className="font-domine font-medium text-3xl sm:text-4xl text-[#b37556]">
