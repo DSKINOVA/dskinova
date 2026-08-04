@@ -50,7 +50,7 @@ const SocialLink = ({ href, Icon, label }) => (
     href={href}
     className="flex items-center gap-3 text-white/95 hover:text-white transition-colors text-sm"
     target="_blank"
-    rel="noopener noreferrer"
+    rel="noopener noreferrer nofollow"
   >
     <Icon className="w-5 h-5" />
     <span>{label}</span>
@@ -272,9 +272,9 @@ export default function Footer() {
         {/* Copyright */}
         <p className="mt-6 text-center text-white/95 text-xs sm:text-sm">
           Designed and developed by{" "}
-          <span className="text-white font-medium animate-pulse">
+          <a href="https://digitalnishi.in" target="_blank" rel="nofollow noopener noreferrer" className="text-white font-medium animate-pulse hover:underline">
             Digital Nishi
-          </span>
+          </a>
         </p>
       </div>
     </footer>

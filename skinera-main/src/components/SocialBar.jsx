@@ -90,7 +90,7 @@ const SocialBar = () => {
           <a
             href="https://www.facebook.com/p/Dskinova-61577979712519/"
             target="_blank"
-            rel="noreferrer"
+            rel="noreferrer nofollow"
           >
             <img
               src="/Images/social-icons/facebook.png"
@@ -103,7 +103,7 @@ const SocialBar = () => {
           <a
             href="https://www.instagram.com/_dskinova/"
             target="_blank"
-            rel="noreferrer"
+            rel="noreferrer nofollow"
           >
             <img
               src="/Images/social-icons/instagram.png"
@@ -116,7 +116,7 @@ const SocialBar = () => {
           <a
             href="https://www.linkedin.com/in/dr-kirti-kothari-12b282377/?originalSubdomain=in"
             target="_blank"
-            rel="noreferrer"
+            rel="noreferrer nofollow"
           >
             <img
               src="/Images/social-icons/linkedin.png"
@@ -129,7 +129,7 @@ const SocialBar = () => {
           <a
             href="https://www.youtube.com/@DSKINOVA"
             target="_blank"
-            rel="noreferrer"
+            rel="noreferrer nofollow"
           >
             <img
               src="/Images/social-icons/youtube.png"
