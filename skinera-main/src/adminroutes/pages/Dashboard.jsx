@@ -11,7 +11,7 @@ import CertificateManager from "../components/CertificateManager.jsx";
 
 export default function Dashboard() {
   const navigate = useNavigate();
-  const [isAuthenticated, setIsAuthenticated] = useState(true);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [showNewsManager, setShowNewsManager] = useState(false);
   const [showAccountManager, setShowAccountManager] = useState(false);
   const [deletingSlug, setDeletingSlug] = useState(null);
@@ -38,14 +38,12 @@ export default function Dashboard() {
   });
 
   useEffect(() => {
-    // Bypass authentication check
-    setIsAuthenticated(true);
-    // const authStatus = localStorage.getItem("adminAuthenticated");
-    // if (!authStatus) {
-    //   navigate("/admin-login");
-    // } else {
-    //   setIsAuthenticated(true);
-    // }
+    const authStatus = localStorage.getItem("adminAuthenticated");
+    if (!authStatus) {
+      navigate("/admin-login");
+    } else {
+      setIsAuthenticated(true);
+    }
   }, [navigate]);
 
   useEffect(() => {
