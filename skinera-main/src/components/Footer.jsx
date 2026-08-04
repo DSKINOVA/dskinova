@@ -93,21 +93,25 @@ export default function Footer() {
             href="https://www.facebook.com/p/Dskinova-61577979712519/"
             Icon={FacebookIcon}
             label="Facebook"
+            rel="nofollow"
           />
           <SocialLink
             href="https://in.linkedin.com/in/dr-kirti-kothari-12b282377"
             Icon={LinkedInIcon}
             label="LinkedIn"
+            rel="nofollow"
           />
           <SocialLink
             href="https://www.instagram.com/_dskinova/"
             Icon={InstagramIcon}
             label="Instagram"
+            rel="nofollow"
           />
           <SocialLink
             href="https://www.youtube.com/channel/UCgGwM0SYnqIO8_9JVYrF7vg"
             Icon={YouTubeIcon}
             label="YouTube"
+            rel="nofollow"
           />
         </div>
 
