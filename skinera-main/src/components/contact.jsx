@@ -23,7 +23,7 @@ const content = {
     {
       city: "Jaipur, Rajasthan",
       phone: "+91 78788 67379",
-      email: "dskinova@gmail.com",
+      email: "dskinova(@)gmail.com",
       address:
         "2nd Floor, A-2, Mall Rd, opposite MAHESHWARI GIRLS PUBLIC SCHOOL, Sector-3, Ambabari, Naya Khera, Vidyadhar Nagar, Jaipur, Rajasthan 302029",
     },
