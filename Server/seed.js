@@ -13,8 +13,8 @@ async function run() {
   await mongoose.connect(MONGODB_URI, {});
   console.log("MongoDB connected");
 
-  const username = process.env.SEED_ADMIN_USERNAME || "admin";
-  const password = process.env.SEED_ADMIN_PASSWORD || "admin123";
+  const username = "admin";
+  const password = "admin123";
 
   let admin = await Admin.findOne({ username });
   if (admin) {
