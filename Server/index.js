@@ -92,6 +92,8 @@ async function connectDb() {
 app.use(async (req, res, next) => {
   try {
     await connectDb();
+    // Auto seed admin if not seeded yet
+    await seedAdmin();
     next();
   } catch (error) {
     console.error("Database connection middleware error:", error);
