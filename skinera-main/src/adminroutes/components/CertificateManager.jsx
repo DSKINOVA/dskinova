@@ -17,7 +17,7 @@ export default function CertificateManager() {
   // ── fetch all ──────────────────────────────────────────────────────────────
   const fetchCertificates = async () => {
     try {
-      const res = await fetch(`${SERVER_URL}/api/certificates`);
+      const res = await fetch(`${SERVER_URL}/certificates`);
       const data = await res.json();
       if (data?.success) setCertificates(data.items || []);
     } catch {
@@ -55,7 +55,7 @@ export default function CertificateManager() {
       const fd = new FormData();
       fd.append("image", selectedFile);
       fd.append("order", certificates.length); // append at end
-      const res = await fetch(`${SERVER_URL}/api/certificates`, {
+      const res = await fetch(`${SERVER_URL}/certificates`, {
         method: "POST",
         body: fd,
       });
@@ -97,7 +97,7 @@ export default function CertificateManager() {
       const fd = new FormData();
       fd.append("order", editOrder);
       if (selectedFile) fd.append("image", selectedFile);
-      const res = await fetch(`${SERVER_URL}/api/certificates/${cert._id}`, {
+      const res = await fetch(`${SERVER_URL}/certificates/${cert._id}`, {
         method: "PUT",
         body: fd,
       });
@@ -129,7 +129,7 @@ export default function CertificateManager() {
             <button
               onClick={async () => {
                 try {
-                  const res = await fetch(`${SERVER_URL}/api/certificates/${id}`, {
+                  const res = await fetch(`${SERVER_URL}/certificates/${id}`, {
                     method: "DELETE",
                   });
                   const data = await res.json();

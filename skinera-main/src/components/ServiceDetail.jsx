@@ -15,6 +15,8 @@ import NotFound from "./NotFound.jsx";
 
 export default function ServiceDetail({ serviceId }) {
   const [appointmentOpen, setAppointmentOpen] = useState(false);
+  const [apiService, setApiService] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   const openAppointment = () => setAppointmentOpen(true);
   const closeAppointment = () => setAppointmentOpen(false);
@@ -24,9 +26,33 @@ export default function ServiceDetail({ serviceId }) {
   const effectiveId =
     serviceId || (params ? params.id : undefined) || "laser-hair-removal-treatment-in-jaipur";
 
-  const service = getExpandedService(effectiveId) || getServiceById(effectiveId);
+  useEffect(() => {
+    let isMounted = true;
+    async function loadService() {
+      setLoading(true);
+      try {
+        const res = await fetch(
+          `${import.meta.env.VITE_SERVER_URL || ""}/services/${effectiveId}`
+        );
+        if (res.ok) {
+          const data = await res.json();
+          if (isMounted && data?.success && data?.item) {
+            setApiService(data.item);
+          }
+        }
+      } catch (err) {
+        // Fallback to static
+      } finally {
+        if (isMounted) setLoading(false);
+      }
+    }
+    loadService();
+    return () => { isMounted = false; };
+  }, [effectiveId]);
 
-  if (!service) {
+  const service = apiService || getExpandedService(effectiveId) || getServiceById(effectiveId);
+
+  if (!loading && !service) {
     return <NotFound />;
   }
 
@@ -111,9 +137,19 @@ export default function ServiceDetail({ serviceId }) {
                   </ul>
                 </div>
 
+                {/* Price Display */}
+                {service.price > 0 && (
+                  <div className="bg-rose-100/60 border border-rose-200 rounded-lg p-3 inline-block">
+                    <span className="text-xs text-gray-500 uppercase tracking-wider font-semibold block">Starting Price</span>
+                    <span className="text-xl font-bold text-[#b37556]">
+                      {service.currency || "₹"}{service.price} <span className="text-xs font-normal text-gray-600">({service.priceNote || "per session"})</span>
+                    </span>
+                  </div>
+                )}
+
                 <button
                   onClick={openAppointment}
-                  className="bg-[#c98963] hover:bg-[#be7f58] text-white w-full sm:w-auto px-6 py-3 rounded-lg mt-4"
+                  className="bg-[#c98963] hover:bg-[#be7f58] text-white w-full sm:w-auto px-6 py-3 rounded-lg mt-4 font-medium transition-colors"
                 >
                   Book Appointment
                 </button>
@@ -125,7 +161,7 @@ export default function ServiceDetail({ serviceId }) {
 
       <ServiceExtras />
 
-      {/* BEFORE AFTER */}
+      {/* BEFORE AFTER (DYNAMIC) */}
       <div className="py-16 bg-white">
         <div className="container mx-auto px-4 sm:px-6 max-w-4xl">
           <h2 className="text-3xl font-domine text-center text-[#b37556] mb-8">
@@ -134,24 +170,33 @@ export default function ServiceDetail({ serviceId }) {
 
           <div className="flex flex-col lg:flex-row items-center gap-8">
             <img
-              src={beforeAfterImg || service.image}
-              className="w-full lg:w-1/2 h-[300px] sm:h-[400px] rounded-lg object-cover shadow"
+              src={service.beforeAfter?.image || service.beforeAfterImage || beforeAfterImg || service.image}
+              alt={`Before & After - ${service.title}`}
+              className="w-full lg:w-1/2 h-[300px] sm:h-[400px] rounded-lg object-cover shadow border border-gray-100"
             />
 
             <div className="w-full lg:w-1/2 space-y-4">
               <h3 className="text-xl font-domine text-[#b37556]">
-                Transform Your Skin with {service.title}
+                {service.beforeAfter?.heading || `Transform Your Skin with ${service.title}`}
               </h3>
 
-              <p className="text-gray-600">
-                Experience visible improvement with our modern techniques designed to rejuvenate your skin.
+              <p className="text-gray-600 leading-relaxed whitespace-pre-line">
+                {service.beforeAfter?.description || "Experience visible improvement with our modern techniques designed to rejuvenate your skin."}
               </p>
 
-              <ul className="list-disc list-inside text-gray-600 space-y-1">
-                <li>Visible improvement in skin texture</li>
-                <li>Reduction in fine lines & wrinkles</li>
-                <li>Improved tone & glow</li>
-                <li>Long-lasting natural results</li>
+              <ul className="list-disc list-inside text-gray-600 space-y-1 text-sm">
+                {service.beforeAfter?.points && service.beforeAfter.points.length > 0 ? (
+                  service.beforeAfter.points.map((pt, idx) => (
+                    <li key={idx}>{pt}</li>
+                  ))
+                ) : (
+                  <>
+                    <li>Visible improvement in skin texture</li>
+                    <li>Reduction in fine lines & wrinkles</li>
+                    <li>Improved tone & glow</li>
+                    <li>Long-lasting natural results</li>
+                  </>
+                )}
               </ul>
             </div>
           </div>

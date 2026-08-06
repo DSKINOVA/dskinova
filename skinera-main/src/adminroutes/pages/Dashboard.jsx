@@ -8,6 +8,7 @@ import AccountManagerModal from "../components/AccountManagerModal.jsx";
 import NewsManager from "../components/NewsManager.jsx";
 import NewsList from "../components/NewsList.jsx";
 import CertificateManager from "../components/CertificateManager.jsx";
+import ServicesManager from "../components/ServicesManager.jsx";
 
 export default function Dashboard() {
   const navigate = useNavigate();
@@ -51,10 +52,12 @@ export default function Dashboard() {
     async function loadNews() {
       try {
         const res = await fetch(import.meta.env.VITE_SERVER_URL + "/news");
-        const data = await res.json();
-        if (data?.success) {
-          setNewsList(data.items || []);
-          setCurrentPage(1);
+        if (res.ok) {
+          const data = await res.json();
+          if (data?.success) {
+            setNewsList(data.items || []);
+            setCurrentPage(1);
+          }
         }
       } catch (e) {
         // ignore; keep list as-is
@@ -485,6 +488,11 @@ export default function Dashboard() {
           {/* ── Certificates Management ── */}
           {!showNewsManager && (
             <CertificateManager />
+          )}
+
+          {/* ── Services Management ── */}
+          {!showNewsManager && (
+            <ServicesManager />
           )}
         </div>
       </main>

@@ -11,9 +11,11 @@ export default function LatestNews() {
         const res = await fetch(
           (import.meta.env.VITE_SERVER_URL || "") + "/news/latest?limit=4"
         );
-        const data = await res.json();
-        if (!abort && data?.success) {
-          setNewsArticles(Array.isArray(data.items) ? data.items : []);
+        if (res.ok) {
+          const data = await res.json();
+          if (!abort && data?.success) {
+            setNewsArticles(Array.isArray(data.items) ? data.items : []);
+          }
         }
       } catch (e) {
         if (!abort) setNewsArticles([]);

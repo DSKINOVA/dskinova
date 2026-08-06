@@ -95,13 +95,15 @@ export default function NewsFirstSec({ article }) {
     async function loadPopular() {
       try {
         const res = await fetch(import.meta.env.VITE_SERVER_URL + "/news");
-        const data = await res.json();
-        if (data?.success && Array.isArray(data.items)) {
-          const list = data.items
-            .filter((n) => n.slug !== article.slug)
-            .slice(0, 5)
-            .map((n) => ({ slug: n.slug, title: n.title }));
-          if (!abort) setPopularNews(list);
+        if (res.ok) {
+          const data = await res.json();
+          if (data?.success && Array.isArray(data.items)) {
+            const list = data.items
+              .filter((n) => n.slug !== article.slug)
+              .slice(0, 5)
+              .map((n) => ({ slug: n.slug, title: n.title }));
+            if (!abort) setPopularNews(list);
+          }
         }
       } catch {}
     }

@@ -7,9 +7,11 @@ import dotenv from "dotenv";
 dotenv.config();
 import News from "./models/News.js";
 import Certificate from "./models/Certificate.js";
+import Service from "./models/Service.js";
 import multer from "multer";
 import { v2 as cloudinary } from "cloudinary";
 import { PassThrough } from "stream";
+import { seedAdmin } from "./createAdmin.js";
 
 // Basic Express app setup
 const app = express();
@@ -585,6 +587,251 @@ app.delete("/api/certificates/:id", async (req, res) => {
   }
 });
 
+// ─── Services ─────────────────────────────────────────────────────────────────
+
+// Get all services
+app.get("/api/services", async (req, res) => {
+  try {
+    const items = await Service.find({}).sort({ createdAt: -1 }).lean();
+    res.json({ success: true, items });
+  } catch (err) {
+    console.error("List services error:", err);
+    res.status(500).json({ success: false, message: "Server error" });
+  }
+});
+
+// Get service by slug
+app.get("/api/services/:slug", async (req, res) => {
+  try {
+    const item = await Service.findOne({ slug: req.params.slug }).lean();
+    if (!item) return res.status(404).json({ success: false, message: "Service not found" });
+    res.json({ success: true, item });
+  } catch (err) {
+    console.error("Get service error:", err);
+    res.status(500).json({ success: false, message: "Server error" });
+  }
+});
+
+// Create service
+app.post(
+  "/api/services",
+  upload.fields([
+    { name: "image", maxCount: 1 },
+    { name: "beforeAfterImage", maxCount: 1 },
+  ]),
+  async (req, res) => {
+    try {
+      const {
+        title = "",
+        customSlug = "",
+        category = "Skin",
+        subcategory = "",
+        short = "",
+        price = 0,
+        currency = "₹",
+        priceNote = "per session",
+        overviewTitle = "Overview",
+        overviewDescription = "",
+        included = "[]",
+        excluded = "[]",
+        duration = "",
+        sessions = "",
+        results = "",
+        beforeAfterHeading = "",
+        beforeAfterDescription = "",
+        beforeAfterPoints = "[]",
+        seoTitle = "",
+        seoDescription = "",
+        seoKeywords = "",
+      } = req.body || {};
+
+      if (!title.trim()) {
+        return res.status(400).json({ success: false, message: "Title is required" });
+      }
+
+      const baseSlug = customSlug.trim() ? slugify(customSlug) : slugify(title);
+      let imageUrl = "";
+      let baImageUrl = "";
+
+      if (req.files?.image?.[0]) {
+        const result = await uploadToCloudinary(
+          req.files.image[0].buffer,
+          "dskinova/services"
+        );
+        imageUrl = result.secure_url;
+      }
+
+      if (req.files?.beforeAfterImage?.[0]) {
+        const result = await uploadToCloudinary(
+          req.files.beforeAfterImage[0].buffer,
+          "dskinova/services/beforeafter"
+        );
+        baImageUrl = result.secure_url;
+      }
+
+      const parsedIncluded = JSON.parse(included || "[]");
+      const parsedExcluded = JSON.parse(excluded || "[]");
+      const parsedBAPoints = JSON.parse(beforeAfterPoints || "[]");
+
+      const payload = {
+        title: title.trim(),
+        slug: baseSlug,
+        category: category || "Skin",
+        subcategory: subcategory || "",
+        short,
+        price: Number(price) || 0,
+        currency,
+        priceNote,
+        image: imageUrl,
+        overview: {
+          title: overviewTitle,
+          description: overviewDescription,
+        },
+        included: Array.isArray(parsedIncluded) ? parsedIncluded : [],
+        excluded: Array.isArray(parsedExcluded) ? parsedExcluded : [],
+        additionalInfo: { duration, sessions, results },
+        beforeAfter: {
+          image: baImageUrl,
+          heading: beforeAfterHeading,
+          description: beforeAfterDescription,
+          points: Array.isArray(parsedBAPoints) ? parsedBAPoints : [],
+        },
+        seo: {
+          meta_title: seoTitle || title,
+          meta_description: seoDescription || short,
+          focus_keyphrase: seoKeywords,
+          slug: baseSlug,
+        },
+      };
+
+      const doc = await Service.create(payload);
+      res.json({ success: true, item: doc });
+    } catch (err) {
+      if (err?.code === 11000) {
+        return res.status(409).json({ success: false, message: "Slug already exists. Choose another slug." });
+      }
+      console.error("Create service error:", err);
+      res.status(500).json({ success: false, message: "Server error" });
+    }
+  }
+);
+
+// Update service
+app.put(
+  "/api/services/:id",
+  upload.fields([
+    { name: "image", maxCount: 1 },
+    { name: "beforeAfterImage", maxCount: 1 },
+  ]),
+  async (req, res) => {
+    try {
+      const doc = await Service.findById(req.params.id);
+      if (!doc) return res.status(404).json({ success: false, message: "Not found" });
+
+      const {
+        title,
+        customSlug,
+        category,
+        subcategory,
+        short,
+        price,
+        currency,
+        priceNote,
+        overviewTitle,
+        overviewDescription,
+        included,
+        excluded,
+        duration,
+        sessions,
+        results,
+        beforeAfterHeading,
+        beforeAfterDescription,
+        beforeAfterPoints,
+        seoTitle,
+        seoDescription,
+        seoKeywords,
+      } = req.body || {};
+
+      if (typeof title === "string" && title.trim()) doc.title = title.trim();
+      if (typeof customSlug === "string" && customSlug.trim()) {
+        doc.slug = slugify(customSlug);
+      }
+      if (typeof category === "string") doc.category = category;
+      if (typeof subcategory === "string") doc.subcategory = subcategory;
+      if (typeof short === "string") doc.short = short;
+      if (typeof price !== "undefined") doc.price = Number(price) || 0;
+      if (typeof currency === "string") doc.currency = currency;
+      if (typeof priceNote === "string") doc.priceNote = priceNote;
+
+      if (!doc.overview) doc.overview = {};
+      if (typeof overviewTitle === "string") doc.overview.title = overviewTitle;
+      if (typeof overviewDescription === "string") doc.overview.description = overviewDescription;
+
+      if (typeof included !== "undefined") {
+        try { doc.included = JSON.parse(included || "[]"); } catch {}
+      }
+      if (typeof excluded !== "undefined") {
+        try { doc.excluded = JSON.parse(excluded || "[]"); } catch {}
+      }
+
+      if (!doc.additionalInfo) doc.additionalInfo = {};
+      if (typeof duration === "string") doc.additionalInfo.duration = duration;
+      if (typeof sessions === "string") doc.additionalInfo.sessions = sessions;
+      if (typeof results === "string") doc.additionalInfo.results = results;
+
+      if (!doc.beforeAfter) doc.beforeAfter = {};
+      if (typeof beforeAfterHeading === "string") doc.beforeAfter.heading = beforeAfterHeading;
+      if (typeof beforeAfterDescription === "string") doc.beforeAfter.description = beforeAfterDescription;
+      if (typeof beforeAfterPoints !== "undefined") {
+        try { doc.beforeAfter.points = JSON.parse(beforeAfterPoints || "[]"); } catch {}
+      }
+
+      if (!doc.seo) doc.seo = {};
+      if (typeof seoTitle === "string") doc.seo.meta_title = seoTitle;
+      if (typeof seoDescription === "string") doc.seo.meta_description = seoDescription;
+      if (typeof seoKeywords === "string") doc.seo.focus_keyphrase = seoKeywords;
+      doc.seo.slug = doc.slug;
+
+      if (req.files?.image?.[0]) {
+        const result = await uploadToCloudinary(
+          req.files.image[0].buffer,
+          "dskinova/services"
+        );
+        doc.image = result.secure_url;
+      }
+
+      if (req.files?.beforeAfterImage?.[0]) {
+        const result = await uploadToCloudinary(
+          req.files.beforeAfterImage[0].buffer,
+          "dskinova/services/beforeafter"
+        );
+        doc.beforeAfter.image = result.secure_url;
+      }
+
+      await doc.save();
+      res.json({ success: true, item: doc });
+    } catch (err) {
+      if (err?.code === 11000) {
+        return res.status(409).json({ success: false, message: "Slug already in use" });
+      }
+      console.error("Update service error:", err);
+      res.status(500).json({ success: false, message: "Server error" });
+    }
+  }
+);
+
+// Delete service
+app.delete("/api/services/:id", async (req, res) => {
+  try {
+    const result = await Service.findByIdAndDelete(req.params.id);
+    if (!result) return res.status(404).json({ success: false, message: "Not found" });
+    res.json({ success: true, message: "Deleted" });
+  } catch (err) {
+    console.error("Delete service error:", err);
+    res.status(500).json({ success: false, message: "Server error" });
+  }
+});
+
 // For Vercel serverless deployment
 export default app;
 
@@ -592,7 +839,9 @@ export default app;
 if (process.env.NODE_ENV !== "production") {
   const PORT = process.env.PORT || 3000;
   connectDb()
-    .then(() => {
+    .then(async () => {
+      // Auto-seed admin from .env credentials
+      await seedAdmin();
       app.listen(PORT, () => {
         console.log(`Server is running on port ${PORT}`);
         console.log(`API available at: http://localhost:${PORT}/api`);

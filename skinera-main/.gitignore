@@ -1,3 +1,11 @@
+# Node modules
 node_modules/
-node_modules
-/node_modules
+
+# Environment variables (Crucial for production security)
+.env
+.env.local
+.env.*.local
+
+# Build output
+dist/
+build/

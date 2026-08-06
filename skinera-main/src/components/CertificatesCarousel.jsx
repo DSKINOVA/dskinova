@@ -13,14 +13,16 @@ export default function CertificatesCarousel() {
     async function fetchCertificates() {
       try {
         const url = SERVER_URL
-          ? `${SERVER_URL}/api/certificates`
+          ? `${SERVER_URL}/certificates`
           : "/api/certificates";
         const res = await fetch(url);
-        const data = await res.json();
-        if (data?.success) {
-          setCertificates(data.items || []);
-        } else {
-          setError(true);
+        if (res.ok) {
+          const data = await res.json();
+          if (data?.success) {
+            setCertificates(data.items || []);
+          } else {
+            setError(true);
+          }
         }
       } catch {
         setError(true);
