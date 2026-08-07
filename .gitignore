@@ -32,3 +32,4 @@ out/
 .vite/
 .vscode/
 .idea/
+.vercel
