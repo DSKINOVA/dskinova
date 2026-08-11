@@ -159,7 +159,7 @@ export default function ServiceDetail({ serviceId }) {
 
                 <button
                   onClick={openAppointment}
-                  className="bg-[#c98963] hover:bg-[#be7f58] text-white w-full sm:w-auto px-6 py-3 rounded-lg mt-4 font-medium transition-colors"
+                  className="bg-[#c98963] hover:bg-[#be7f58] text-white w-full sm:w-auto px-6 py-3 rounded-lg mt-4 ms-3 font-medium transition-colors"
                 >
                   Book Appointment
                 </button>
