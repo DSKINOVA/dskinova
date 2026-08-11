@@ -278,6 +278,7 @@ export default function ServicesManager() {
           </div>
 
           <div>
+            {/* Custom URL Slug Field */}
             <label className="block text-sm font-medium text-gray-700 mb-1">
               Custom URL Slug (Optional)
             </label>
