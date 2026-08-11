@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { Helmet } from "react-helmet";
+import "react-quill/dist/quill.snow.css";
 import Header from "./Header.jsx";
 import Footer from "./Footer.jsx";
 import AppointmentModal from "./AppointmentModal.jsx";
@@ -116,9 +117,11 @@ export default function ServiceDetail({ serviceId }) {
                 <h3 className="text-lg sm:text-xl font-domine text-[#b37556]">
                   {service.overview.title}
                 </h3>
-                <p className="text-gray-600 text-sm leading-relaxed">
-                  {service.overview.description}
-                </p>
+                <div 
+                  className="text-gray-600 text-sm leading-relaxed ql-editor"
+                  style={{ padding: 0 }}
+                  dangerouslySetInnerHTML={{ __html: service.overview.description }}
+                />
 
                 {/* Included / Excluded */}
                 <h3 className="text-lg sm:text-xl font-domine mb-3 text-[#b37556]">

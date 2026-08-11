@@ -1,7 +1,30 @@
 import React, { useState, useEffect, useRef } from "react";
 import toast from "react-hot-toast";
+import ReactQuill from "react-quill";
+import "react-quill/dist/quill.snow.css";
 
 const SERVER_URL = import.meta.env.VITE_SERVER_URL || "";
+
+const modules = {
+  toolbar: [
+    [{ header: [1, 2, 3, false] }],
+    ["bold", "italic", "underline", "strike", "blockquote"],
+    [{ list: "ordered" }, { list: "bullet" }],
+    ["link", "clean"],
+  ],
+};
+
+const formats = [
+  "header",
+  "bold",
+  "italic",
+  "underline",
+  "strike",
+  "blockquote",
+  "list",
+  "bullet",
+  "link",
+];
 
 export default function ServicesManager() {
   const [services, setServices] = useState([]);
@@ -421,13 +444,14 @@ export default function ServicesManager() {
               placeholder="Overview Section Heading"
               className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#BE7F58] outline-none mb-2"
             />
-            <textarea
-              name="overviewDescription"
-              rows={4}
+            <ReactQuill
+              theme="snow"
               value={form.overviewDescription}
-              onChange={handleChange}
+              onChange={(val) => setForm((prev) => ({ ...prev, overviewDescription: val }))}
+              modules={modules}
+              formats={formats}
               placeholder="Detailed description of the service..."
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#BE7F58] outline-none"
+              className="bg-white rounded-lg mb-2"
             />
           </div>
         </div>
