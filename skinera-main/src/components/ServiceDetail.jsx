@@ -28,6 +28,10 @@ export default function ServiceDetail({ serviceId }) {
     serviceId || (params ? params.id : undefined) || "laser-hair-removal-treatment-in-jaipur";
 
   useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  useEffect(() => {
     let isMounted = true;
     async function loadService() {
       setLoading(true);
@@ -73,10 +77,6 @@ export default function ServiceDetail({ serviceId }) {
   const seoFocusKeyphrase = service?.seo?.focus_keyphrase || "";
   const seoSlug = service?.seo?.slug || service?.id;
   const seoImage = service?.image;
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-pink-50 to-rose-50">
