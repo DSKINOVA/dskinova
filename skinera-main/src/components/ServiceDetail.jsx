@@ -117,6 +117,27 @@ export default function ServiceDetail({ serviceId }) {
                 <h3 className="text-lg sm:text-xl font-domine text-[#b37556]">
                   {service.overview.title}
                 </h3>
+                <style>{`
+                  .ql-editor {
+                    height: auto !important;
+                    overflow-y: visible !important;
+                    padding: 0 !important;
+                    white-space: normal !important;
+                  }
+                  .ql-editor p {
+                    margin-bottom: 0.75rem;
+                  }
+                  .ql-editor ul, .ql-editor ol {
+                    padding-left: 1.5rem !important;
+                    margin-bottom: 0.75rem;
+                  }
+                  .ql-editor ul {
+                    list-style-type: disc !important;
+                  }
+                  .ql-editor ol {
+                    list-style-type: decimal !important;
+                  }
+                `}</style>
                 <div 
                   className="text-gray-600 text-sm leading-relaxed ql-editor"
                   style={{ padding: 0 }}
