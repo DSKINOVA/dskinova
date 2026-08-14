@@ -3,6 +3,7 @@ import mongoose from "mongoose";
 const serviceSchema = new mongoose.Schema(
   {
     slug: { type: String, required: true, unique: true, index: true },
+    previousSlugs: { type: [String], default: [], index: true },
     title: { type: String, required: true },
     short: { type: String, default: "" },
     price: { type: Number, default: 0 },

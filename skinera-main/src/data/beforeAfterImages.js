@@ -25,6 +25,7 @@ const microdermabrasion = deepPeel; // placeholder
 
 // Service ID to image mapping (keys correspond to service IDs used in menu/routes)
 export const beforeAfterImages = {
+  "anti-aging": antiAging,
   "anti-aging-solutions": antiAging,
   "botox-treatment": botox,
   facials: facial,
@@ -32,18 +33,22 @@ export const beforeAfterImages = {
   "hair-gfc-therapy": hairGfc,
   regrowth: hairRegrowthLaser,
   "hair-regrowth-laser": hairRegrowthLaser,
+  "korean-facial": korean,
   "korean-skin-treatment": korean,
   "deep-peelings": deepPeel,
+  "chemical-peel-treatment-jaipur": deepPeel,
   "chemical-peel": deepPeel,
   "pigmentation-solutions": pigmentation,
   "pigmentation-treatments": pigmentation,
   "skin-tightening": skinTightening,
   "stretch-marks": skinTightening,
+  "laser-hair-removal-treatment-in-jaipur": laserHairRemoval,
   "laser-hair-removal": laserHairRemoval,
   "laser-skin-therapy": laserSkinTherapy,
   mesotherapy: mesotherapy,
   microdermabrasion: microdermabrasion,
   "alopecia-treatment": alopeciaareata,
+  "vampire-facial-jaipur": facial,
   dermatitiss: dermatitis,
 };
 

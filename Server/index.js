@@ -602,10 +602,21 @@ app.get("/api/services", async (req, res) => {
   }
 });
 
-// Get service by slug
+// Get service by slug (also checks previousSlugs for old URLs)
 app.get("/api/services/:slug", async (req, res) => {
   try {
-    const item = await Service.findOne({ slug: req.params.slug }).lean();
+    // First try current slug
+    let item = await Service.findOne({ slug: req.params.slug }).lean();
+    
+    // If not found, check if it's an old slug that was changed
+    if (!item) {
+      item = await Service.findOne({ previousSlugs: req.params.slug }).lean();
+      if (item) {
+        // Return the service with a redirect flag so frontend knows to update the URL
+        return res.json({ success: true, item, redirectSlug: item.slug });
+      }
+    }
+    
     if (!item) return res.status(404).json({ success: false, message: "Service not found" });
     res.json({ success: true, item });
   } catch (err) {
@@ -756,7 +767,17 @@ app.put(
 
       if (typeof title === "string" && title.trim()) doc.title = title.trim();
       if (typeof customSlug === "string" && customSlug.trim()) {
-        doc.slug = slugify(customSlug);
+        const newSlug = slugify(customSlug);
+        // If slug is actually changing, save old slug to previousSlugs
+        if (newSlug !== doc.slug) {
+          if (!doc.previousSlugs) doc.previousSlugs = [];
+          if (!doc.previousSlugs.includes(doc.slug)) {
+            doc.previousSlugs.push(doc.slug);
+          }
+          doc.slug = newSlug;
+          // Remove new slug from previousSlugs if it was there
+          doc.previousSlugs = doc.previousSlugs.filter(s => s !== newSlug);
+        }
       }
       if (typeof category === "string") doc.category = category;
       if (typeof subcategory === "string") doc.subcategory = subcategory;

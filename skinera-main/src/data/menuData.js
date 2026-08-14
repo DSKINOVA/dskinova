@@ -8,7 +8,7 @@ export const skinMenu = [
     href: "/anti-aging",
     children: [
       { label: "Korean Facial", href: "/korean-facial" },
-      { label: "Vampire Facial", href: "/vampire-facial" },
+      { label: "Vampire Facial", href: "/vampire-facial-jaipur" },
       { label: "SRF", href: "/srf" },
     ],
   },
@@ -20,9 +20,9 @@ export const skinMenu = [
   { label: "Laser Tattoo Removal", href: "/laser-tattoo-removal-jaipur" },
   {
     label: "Pigmentation Treatments",
-    href: "/pigmentation-treatments",
+    href: "/pigmentation-solutions",
     children: [
-      { label: "Chemical Peel Treatments", href: "/deep-peelings" },
+      { label: "Chemical Peel Treatments", href: "/chemical-peel-treatment-jaipur" },
       { label: "Laser Toning Treatments", href: "/laser-skin-therapy" },
       { label: "Mesotherapy", href: "/mesotherapy" },
       { label: "Microdermabrasion", href: "/microdermabrasion" },

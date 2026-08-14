@@ -102,7 +102,7 @@ export const servicesExpanded = [
     excluded: ["Medication courses"],
   },
   {
-    id: "korean-skin-treatment",
+    id: "korean-facial",
     title: "Korean Skin Treatment",
     short:
       "Hydration layering and barrier renewal inspired by Korean aesthetics.",
@@ -129,7 +129,7 @@ export const servicesExpanded = [
   //   excluded: ["Dermal fillers"],
   // },
   {
-    id: "anti-aging-solutions",
+    id: "anti-aging",
     title: "Anti-aging Solutions",
     short:
       "Holistic protocols addressing texture, tone, firmness, and radiance.",
@@ -142,7 +142,7 @@ export const servicesExpanded = [
     excluded: ["Surgical lifting"],
   },
   {
-    id: "deep-peelings",
+    id: "chemical-peel-treatment-jaipur",
     title: "Deep Peelings",
     short: "Advanced controlled exfoliation for stubborn irregularities.",
     overview: {
@@ -325,7 +325,7 @@ export const servicesExpanded = [
     excluded: ["Chemical peels"],
   },
   {
-    id: "vampire-facial",
+    id: "vampire-facial-jaipur",
     title: "Vampire Facial",
     short: "Platelet-rich plasma facial for skin rejuvenation.",
     overview: {
