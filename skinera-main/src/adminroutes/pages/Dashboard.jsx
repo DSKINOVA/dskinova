@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
+import { SERVER_URL } from "../../services/api.js";
 import Header from "../../components/Header.jsx";
 import Footer from "../../components/Footer.jsx";
 import DashboardHeader from "../components/DashboardHeader.jsx";
@@ -51,7 +52,7 @@ export default function Dashboard() {
     // Load news from backend
     async function loadNews() {
       try {
-        const res = await fetch(import.meta.env.VITE_SERVER_URL + "/news");
+        const res = await fetch(`${SERVER_URL}/news`);
         if (res.ok) {
           const data = await res.json();
           if (data?.success) {
@@ -77,7 +78,7 @@ export default function Dashboard() {
 
   const handleLogout = async () => {
     try {
-      await fetch(import.meta.env.VITE_SERVER_URL + "/admin-logout", {
+      await fetch(`${SERVER_URL}/admin-logout`, {
         method: "POST",
       });
     } catch {}
@@ -147,7 +148,7 @@ export default function Dashboard() {
               onClick={async () => {
                 try {
                   const res = await fetch(
-                    `${import.meta.env.VITE_SERVER_URL}/news/${slug}`,
+                    `${SERVER_URL}/news/${slug}`,
                     { method: "DELETE" }
                   );
                   const data = await res.json();
@@ -156,7 +157,7 @@ export default function Dashboard() {
                   // Refresh list
                   try {
                     const listRes = await fetch(
-                      import.meta.env.VITE_SERVER_URL + "/news"
+                      `${SERVER_URL}/news`
                     );
                     const listData = await listRes.json();
                     if (listData?.success) setNewsList(listData.items || []);
@@ -221,10 +222,10 @@ export default function Dashboard() {
       fd.append("contentImage", newsForm.content.image);
 
     try {
-      let url = import.meta.env.VITE_SERVER_URL + "/news";
+      let url = `${SERVER_URL}/news`;
       let method = "POST";
       if (editingNews?.slug) {
-        url = `${import.meta.env.VITE_SERVER_URL}/news/${editingNews.slug}`;
+        url = `${SERVER_URL}/news/${editingNews.slug}`;
         method = "PUT";
       }
       const res = await fetch(url, { method, body: fd });
@@ -240,7 +241,7 @@ export default function Dashboard() {
       // Refresh list
       try {
         const listRes = await fetch(
-          import.meta.env.VITE_SERVER_URL + "/news"
+          `${SERVER_URL}/news`
         );
         const listData = await listRes.json();
         if (listData?.success) setNewsList(listData.items || []);

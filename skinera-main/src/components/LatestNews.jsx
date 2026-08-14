@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { SERVER_URL } from "../services/api.js";
 
 export default function LatestNews() {
   const [newsArticles, setNewsArticles] = useState([]);
@@ -9,7 +10,7 @@ export default function LatestNews() {
     async function load() {
       try {
         const res = await fetch(
-          (import.meta.env.VITE_SERVER_URL || "") + "/news/latest?limit=4"
+          `${SERVER_URL}/news/latest?limit=4`
         );
         if (res.ok) {
           const data = await res.json();

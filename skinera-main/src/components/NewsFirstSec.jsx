@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import sideBg from "../../public/Images/Contact-page/bg-3-flower-2x.png";
 import { Link } from "react-router-dom";
+import { SERVER_URL } from "../services/api.js";
 
 // Lightweight social icons
 const Icon = ({ path, className = "w-4 h-4" }) => (
@@ -94,7 +95,7 @@ export default function NewsFirstSec({ article }) {
     let abort = false;
     async function loadPopular() {
       try {
-        const res = await fetch(import.meta.env.VITE_SERVER_URL + "/news");
+        const res = await fetch(`${SERVER_URL}/news`);
         if (res.ok) {
           const data = await res.json();
           if (data?.success && Array.isArray(data.items)) {

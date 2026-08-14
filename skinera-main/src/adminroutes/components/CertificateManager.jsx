@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import toast from "react-hot-toast";
 
-const SERVER_URL = import.meta.env.VITE_SERVER_URL || "";
+import { SERVER_URL } from "../../services/api.js";
 
 export default function CertificateManager() {
   const [certificates, setCertificates] = useState([]);

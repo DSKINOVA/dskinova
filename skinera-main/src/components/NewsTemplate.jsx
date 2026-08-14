@@ -4,6 +4,7 @@ import Footer from "./Footer.jsx";
 import HeroThree from "./HeroThree.jsx";
 import NewsFirstSec from "./NewsFirstSec.jsx";
 import { useParams } from "react-router-dom";
+import { SERVER_URL } from "../services/api.js";
 
 export default function NewsTemplate() {
   const [appointmentOpen, setAppointmentOpen] = useState(false);
@@ -20,9 +21,7 @@ export default function NewsTemplate() {
       setNotFound(false);
       try {
         const res = await fetch(
-          import.meta.env.VITE_SERVER_URL +
-            "/news/" +
-            encodeURIComponent(slug)
+          `${SERVER_URL}/news/${encodeURIComponent(slug)}`
         );
         if (res.status === 404) {
           if (!abort) setNotFound(true);

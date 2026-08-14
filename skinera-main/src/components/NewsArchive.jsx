@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Header from "./Header.jsx";
+import { SERVER_URL } from "../services/api.js";
 import Footer from "./Footer.jsx";
 import Hero from "./Hero.jsx";
 import { Helmet } from "react-helmet-async";
@@ -29,7 +30,7 @@ export default function NewsArchive() {
       setLoading(true);
       try {
         const res = await fetch(
-          (import.meta.env.VITE_SERVER_URL || "") + "/news"
+          `${SERVER_URL}/news`
         );
         if (res.ok) {
           const data = await res.json();

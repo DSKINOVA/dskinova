@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import Header from "./Header.jsx";
 import Footer from "./Footer.jsx";
@@ -12,6 +12,7 @@ import ServiceExtras from "./ServiceExtras.jsx";
 import ClientFaq from "./ClientFaq.jsx";
 import { getBeforeAfterImage } from "../data/beforeAfterImages";
 import NotFound from "./NotFound.jsx";
+import { SERVER_URL } from "../services/api.js";
 
 export default function ServiceDetail({ serviceId }) {
   const [appointmentOpen, setAppointmentOpen] = useState(false);
@@ -22,6 +23,7 @@ export default function ServiceDetail({ serviceId }) {
   const closeAppointment = () => setAppointmentOpen(false);
 
   const params = typeof useParams === "function" ? useParams() : {};
+  const navigate = typeof useNavigate === "function" ? useNavigate() : null;
 
   const effectiveId =
     serviceId || (params ? params.id : undefined) || "laser-hair-removal-treatment-in-jaipur";
@@ -35,13 +37,42 @@ export default function ServiceDetail({ serviceId }) {
     async function loadService() {
       setLoading(true);
       try {
+        // 1. Try exact match fetch
         const res = await fetch(
-          `${import.meta.env.VITE_SERVER_URL || ""}/services/${effectiveId}`
+          `${SERVER_URL}/services/${effectiveId}`
         );
         if (res.ok) {
           const data = await res.json();
           if (isMounted && data?.success && data?.item) {
             setApiService(data.item);
+            if (data.redirectSlug && data.redirectSlug !== effectiveId && navigate) {
+              navigate(`/${data.redirectSlug}`, { replace: true });
+            }
+            return;
+          }
+        }
+
+        // 2. If exact match fails, fetch all services and do a fuzzy match on slugs
+        const listRes = await fetch(`${SERVER_URL}/services`);
+        if (listRes.ok) {
+          const listData = await listRes.json();
+          if (isMounted && listData?.success && Array.isArray(listData?.items)) {
+            const match = listData.items.find(s => {
+              const sSlug = (s.slug || "").toLowerCase();
+              const effId = effectiveId.toLowerCase();
+              return sSlug === effId || 
+                     sSlug === `${effId}-jaipur` || 
+                     `${effId}-jaipur` === sSlug ||
+                     sSlug.includes(effId) || 
+                     effId.includes(sSlug);
+            });
+            if (match) {
+              setApiService(match);
+              if (navigate && match.slug !== effectiveId) {
+                navigate(`/${match.slug}`, { replace: true });
+              }
+              return;
+            }
           }
         }
       } catch (err) {

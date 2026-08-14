@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Header from "../../components/Header.jsx";
+import { SERVER_URL } from "../../services/api.js";
 import Footer from "../../components/Footer.jsx";
 
 export default function AdminLogin() {
@@ -53,7 +54,7 @@ export default function AdminLogin() {
     try {
       // Call backend API
       const resp = await fetch(
-        import.meta.env.VITE_SERVER_URL + "/admin-login",
+        `${SERVER_URL}/admin-login`,
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -69,7 +70,7 @@ export default function AdminLogin() {
         // Optionally refresh stored profile username for UI
         try {
           const p = await fetch(
-            import.meta.env.VITE_SERVER_URL + "/admin/profile"
+            `${SERVER_URL}/admin/profile`
           );
           const pd = await p.json();
           if (p.ok && pd?.success && pd?.username) {

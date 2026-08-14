@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import toast from "react-hot-toast";
+import { SERVER_URL } from "../../services/api.js";
 
 export default function AccountManagerModal({ isOpen, onClose }) {
   const [activeTab, setActiveTab] = useState("password"); // 'password' | 'username'
@@ -12,7 +13,7 @@ export default function AccountManagerModal({ isOpen, onClose }) {
     const loadProfile = async () => {
       try {
         const resp = await fetch(
-          import.meta.env.VITE_SERVER_URL + "/admin/profile"
+          `${SERVER_URL}/admin/profile`
         );
         const data = await resp.json();
         if (resp.ok && data?.success) {
@@ -77,7 +78,7 @@ export default function AccountManagerModal({ isOpen, onClose }) {
     (async () => {
       try {
         const resp = await fetch(
-          import.meta.env.VITE_SERVER_URL + "/admin/change-password",
+          `${SERVER_URL}/admin/change-password`,
           {
             method: "POST",
             headers: { "Content-Type": "application/json" },
@@ -124,7 +125,7 @@ export default function AccountManagerModal({ isOpen, onClose }) {
     (async () => {
       try {
         const resp = await fetch(
-          import.meta.env.VITE_SERVER_URL + "/admin/change-username",
+          `${SERVER_URL}/admin/change-username`,
           {
             method: "POST",
             headers: { "Content-Type": "application/json" },

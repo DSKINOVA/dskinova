@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef, useCallback } from "react";
 
-const SERVER_URL = import.meta.env.VITE_SERVER_URL || "";
+import { SERVER_URL } from "../services/api.js";
 
 export default function CertificatesCarousel() {
   const [certificates, setCertificates] = useState([]);

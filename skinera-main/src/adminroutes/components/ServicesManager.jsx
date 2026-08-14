@@ -3,7 +3,7 @@ import toast from "react-hot-toast";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 
-const SERVER_URL = import.meta.env.VITE_SERVER_URL || "";
+import { SERVER_URL } from "../../services/api.js";
 
 const modules = {
   toolbar: [
