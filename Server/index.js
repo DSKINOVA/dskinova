@@ -12,6 +12,7 @@ import multer from "multer";
 import { v2 as cloudinary } from "cloudinary";
 import { PassThrough } from "stream";
 import { seedAdmin } from "./createAdmin.js";
+import { seedMissingServices } from "./seed_missing_services.js";
 
 // Basic Express app setup
 const app = express();
@@ -94,6 +95,8 @@ app.use(async (req, res, next) => {
     await connectDb();
     // Auto seed admin if not seeded yet
     await seedAdmin();
+    // Auto seed missing services if not seeded yet
+    await seedMissingServices();
     next();
   } catch (error) {
     console.error("Database connection middleware error:", error);
