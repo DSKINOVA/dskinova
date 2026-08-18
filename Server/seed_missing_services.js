@@ -3,11 +3,128 @@ import Service from "./models/Service.js";
 
 const servicesToSeed = [
   {
+    oldSlugs: [],
+    slug: "micro-needling-prp",
+    previousSlugs: ["microneedling-prp", "microneedling"],
+    title: "Micro Needling with PRP",
+    short: "Stimulate collagen naturally with Micro Needling combined with PRP therapy at Dskinova Jaipur.",
+    price: 3500,
+    currency: "₹",
+    priceNote: "per session",
+    category: "Skin",
+    subcategory: "Anti Aging",
+    image: "/Images/cosmatic/Skin Specialist in Jaipur.jpg",
+    overview: {
+      title: "Micro Needling with PRP – Natural Collagen Boost",
+      description: `
+        <p>Micro Needling with PRP (Platelet-Rich Plasma) is one of the most effective skin rejuvenation treatments available today. This combination therapy harnesses your body's own healing power to stimulate collagen production, reduce scars, and restore youthful skin texture.</p>
+        <h3>What is Micro Needling with PRP?</h3>
+        <p>Micro Needling creates thousands of micro-channels in the skin using ultra-fine needles, triggering the skin's natural repair process. When combined with PRP — derived from your own blood and rich in growth factors — the results are dramatically enhanced. PRP is applied topically and penetrates deeply through the micro-channels for superior skin renewal.</p>
+        <h3>Benefits of Micro Needling with PRP</h3>
+        <p>This treatment effectively addresses acne scars, fine lines, wrinkles, uneven skin tone, large pores, and dull complexion. It is safe for all skin types and delivers natural-looking results with minimal downtime.</p>
+        <h3>What to Expect</h3>
+        <p>A session typically takes 60–90 minutes. You may experience mild redness for 24–48 hours post-treatment. Most patients see visible improvement after 3–4 sessions, with full results appearing over 3–6 months as collagen rebuilds.</p>
+        <h3>Why Choose Dskinova for Micro Needling with PRP?</h3>
+        <p>At Dskinova Jaipur, our certified dermatologists use medical-grade micro needling devices and freshly prepared PRP to ensure safe, hygienic, and effective treatment customized to your skin's unique needs.</p>
+      `
+    },
+    included: [
+      "Blood draw and PRP preparation",
+      "Topical anesthesia application",
+      "Micro needling session",
+      "PRP application",
+      "Post-treatment care guidance"
+    ],
+    excluded: [
+      "Surgical procedures",
+      "Home care products (available separately)"
+    ],
+    additionalInfo: {
+      duration: "60-90 min",
+      sessions: "3-6 sessions recommended",
+      results: "Visible in 4-6 weeks"
+    },
+    seo: {
+      meta_title: "Micro Needling with PRP in Jaipur | Dskinova Skin Clinic",
+      meta_description: "Get Micro Needling with PRP treatment in Jaipur at Dskinova. Stimulate collagen naturally, reduce acne scars, and achieve youthful glowing skin.",
+      focus_keyphrase: "micro needling with PRP Jaipur"
+    },
+    beforeAfter: {
+      heading: "Transform Your Skin with Micro Needling PRP",
+      description: "Patients report visibly smoother, firmer skin with reduced scars and improved tone after completing their recommended sessions.",
+      points: [
+        "Reduced acne scars and blemishes",
+        "Improved skin texture and firmness",
+        "Natural glow restoration",
+        "Minimized pores and fine lines"
+      ]
+    }
+  },
+  {
+    oldSlugs: [],
+    slug: "mnrf",
+    previousSlugs: ["mnrf-treatment", "micro-needling-rf"],
+    title: "MNRF – Micro Needling Radio Frequency",
+    short: "Advanced MNRF treatment for skin tightening, scar reduction and deep collagen remodelling at Dskinova Jaipur.",
+    price: 5000,
+    currency: "₹",
+    priceNote: "per session",
+    category: "Skin",
+    subcategory: "Skin Tightening",
+    image: "/Images/cosmatic/Skin Specialist in Jaipur.jpg",
+    overview: {
+      title: "MNRF Treatment in Jaipur – Next-Generation Skin Tightening",
+      description: `
+        <p>MNRF (Micro Needling Radio Frequency) is a revolutionary skin rejuvenation procedure that combines the collagen-inducing power of micro needling with the deep tissue heating of radio frequency energy. This dual-action treatment delivers transformative results for skin tightening, acne scars, and overall skin quality improvement.</p>
+        <h3>How MNRF Works</h3>
+        <p>Insulated micro needles penetrate the skin to a precise depth and deliver RF energy directly into the dermis. This controlled thermal injury stimulates intense collagen and elastin production deep within the skin layers — far beyond what surface treatments can achieve — resulting in firmer, smoother, and younger-looking skin.</p>
+        <h3>What MNRF Treats</h3>
+        <p>MNRF is highly effective for acne scars, enlarged pores, skin laxity, fine lines and wrinkles, stretch marks, and uneven skin texture. It works beautifully on all skin types, including darker skin tones, with minimal risk of post-inflammatory hyperpigmentation.</p>
+        <h3>Treatment Experience & Recovery</h3>
+        <p>The procedure is performed under topical anesthesia and takes approximately 45–60 minutes. Mild redness and swelling for 24–72 hours is normal. Most patients require 3–4 sessions spaced 4–6 weeks apart for optimal results, with improvements continuing over several months.</p>
+        <h3>Why MNRF at Dskinova Jaipur</h3>
+        <p>Dskinova uses advanced MNRF technology with precision-controlled depth and energy settings, customized for each patient's skin type and concern. Our expert dermatologists ensure safe, effective treatment with natural-looking, long-lasting results.</p>
+      `
+    },
+    included: [
+      "Pre-treatment skin assessment",
+      "Topical anesthesia",
+      "MNRF session with precision device",
+      "Post-procedure cooling and care",
+      "Aftercare guidance"
+    ],
+    excluded: [
+      "Surgical procedures",
+      "Home skincare kit (available separately)"
+    ],
+    additionalInfo: {
+      duration: "45-60 min",
+      sessions: "3-4 sessions recommended",
+      results: "Progressive improvement over 3-6 months"
+    },
+    seo: {
+      meta_title: "MNRF Treatment in Jaipur | Micro Needling RF | Dskinova",
+      meta_description: "Advanced MNRF (Micro Needling Radio Frequency) treatment in Jaipur at Dskinova. Best for acne scars, skin tightening and collagen remodelling.",
+      focus_keyphrase: "MNRF treatment Jaipur"
+    },
+    beforeAfter: {
+      heading: "MNRF – Visible Skin Transformation",
+      description: "Patients notice significant tightening and scar reduction after MNRF sessions, with skin appearing firmer and more youthful with each treatment.",
+      points: [
+        "Dramatic acne scar improvement",
+        "Firmer, tighter skin",
+        "Reduced pore size",
+        "Long-lasting collagen remodelling"
+      ]
+    }
+  },
+  {
     oldSlugs: ["anti-aging"],
     slug: "anti-aging-in-jaipur",
     previousSlugs: ["anti-aging"],
     title: "Anti-Aging Treatment in Jaipur",
     short: "Bring back your youthful glow with premium non-surgical anti-aging solutions at Dskinova.",
+
     price: 2500,
     currency: "₹",
     priceNote: "per session",
@@ -519,8 +636,37 @@ export async function seedMissingServices() {
         console.log(`Successfully created/seeded new service "${data.slug}".`);
       }
     }
+
+    // --- Fix cosmeologist-in-jaipur redirect ---
+    // Add "cosmeologist-in-jaipur" to previousSlugs of "cosmologist-in-jaipur"
+    const cosmoDoc = await Service.findOne({ slug: "cosmologist-in-jaipur" });
+    if (cosmoDoc) {
+      if (!cosmoDoc.previousSlugs) cosmoDoc.previousSlugs = [];
+      if (!cosmoDoc.previousSlugs.includes("cosmeologist-in-jaipur")) {
+        cosmoDoc.previousSlugs.push("cosmeologist-in-jaipur");
+        await cosmoDoc.save();
+        console.log("Added 'cosmeologist-in-jaipur' to previousSlugs of cosmologist-in-jaipur.");
+      } else {
+        console.log("'cosmeologist-in-jaipur' already in previousSlugs.");
+      }
+    }
+
+    // --- Fix pigmentation-treatments redirect ---
+    const pigDoc = await Service.findOne({ slug: "pigmentation-treatment-doctor-in-jaipur" });
+    if (pigDoc) {
+      if (!pigDoc.previousSlugs) pigDoc.previousSlugs = [];
+      if (!pigDoc.previousSlugs.includes("pigmentation-treatments")) {
+        pigDoc.previousSlugs.push("pigmentation-treatments");
+        await pigDoc.save();
+        console.log("Added 'pigmentation-treatments' to previousSlugs of pigmentation-treatment-doctor-in-jaipur.");
+      } else {
+        console.log("'pigmentation-treatments' already in previousSlugs.");
+      }
+    }
+
     console.log("Services seeding/migration finished successfully!");
   } catch (error) {
     console.error("Error in services seeding/migration:", error);
   }
 }
+
