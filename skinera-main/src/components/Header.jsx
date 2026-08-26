@@ -5,13 +5,15 @@ import { skinMenu, hairMenu, hemopathicMenu, getNested } from "../data/menuData.
 import { SERVER_URL } from "../services/api.js";
 
 function mergeBackendServicesIntoMenus(backendItems, baseSkin, baseHair, baseHemo) {
-  if (!Array.isArray(backendItems) || backendItems.length === 0) {
-    return { skin: baseSkin, hair: baseHair, hemo: baseHemo };
-  }
+  // Deep clone the static menus so we don't mutate the originals
+  const deepClone = (arr) => JSON.parse(JSON.stringify(arr));
+  const skin = deepClone(baseSkin);
+  const hair = deepClone(baseHair);
+  const hemo = deepClone(baseHemo);
 
-  const skin = [];
-  const hair = [];
-  const hemo = [];
+  if (!Array.isArray(backendItems) || backendItems.length === 0) {
+    return { skin, hair, hemo };
+  }
 
   const helperAdd = (menuList, item) => {
     const rawSlug = (item.slug || item.id || "").replace(/^\//, "");
@@ -60,11 +62,7 @@ function mergeBackendServicesIntoMenus(backendItems, baseSkin, baseHair, baseHem
     }
   }
 
-  return {
-    skin: skin.length > 0 ? skin : baseSkin,
-    hair: hair.length > 0 ? hair : baseHair,
-    hemo: hemo.length > 0 ? hemo : baseHemo,
-  };
+  return { skin, hair, hemo };
 }
 
 // Simple down-caret icon
