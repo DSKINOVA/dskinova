@@ -9,9 +9,9 @@ function mergeBackendServicesIntoMenus(backendItems, baseSkin, baseHair, baseHem
     return { skin: baseSkin, hair: baseHair, hemo: baseHemo };
   }
 
-  const skin = JSON.parse(JSON.stringify(baseSkin));
-  const hair = JSON.parse(JSON.stringify(baseHair));
-  const hemo = JSON.parse(JSON.stringify(baseHemo));
+  const skin = [];
+  const hair = [];
+  const hemo = [];
 
   const helperAdd = (menuList, item) => {
     const rawSlug = (item.slug || item.id || "").replace(/^\//, "");
@@ -50,7 +50,7 @@ function mergeBackendServicesIntoMenus(backendItems, baseSkin, baseHair, baseHem
   };
 
   for (const item of backendItems) {
-    const cat = (item.category || "").trim().toLowerCase();
+    const cat = (item.category || "Skin").trim().toLowerCase();
     if (cat === "hair") {
       helperAdd(hair, item);
     } else if (cat.includes("hemo") || cat.includes("homeo")) {
@@ -60,7 +60,11 @@ function mergeBackendServicesIntoMenus(backendItems, baseSkin, baseHair, baseHem
     }
   }
 
-  return { skin, hair, hemo };
+  return {
+    skin: skin.length > 0 ? skin : baseSkin,
+    hair: hair.length > 0 ? hair : baseHair,
+    hemo: hemo.length > 0 ? hemo : baseHemo,
+  };
 }
 
 // Simple down-caret icon
@@ -375,8 +379,8 @@ useEffect(() => {
                 />
               </button>
               <div
-                className={`absolute left-0 top-full mt-2 min-w-[180px] bg-white text-[#c67c54] shadow-xl ring-1 ring-black/5 z-50 transition-opacity duration-150 ${
-                  svcDesktopOpen ? "opacity-100 visible" : "opacity-0 invisible"
+                className={`absolute left-0 top-full mt-2 min-w-[220px] max-h-[65vh] overflow-y-auto bg-white text-[#c67c54] shadow-2xl ring-1 ring-black/5 rounded-lg z-50 transition-all duration-150 ${
+                  svcDesktopOpen ? "opacity-100 visible translate-y-0" : "opacity-0 invisible -translate-y-1"
                 }`}
                 onMouseEnter={() => {
                   if (svcTimer.current) clearTimeout(svcTimer.current);
@@ -407,7 +411,7 @@ useEffect(() => {
                         )}
                       </a>
                       {hasNested && (
-                        <div className="absolute left-full top-0 mt-0 min-w-[220px] bg-white text-[#c67c54] shadow-xl ring-1 ring-black/5 opacity-0 invisible group-hover:opacity-100 group-hover:visible">
+                        <div className="absolute left-full top-0 mt-0 min-w-[220px] max-h-[55vh] overflow-y-auto bg-white text-[#c67c54] shadow-2xl ring-1 ring-black/5 rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible z-50">
                           {nested.map((sub) => (
                             <a
                               key={sub.label}
@@ -454,10 +458,10 @@ useEffect(() => {
                 />
               </button>
               <div
-                className={`absolute left-0 top-full mt-2 min-w-[220px] bg-white text-[#c67c54] shadow-xl ring-1 ring-black/5 z-50 transition-opacity duration-150 ${
+                className={`absolute left-0 top-full mt-2 min-w-[220px] max-h-[65vh] overflow-y-auto bg-white text-[#c67c54] shadow-2xl ring-1 ring-black/5 rounded-lg z-50 transition-all duration-150 ${
                   hairDesktopOpen
-                    ? "opacity-100 visible"
-                    : "opacity-0 invisible"
+                    ? "opacity-100 visible translate-y-0"
+                    : "opacity-0 invisible -translate-y-1"
                 }`}
                 onMouseEnter={() => {
                   if (hairTimer.current) clearTimeout(hairTimer.current);
@@ -532,10 +536,10 @@ useEffect(() => {
                 />
               </button>
               <div
-                className={`absolute left-0 top-full mt-2 min-w-[220px] bg-white text-[#c67c54] shadow-xl ring-1 ring-black/5 z-50 transition-opacity duration-150 ${
+                className={`absolute left-0 top-full mt-2 min-w-[220px] max-h-[65vh] overflow-y-auto bg-white text-[#c67c54] shadow-2xl ring-1 ring-black/5 rounded-lg z-50 transition-all duration-150 ${
                   hemoDesktopOpen
-                    ? "opacity-100 visible"
-                    : "opacity-0 invisible"
+                    ? "opacity-100 visible translate-y-0"
+                    : "opacity-0 invisible -translate-y-1"
                 }`}
                 onMouseEnter={() => {
                   if (hemoTimer.current) clearTimeout(hemoTimer.current);
