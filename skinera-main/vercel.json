@@ -12,8 +12,6 @@
   "installCommand": "npm ci --include=dev",
   "buildCommand": "npm ci && npm run vercel-build",
   "outputDirectory": "dist",
-  "cleanUrls": true,
-  "trailingSlash": false,
   "routes": [
     { "handle": "filesystem" },
     { "src": "/.*", "dest": "/index.html" }
