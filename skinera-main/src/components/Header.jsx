@@ -398,28 +398,25 @@ useEffect(() => {
                     : getNested("skin", item.label);
                   const hasNested = nested && nested.length > 0;
                   return (
-                    <div key={item.label} className="relative group">
+                    <div key={item.label} className="group/item">
                       <a
                         href={item.href}
                         className="px-4 py-2.5 my-0.5 rounded-xl hover:bg-[#faf0e8] hover:text-[#c67c54] flex items-center justify-between transition-all duration-150 text-sm font-medium"
                       >
                         <span className="truncate pr-2">{item.label}</span>
                         {hasNested && (
-                          <CaretDown className="w-3.5 h-3.5 -rotate-90 text-[#c67c54] flex-shrink-0 transition-transform group-hover:translate-x-0.5" />
+                          <CaretDown className="w-3.5 h-3.5 text-[#c67c54] flex-shrink-0 transition-transform duration-200 group-hover/item:rotate-180" />
                         )}
                       </a>
                       {hasNested && (
-                        <div className="absolute left-[calc(100%+6px)] top-0 mt-0 w-64 max-h-[55vh] overflow-y-auto overflow-x-hidden bg-white/95 backdrop-blur-md text-gray-800 shadow-[0_20px_50px_rgba(0,0,0,0.15)] border border-[#e8d5c8] rounded-2xl p-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 [&::-webkit-scrollbar]:w-1.5 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-[#c67c54]/30 [&::-webkit-scrollbar-thumb]:rounded-full">
+                        <div className="max-h-0 overflow-hidden group-hover/item:max-h-[40vh] transition-[max-height] duration-300 ease-in-out pl-3 border-l-2 border-[#e8d5c8] ml-4">
                           {nested.map((sub) => (
                             <a
                               key={sub.label}
                               href={sub.href}
-                              className="px-4 py-2 my-0.5 rounded-xl hover:bg-[#faf0e8] hover:text-[#c67c54] flex items-center justify-between transition-all duration-150 text-xs font-medium"
+                              className="px-3 py-1.5 my-0.5 rounded-lg hover:bg-[#faf0e8] hover:text-[#c67c54] flex items-center transition-all duration-150 text-xs font-medium text-gray-600"
                             >
-                              <span className="truncate pr-2">{sub.label}</span>
-                              {sub.children && sub.children.length > 0 && (
-                                <CaretDown className="w-3 h-3 -rotate-90 text-[#c67c54] opacity-80 flex-shrink-0" />
-                              )}
+                              <span className="truncate">{sub.label}</span>
                             </a>
                           ))}
                         </div>
@@ -476,28 +473,25 @@ useEffect(() => {
                 {hairMenuList.map((item) => {
                   const hasChildren = item.children && item.children.length > 0;
                   return (
-                    <div key={item.label} className="relative group">
+                    <div key={item.label} className="group/item">
                       <a
                         href={item.href}
                         className="px-4 py-2.5 my-0.5 rounded-xl hover:bg-[#faf0e8] hover:text-[#c67c54] flex items-center justify-between transition-all duration-150 text-sm font-medium"
                       >
                         <span className="truncate pr-2">{item.label}</span>
                         {hasChildren && (
-                          <CaretDown className="w-3.5 h-3.5 -rotate-90 text-[#c67c54] flex-shrink-0 transition-transform group-hover:translate-x-0.5" />
+                          <CaretDown className="w-3.5 h-3.5 text-[#c67c54] flex-shrink-0 transition-transform duration-200 group-hover/item:rotate-180" />
                         )}
                       </a>
                       {hasChildren && (
-                        <div className="absolute left-[calc(100%+6px)] top-0 mt-0 w-64 max-h-[55vh] overflow-y-auto overflow-x-hidden bg-white/95 backdrop-blur-md text-gray-800 shadow-[0_20px_50px_rgba(0,0,0,0.15)] border border-[#e8d5c8] rounded-2xl p-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 [&::-webkit-scrollbar]:w-1.5 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-[#c67c54]/30 [&::-webkit-scrollbar-thumb]:rounded-full">
+                        <div className="max-h-0 overflow-hidden group-hover/item:max-h-[40vh] transition-[max-height] duration-300 ease-in-out pl-3 border-l-2 border-[#e8d5c8] ml-4">
                           {item.children.map((sub) => (
                             <a
                               key={sub.label}
                               href={sub.href}
-                              className="px-4 py-2 my-0.5 rounded-xl hover:bg-[#faf0e8] hover:text-[#c67c54] flex items-center justify-between transition-all duration-150 text-xs font-medium"
+                              className="px-3 py-1.5 my-0.5 rounded-lg hover:bg-[#faf0e8] hover:text-[#c67c54] flex items-center transition-all duration-150 text-xs font-medium text-gray-600"
                             >
-                              <span className="truncate pr-2">{sub.label}</span>
-                              {sub.children && sub.children.length > 0 && (
-                                <CaretDown className="w-3 h-3 -rotate-90 text-[#c67c54] opacity-80 flex-shrink-0" />
-                              )}
+                              <span className="truncate">{sub.label}</span>
                             </a>
                           ))}
                         </div>
@@ -554,25 +548,25 @@ useEffect(() => {
                 {hemoMenuList.map((item) => {
                   const hasChildren = item.children && item.children.length > 0;
                   return (
-                    <div key={item.label} className="relative group">
+                    <div key={item.label} className="group/item">
                       <a
                         href={item.href}
                         className="px-4 py-2.5 my-0.5 rounded-xl hover:bg-[#faf0e8] hover:text-[#c67c54] flex items-center justify-between transition-all duration-150 text-sm font-medium"
                       >
                         <span className="truncate pr-2">{item.label}</span>
                         {hasChildren && (
-                          <CaretDown className="w-3.5 h-3.5 -rotate-90 text-[#c67c54] flex-shrink-0 transition-transform group-hover:translate-x-0.5" />
+                          <CaretDown className="w-3.5 h-3.5 text-[#c67c54] flex-shrink-0 transition-transform duration-200 group-hover/item:rotate-180" />
                         )}
                       </a>
                       {hasChildren && (
-                        <div className="absolute left-[calc(100%+6px)] top-0 mt-0 w-64 max-h-[55vh] overflow-y-auto overflow-x-hidden bg-white/95 backdrop-blur-md text-gray-800 shadow-[0_20px_50px_rgba(0,0,0,0.15)] border border-[#e8d5c8] rounded-2xl p-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 [&::-webkit-scrollbar]:w-1.5 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-[#c67c54]/30 [&::-webkit-scrollbar-thumb]:rounded-full">
+                        <div className="max-h-0 overflow-hidden group-hover/item:max-h-[40vh] transition-[max-height] duration-300 ease-in-out pl-3 border-l-2 border-[#e8d5c8] ml-4">
                           {item.children.map((sub) => (
                             <a
                               key={sub.label}
                               href={sub.href}
-                              className="px-4 py-2 my-0.5 rounded-xl hover:bg-[#faf0e8] hover:text-[#c67c54] flex items-center justify-between transition-all duration-150 text-xs font-medium"
+                              className="px-3 py-1.5 my-0.5 rounded-lg hover:bg-[#faf0e8] hover:text-[#c67c54] flex items-center transition-all duration-150 text-xs font-medium text-gray-600"
                             >
-                              <span className="truncate pr-2">{sub.label}</span>
+                              <span className="truncate">{sub.label}</span>
                             </a>
                           ))}
                         </div>
