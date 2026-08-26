@@ -105,9 +105,12 @@ export default function ServiceDetail({ serviceId }) {
   const rawMetaTitle = service?.seo?.meta_title || service?.title || "";
   const seoMetaTitle = rawMetaTitle.replace(/^Meta Title:\s*/i, "").trim();
   const seoMetaDescription = service?.seo?.meta_description || service?.short || "";
-  const seoFocusKeyphrase = service?.seo?.focus_keyphrase || "";
+  const seoFocusKeyphrase = (service?.seo?.focus_keyphrase && service.seo.focus_keyphrase.trim())
+    ? service.seo.focus_keyphrase.trim()
+    : `${seoMetaTitle.split('|')[0].trim()}, DSkinova, Skin Specialist in Jaipur`;
   const seoSlug = service?.seo?.slug || service?.id || effectiveId;
-  const seoImage = service?.image;
+  const seoImage = service?.image || "https://www.dskinova.com/logo.png";
+  const canonicalUrl = `https://www.dskinova.com/${seoSlug.replace(/^\//, "")}`;
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-pink-50 to-rose-50">
@@ -116,10 +119,11 @@ export default function ServiceDetail({ serviceId }) {
         <title>{seoMetaTitle}</title>
         <meta name="description" content={seoMetaDescription} />
         <meta name="keywords" content={seoFocusKeyphrase} />
-        <link rel="canonical" href={`/${seoSlug}`} />
+        <link rel="canonical" href={canonicalUrl} />
         <meta property="og:title" content={seoMetaTitle} />
         <meta property="og:description" content={seoMetaDescription} />
         <meta property="og:image" content={seoImage} />
+        <meta property="og:url" content={canonicalUrl} />
       </Helmet>
 
       <Header onBookAppointment={openAppointment} />
