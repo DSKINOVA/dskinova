@@ -553,15 +553,35 @@ useEffect(() => {
                   );
                 }}
               >
-                {hemoMenuList.map((item) => (
-                  <a
-                    key={item.label}
-                    href={item.href}
-                    className="px-4 py-2.5 my-0.5 rounded-xl hover:bg-[#faf0e8] hover:text-[#c67c54] flex items-center justify-between transition-all duration-150 text-sm font-medium"
-                  >
-                    <span className="truncate pr-2">{item.label}</span>
-                  </a>
-                ))}
+                {hemoMenuList.map((item) => {
+                  const hasChildren = item.children && item.children.length > 0;
+                  return (
+                    <div key={item.label} className="relative group">
+                      <a
+                        href={item.href}
+                        className="px-4 py-2.5 my-0.5 rounded-xl hover:bg-[#faf0e8] hover:text-[#c67c54] flex items-center justify-between transition-all duration-150 text-sm font-medium"
+                      >
+                        <span className="truncate pr-2">{item.label}</span>
+                        {hasChildren && (
+                          <CaretDown className="w-3.5 h-3.5 -rotate-90 text-[#c67c54] flex-shrink-0 transition-transform group-hover:translate-x-0.5" />
+                        )}
+                      </a>
+                      {hasChildren && (
+                        <div className="absolute left-[calc(100%+6px)] top-0 mt-0 w-64 max-h-[55vh] overflow-y-auto overflow-x-hidden bg-white/95 backdrop-blur-md text-gray-800 shadow-[0_20px_50px_rgba(0,0,0,0.15)] border border-[#e8d5c8] rounded-2xl p-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 [&::-webkit-scrollbar]:w-1.5 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-[#c67c54]/30 [&::-webkit-scrollbar-thumb]:rounded-full">
+                          {item.children.map((sub) => (
+                            <a
+                              key={sub.label}
+                              href={sub.href}
+                              className="px-4 py-2 my-0.5 rounded-xl hover:bg-[#faf0e8] hover:text-[#c67c54] flex items-center justify-between transition-all duration-150 text-xs font-medium"
+                            >
+                              <span className="truncate pr-2">{sub.label}</span>
+                            </a>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                  );
+                })}
               </div>
             </div>
 
@@ -872,15 +892,36 @@ useEffect(() => {
               }`}
               aria-hidden={!hemoOpen}
             >
-              {hemoMenuList.map((item) => (
-                <a
-                  key={item.label}
-                  href={item.href}
-                  className="block py-2"
-                >
-                  {item.label}
-                </a>
-              ))}
+              {hemoMenuList.map((item) => {
+                const hasChildren = item.children && item.children.length > 0;
+                return (
+                  <div key={item.label}>
+                    {hasChildren ? (
+                      <>
+                        <button
+                          type="button"
+                          className="w-full flex items-center justify-between py-2 text-sm text-gray-700 font-semibold"
+                          onClick={() => setHemoSubOpen((prev) => ({ ...prev, [item.label]: !prev[item.label] }))}
+                        >
+                          <span>{item.label}</span>
+                          <CaretDown className={`w-3 h-3 transition-transform duration-200 ${hemoSubOpen[item.label] ? "rotate-180" : ""}`} />
+                        </button>
+                        <div className={`pl-3 overflow-hidden transition-[max-height,opacity] duration-300 ${hemoSubOpen[item.label] ? "max-h-[40vh] opacity-100" : "max-h-0 opacity-0"}`}>
+                          {item.children.map((sub) => (
+                            <a key={sub.label} href={sub.href} className="block py-1.5 text-sm text-gray-600">
+                              {sub.label}
+                            </a>
+                          ))}
+                        </div>
+                      </>
+                    ) : (
+                      <a href={item.href} className="block py-2 text-sm text-gray-700">
+                        {item.label}
+                      </a>
+                    )}
+                  </div>
+                );
+              })}
             </div>
 
             {/* Extra links */}
