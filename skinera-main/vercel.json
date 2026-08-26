@@ -1,19 +1,13 @@
 {
   "version": 2,
-  "builds": [
-    {
-      "src": "package.json",
-      "use": "@vercel/static-build",
-      "config": {
-        "distDir": "dist"
-      }
-    }
-  ],
-  "installCommand": "npm ci --include=dev",
-  "buildCommand": "npm ci && npm run vercel-build",
-  "outputDirectory": "dist",
-  "routes": [
-    { "handle": "filesystem" },
-    { "src": "/.*", "dest": "/index.html" }
+  "rewrites": [
+    { "source": "/about", "destination": "/about/index.html" },
+    { "source": "/contact", "destination": "/contact/index.html" },
+    { "source": "/gallery", "destination": "/gallery/index.html" },
+    { "source": "/wellness", "destination": "/wellness/index.html" },
+    { "source": "/news", "destination": "/news/index.html" },
+    { "source": "/admin-login", "destination": "/index.html" },
+    { "source": "/admin-dashboard", "destination": "/index.html" },
+    { "source": "/:slug", "destination": "/api/ssr?slug=$1" }
   ]
 }
