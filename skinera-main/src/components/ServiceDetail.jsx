@@ -102,10 +102,11 @@ export default function ServiceDetail({ serviceId }) {
   const beforeAfterImg = getBeforeAfterImage(effectiveId);
 
   // SEO
-  const seoMetaTitle = service?.seo?.meta_title || service?.title;
-  const seoMetaDescription = service?.seo?.meta_description || service?.short;
+  const rawMetaTitle = service?.seo?.meta_title || service?.title || "";
+  const seoMetaTitle = rawMetaTitle.replace(/^Meta Title:\s*/i, "").trim();
+  const seoMetaDescription = service?.seo?.meta_description || service?.short || "";
   const seoFocusKeyphrase = service?.seo?.focus_keyphrase || "";
-  const seoSlug = service?.seo?.slug || service?.id;
+  const seoSlug = service?.seo?.slug || service?.id || effectiveId;
   const seoImage = service?.image;
 
   return (
