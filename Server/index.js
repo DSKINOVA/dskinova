@@ -615,25 +615,52 @@ app.get("/api/services", async (req, res) => {
   }
 });
 
-// Get service by slug (also checks previousSlugs for old URLs)
+// Get service by slug (also checks previousSlugs & fuzzy matches for short aliases)
 app.get("/api/services/:slug", async (req, res) => {
   try {
-    // First try current slug
-    let item = await Service.findOne({ slug: req.params.slug }).lean();
-    
-    // If not found, check if it's an old slug that was changed
+    const rawParam = req.params.slug.toLowerCase().trim();
+
+    // 1. First try exact slug match
+    let item = await Service.findOne({ slug: rawParam }).lean();
+
+    // 2. Check previousSlugs for old URLs
     if (!item) {
-      item = await Service.findOne({ previousSlugs: req.params.slug }).lean();
-      if (item) {
-        // Return the service with a redirect flag so frontend knows to update the URL
-        return res.json({ success: true, item, redirectSlug: item.slug });
-      }
+      item = await Service.findOne({ previousSlugs: rawParam }).lean();
     }
-    
-    if (!item) return res.status(404).json({ success: false, message: "Service not found" });
-    res.json({ success: true, item });
+
+    // 3. Intelligent fuzzy/alias match across all services
+    if (!item) {
+      const allServices = await Service.find({}).lean();
+      const cleanParam = rawParam
+        .replace(/-jaipur$/, "")
+        .replace(/-treatment$/, "")
+        .replace(/-in-jaipur$/, "");
+
+      item = allServices.find((s) => {
+        const sSlug = (s.slug || "").toLowerCase();
+        const cleanSSlug = sSlug
+          .replace(/-jaipur$/, "")
+          .replace(/-treatment$/, "")
+          .replace(/-in-jaipur$/, "");
+
+        return (
+          sSlug === rawParam ||
+          sSlug === `${rawParam}-jaipur` ||
+          `${sSlug}-jaipur` === rawParam ||
+          cleanSSlug === cleanParam ||
+          sSlug.includes(cleanParam) ||
+          cleanParam.includes(cleanSSlug)
+        );
+      });
+    }
+
+    if (!item) {
+      return res.status(404).json({ success: false, message: "Service not found" });
+    }
+
+    res.json({ success: true, item, redirectSlug: item.slug });
   } catch (err) {
-    console.error("Get service error:", err);
+    console.error("Get service by slug error:", err);
     res.status(500).json({ success: false, message: "Server error" });
   }
 });
