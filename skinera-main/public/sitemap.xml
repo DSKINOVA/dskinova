@@ -326,6 +326,11 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://www.dskinova.com/test</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://www.dskinova.com/test-service</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
