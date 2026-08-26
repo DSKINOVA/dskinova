@@ -2,6 +2,66 @@ import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "../../public/Images/Header/logo.png";
 import { skinMenu, hairMenu, hemopathicMenu, getNested } from "../data/menuData.js";
+import { SERVER_URL } from "../services/api.js";
+
+function mergeBackendServicesIntoMenus(backendItems, baseSkin, baseHair, baseHemo) {
+  if (!Array.isArray(backendItems) || backendItems.length === 0) {
+    return { skin: baseSkin, hair: baseHair, hemo: baseHemo };
+  }
+
+  const skin = JSON.parse(JSON.stringify(baseSkin));
+  const hair = JSON.parse(JSON.stringify(baseHair));
+  const hemo = JSON.parse(JSON.stringify(baseHemo));
+
+  const helperAdd = (menuList, item) => {
+    const rawSlug = (item.slug || item.id || "").replace(/^\//, "");
+    if (!rawSlug) return;
+    const href = `/${rawSlug}`;
+    const label = (item.title || item.name || rawSlug).trim();
+    const subcat = (item.subcategory || "").trim();
+
+    if (subcat) {
+      let parent = menuList.find(
+        (m) => m.label?.toLowerCase() === subcat.toLowerCase()
+      );
+      if (!parent) {
+        parent = { label: subcat, href: href, children: [] };
+        menuList.push(parent);
+      }
+      if (!parent.children) parent.children = [];
+      const exists = parent.children.some(
+        (c) =>
+          c.href?.toLowerCase() === href.toLowerCase() ||
+          c.label?.toLowerCase() === label.toLowerCase()
+      );
+      if (!exists) {
+        parent.children.push({ label, href });
+      }
+    } else {
+      const exists = menuList.some(
+        (m) =>
+          m.href?.toLowerCase() === href.toLowerCase() ||
+          m.label?.toLowerCase() === label.toLowerCase()
+      );
+      if (!exists) {
+        menuList.push({ label, href });
+      }
+    }
+  };
+
+  for (const item of backendItems) {
+    const cat = (item.category || "").trim().toLowerCase();
+    if (cat === "hair") {
+      helperAdd(hair, item);
+    } else if (cat.includes("hemo") || cat.includes("homeo")) {
+      helperAdd(hemo, item);
+    } else {
+      helperAdd(skin, item);
+    }
+  }
+
+  return { skin, hair, hemo };
+}
 
 // Simple down-caret icon
 const CaretDown = ({ className = "w-3 h-3" }) => (
@@ -40,6 +100,38 @@ export default function Header({ onBookAppointment }) {
   const [hemoSubOpen, setHemoSubOpen] = useState({});
   const [isSticky, setIsSticky] = useState(false);
   const headerRef = useRef(null);
+
+  // Dynamic menus initialized with static fallback
+  const [skinMenuList, setSkinMenuList] = useState(skinMenu);
+  const [hairMenuList, setHairMenuList] = useState(hairMenu);
+  const [hemoMenuList, setHemoMenuList] = useState(hemopathicMenu);
+
+  useEffect(() => {
+    let isMounted = true;
+    async function loadDynamicServices() {
+      try {
+        const res = await fetch(`${SERVER_URL}/services`);
+        if (res.ok) {
+          const data = await res.json();
+          if (isMounted && data?.success && Array.isArray(data?.items)) {
+            const { skin, hair, hemo } = mergeBackendServicesIntoMenus(
+              data.items,
+              skinMenu,
+              hairMenu,
+              hemopathicMenu
+            );
+            setSkinMenuList(skin);
+            setHairMenuList(hair);
+            setHemoMenuList(hemo);
+          }
+        }
+      } catch (err) {
+        // Fallback to static
+      }
+    }
+    loadDynamicServices();
+    return () => { isMounted = false; };
+  }, []);
 useEffect(() => {
     // Determine the height of the top bar (e.g., the part you want to scroll past)
     // We'll use a fixed value or measure the top bar's height.
@@ -298,7 +390,7 @@ useEffect(() => {
                   );
                 }}
               >
-                {skinMenu.map((item) => {
+                {skinMenuList.map((item) => {
                   const nested = item.children?.length
                     ? item.children
                     : getNested("skin", item.label);
@@ -379,7 +471,7 @@ useEffect(() => {
                   );
                 }}
               >
-                {hairMenu.map((item) => {
+                {hairMenuList.map((item) => {
                   const hasChildren = item.children && item.children.length > 0;
                   return (
                     <div key={item.label} className="relative group">
@@ -457,7 +549,7 @@ useEffect(() => {
                   );
                 }}
               >
-                {hemopathicMenu.map((item) => (
+                {hemoMenuList.map((item) => (
                   <a
                     key={item.label}
                     href={item.href}
@@ -627,7 +719,7 @@ useEffect(() => {
               }`}
               aria-hidden={!svcOpen}
             >
-              {skinMenu.map((item) => {
+              {skinMenuList.map((item) => {
                 const nested = item.children?.length
                   ? item.children
                   : getNested("skin", item.label);
@@ -703,7 +795,7 @@ useEffect(() => {
               }`}
               aria-hidden={!hairOpen}
             >
-              {hairMenu.map((item) => {
+              {hairMenuList.map((item) => {
                 const hasChildren = item.children && item.children.length > 0;
                 const expanded = !!hairSubOpen[item.label];
                 return (
@@ -776,7 +868,7 @@ useEffect(() => {
               }`}
               aria-hidden={!hemoOpen}
             >
-              {hemopathicMenu.map((item) => (
+              {hemoMenuList.map((item) => (
                 <a
                   key={item.label}
                   href={item.href}
