@@ -12,7 +12,6 @@ export default async function handler(req, res) {
     if (fs.existsSync(indexPath)) {
       html = fs.readFileSync(indexPath, "utf-8");
     } else {
-      // Fallback if dist/index.html isn't local
       const baseRes = await fetch("https://www.dskinova.com/index.html");
       html = await baseRes.text();
     }
@@ -55,36 +54,30 @@ export default async function handler(req, res) {
         .replace(/>/g, "&gt;")
         .replace(/"/g, "&quot;");
 
-    // 3. Inject live MongoDB SEO into HTML
-    html = html.replace(/<title>(.*?)<\/title>/i, `<title>${escapeHtml(title)}</title>`);
-    html = html.replace(
-      /(<meta\s+name="description"\s+content=")[^"]*"/i,
-      `$1${escapeHtml(description)}"`
-    );
-    html = html.replace(
-      /(<meta\s+name="keywords"\s+content=")[^"]*"/i,
-      `$1${escapeHtml(keywords)}"`
-    );
-    html = html.replace(
-      /(<link\s+rel="canonical"\s+href=")[^"]*"/i,
-      `$1${escapeHtml(canonicalUrl)}"`
-    );
-    html = html.replace(
-      /(<meta\s+property="og:title"\s+content=")[^"]*"/i,
-      `$1${escapeHtml(title)}"`
-    );
-    html = html.replace(
-      /(<meta\s+property="og:description"\s+content=")[^"]*"/i,
-      `$1${escapeHtml(description)}"`
-    );
-    html = html.replace(
-      /(<meta\s+property="og:url"\s+content=")[^"]*"/i,
-      `$1${escapeHtml(canonicalUrl)}"`
-    );
-    html = html.replace(
-      /(<meta\s+property="og:image"\s+content=")[^"]*"/i,
-      `$1${escapeHtml(imageUrl)}"`
-    );
+    // 3. Remove old tags to prevent duplicate or stale meta
+    html = html.replace(/<title[\s\S]*?<\/title>/gi, "");
+    html = html.replace(/<meta\s+[^>]*name=["']description["'][^>]*\/?>/gi, "");
+    html = html.replace(/<meta\s+[^>]*name=["']keywords["'][^>]*\/?>/gi, "");
+    html = html.replace(/<meta\s+[^>]*property=["']og:title["'][^>]*\/?>/gi, "");
+    html = html.replace(/<meta\s+[^>]*property=["']og:description["'][^>]*\/?>/gi, "");
+    html = html.replace(/<meta\s+[^>]*property=["']og:url["'][^>]*\/?>/gi, "");
+    html = html.replace(/<meta\s+[^>]*property=["']og:image["'][^>]*\/?>/gi, "");
+    html = html.replace(/<link\s+[^>]*rel=["']canonical["'][^>]*\/?>/gi, "");
+
+    // 4. Inject clean fresh live SEO block into <head>
+    const cleanSeoBlock = `
+    <!-- Live Admin SEO Injection -->
+    <title>${escapeHtml(title)}</title>
+    <meta name="description" content="${escapeHtml(description)}" />
+    <meta name="keywords" content="${escapeHtml(keywords)}" />
+    <link rel="canonical" href="${escapeHtml(canonicalUrl)}" />
+    <meta property="og:title" content="${escapeHtml(title)}" />
+    <meta property="og:description" content="${escapeHtml(description)}" />
+    <meta property="og:url" content="${escapeHtml(canonicalUrl)}" />
+    <meta property="og:image" content="${escapeHtml(imageUrl)}" />
+    `;
+
+    html = html.replace("</head>", `${cleanSeoBlock}\n  </head>`);
 
     // Disable caching on serverless HTML so view-source always gets live MongoDB data!
     res.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
