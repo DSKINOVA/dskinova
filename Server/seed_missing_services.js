@@ -588,6 +588,48 @@ const servicesToSeed = [
       focus_keyphrase: "carbon facial jaipur",
       slug: "carbon-facial"
     }
+  },
+  {
+    oldSlugs: [],
+    slug: "laser-skin-therapy",
+    previousSlugs: [],
+    title: "Laser Skin Therapy",
+    short: "Advanced laser skin therapy for skin rejuvenation, pigmentation, acne scars, and collagen remodelling at Dskinova Jaipur.",
+    price: 4500,
+    currency: "₹",
+    priceNote: "per session",
+    category: "Skin",
+    subcategory: "Laser Services",
+    image: "/Images/Services/laser-skin-threapy.jpg",
+    overview: {
+      title: "Laser Skin Therapy in Jaipur – Rejuvenate & Renew",
+      description: `
+        <p>Laser Skin Therapy uses targeted light energy to treat a wide spectrum of skin concerns including acne scars, pigmentation, sun damage, fine lines, and uneven texture. At Dskinova Jaipur, we use FDA-approved laser technology customized for Indian skin types.</p>
+        <h3>Benefits of Laser Skin Therapy</h3>
+        <p>Promotes deep collagen remodeling, reduces dark spots, tightens pores, and improves overall skin clarity with minimal downtime.</p>
+      `
+    },
+    included: [
+      "Skin analysis",
+      "Laser therapy session",
+      "Cooling mask",
+      "Post-treatment sunscreen"
+    ],
+    excluded: [
+      "Home care products",
+      "Surgical options"
+    ],
+    additionalInfo: {
+      duration: "45-60 min",
+      sessions: "3-5 sessions recommended",
+      results: "Visible in 2-4 weeks"
+    },
+    seo: {
+      meta_title: "Laser Skin Therapy in Jaipur | DSkinova Skin Clinic",
+      meta_description: "Advanced laser skin therapy in Jaipur for skin rejuvenation, pigmentation, acne scars, and collagen stimulation at DSkinova.",
+      focus_keyphrase: "laser skin therapy jaipur",
+      slug: "laser-skin-therapy"
+    }
   }
 ];
 
