@@ -59,6 +59,16 @@ app.use(
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+// Helper to trigger Vercel deploy hook when content changes in Admin
+function triggerVercelDeploy() {
+  const hookUrl = process.env.VERCEL_DEPLOY_HOOK_URL;
+  if (hookUrl) {
+    fetch(hookUrl, { method: "POST" })
+      .then(() => console.log("[Server] Triggered Vercel deploy hook!"))
+      .catch((err) => console.error("[Server] Vercel deploy hook error:", err.message));
+  }
+}
+
 // MongoDB connection (from env only)
 const { MONGODB_URI } = process.env;
 
@@ -721,6 +731,7 @@ app.post(
       };
 
       const doc = await Service.create(payload);
+      triggerVercelDeploy();
       res.json({ success: true, item: doc });
     } catch (err) {
       if (err?.code === 11000) {
@@ -835,6 +846,7 @@ app.put(
       }
 
       await doc.save();
+      triggerVercelDeploy();
       res.json({ success: true, item: doc });
     } catch (err) {
       if (err?.code === 11000) {
@@ -851,6 +863,7 @@ app.delete("/api/services/:id", async (req, res) => {
   try {
     const result = await Service.findByIdAndDelete(req.params.id);
     if (!result) return res.status(404).json({ success: false, message: "Not found" });
+    triggerVercelDeploy();
     res.json({ success: true, message: "Deleted" });
   } catch (err) {
     console.error("Delete service error:", err);
