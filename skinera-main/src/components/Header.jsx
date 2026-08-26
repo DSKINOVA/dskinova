@@ -379,8 +379,8 @@ useEffect(() => {
                 />
               </button>
               <div
-                className={`absolute left-0 top-full mt-2 min-w-[220px] max-h-[65vh] overflow-y-auto bg-white text-[#c67c54] shadow-2xl ring-1 ring-black/5 rounded-lg z-50 transition-all duration-150 ${
-                  svcDesktopOpen ? "opacity-100 visible translate-y-0" : "opacity-0 invisible -translate-y-1"
+                className={`absolute left-0 top-full mt-3 w-72 max-h-[60vh] overflow-y-auto overflow-x-hidden bg-white/95 backdrop-blur-md text-gray-800 shadow-[0_20px_50px_rgba(0,0,0,0.15)] border border-[#e8d5c8] rounded-2xl p-2 z-50 transition-all duration-200 ease-out [&::-webkit-scrollbar]:w-1.5 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-[#c67c54]/30 [&::-webkit-scrollbar-thumb]:rounded-full ${
+                  svcDesktopOpen ? "opacity-100 visible translate-y-0" : "opacity-0 invisible -translate-y-2"
                 }`}
                 onMouseEnter={() => {
                   if (svcTimer.current) clearTimeout(svcTimer.current);
@@ -400,27 +400,27 @@ useEffect(() => {
                     : getNested("skin", item.label);
                   const hasNested = nested && nested.length > 0;
                   return (
-                    <div key={item.label} className={`relative group`}>
+                    <div key={item.label} className="relative group">
                       <a
                         href={item.href}
-                        className="px-4 py-2 hover:bg-[#f6e8e0] flex items-center justify-between"
+                        className="px-4 py-2.5 my-0.5 rounded-xl hover:bg-[#faf0e8] hover:text-[#c67c54] flex items-center justify-between transition-all duration-150 text-sm font-medium"
                       >
-                        <span>{item.label}</span>
+                        <span className="truncate pr-2">{item.label}</span>
                         {hasNested && (
-                          <CaretDown className="w-3.5 h-3.5 -rotate-90 text-[#c67c54]" />
+                          <CaretDown className="w-3.5 h-3.5 -rotate-90 text-[#c67c54] flex-shrink-0 transition-transform group-hover:translate-x-0.5" />
                         )}
                       </a>
                       {hasNested && (
-                        <div className="absolute left-full top-0 mt-0 min-w-[220px] max-h-[55vh] overflow-y-auto bg-white text-[#c67c54] shadow-2xl ring-1 ring-black/5 rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible z-50">
+                        <div className="absolute left-[calc(100%+6px)] top-0 mt-0 w-64 max-h-[55vh] overflow-y-auto overflow-x-hidden bg-white/95 backdrop-blur-md text-gray-800 shadow-[0_20px_50px_rgba(0,0,0,0.15)] border border-[#e8d5c8] rounded-2xl p-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 [&::-webkit-scrollbar]:w-1.5 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-[#c67c54]/30 [&::-webkit-scrollbar-thumb]:rounded-full">
                           {nested.map((sub) => (
                             <a
                               key={sub.label}
                               href={sub.href}
-                              className="px-4 py-2 hover:bg-[#f6e8e0] flex items-center justify-between"
+                              className="px-4 py-2 my-0.5 rounded-xl hover:bg-[#faf0e8] hover:text-[#c67c54] flex items-center justify-between transition-all duration-150 text-xs font-medium"
                             >
-                              <span>{sub.label}</span>
+                              <span className="truncate pr-2">{sub.label}</span>
                               {sub.children && sub.children.length > 0 && (
-                                <CaretDown className="w-3 h-3 -rotate-90 text-[#c67c54] opacity-80" />
+                                <CaretDown className="w-3 h-3 -rotate-90 text-[#c67c54] opacity-80 flex-shrink-0" />
                               )}
                             </a>
                           ))}
@@ -458,10 +458,10 @@ useEffect(() => {
                 />
               </button>
               <div
-                className={`absolute left-0 top-full mt-2 min-w-[220px] max-h-[65vh] overflow-y-auto bg-white text-[#c67c54] shadow-2xl ring-1 ring-black/5 rounded-lg z-50 transition-all duration-150 ${
+                className={`absolute left-0 top-full mt-3 w-72 max-h-[60vh] overflow-y-auto overflow-x-hidden bg-white/95 backdrop-blur-md text-gray-800 shadow-[0_20px_50px_rgba(0,0,0,0.15)] border border-[#e8d5c8] rounded-2xl p-2 z-50 transition-all duration-200 ease-out [&::-webkit-scrollbar]:w-1.5 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-[#c67c54]/30 [&::-webkit-scrollbar-thumb]:rounded-full ${
                   hairDesktopOpen
                     ? "opacity-100 visible translate-y-0"
-                    : "opacity-0 invisible -translate-y-1"
+                    : "opacity-0 invisible -translate-y-2"
                 }`}
                 onMouseEnter={() => {
                   if (hairTimer.current) clearTimeout(hairTimer.current);
@@ -481,24 +481,24 @@ useEffect(() => {
                     <div key={item.label} className="relative group">
                       <a
                         href={item.href}
-                        className="px-4 py-2 hover:bg-[#f6e8e0] flex items-center justify-between"
+                        className="px-4 py-2.5 my-0.5 rounded-xl hover:bg-[#faf0e8] hover:text-[#c67c54] flex items-center justify-between transition-all duration-150 text-sm font-medium"
                       >
-                        <span>{item.label}</span>
+                        <span className="truncate pr-2">{item.label}</span>
                         {hasChildren && (
-                          <CaretDown className="w-3.5 h-3.5 -rotate-90 text-[#c67c54]" />
+                          <CaretDown className="w-3.5 h-3.5 -rotate-90 text-[#c67c54] flex-shrink-0 transition-transform group-hover:translate-x-0.5" />
                         )}
                       </a>
                       {hasChildren && (
-                        <div className="absolute left-full top-0 mt-0 min-w-[220px] bg-white text-[#c67c54] shadow-xl ring-1 ring-black/5 opacity-0 invisible group-hover:opacity-100 group-hover:visible">
+                        <div className="absolute left-[calc(100%+6px)] top-0 mt-0 w-64 max-h-[55vh] overflow-y-auto overflow-x-hidden bg-white/95 backdrop-blur-md text-gray-800 shadow-[0_20px_50px_rgba(0,0,0,0.15)] border border-[#e8d5c8] rounded-2xl p-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 [&::-webkit-scrollbar]:w-1.5 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-[#c67c54]/30 [&::-webkit-scrollbar-thumb]:rounded-full">
                           {item.children.map((sub) => (
                             <a
                               key={sub.label}
                               href={sub.href}
-                              className="px-4 py-2 hover:bg-[#f6e8e0] flex items-center justify-between"
+                              className="px-4 py-2 my-0.5 rounded-xl hover:bg-[#faf0e8] hover:text-[#c67c54] flex items-center justify-between transition-all duration-150 text-xs font-medium"
                             >
-                              <span>{sub.label}</span>
+                              <span className="truncate pr-2">{sub.label}</span>
                               {sub.children && sub.children.length > 0 && (
-                                <CaretDown className="w-3 h-3 -rotate-90 text-[#c67c54] opacity-80" />
+                                <CaretDown className="w-3 h-3 -rotate-90 text-[#c67c54] opacity-80 flex-shrink-0" />
                               )}
                             </a>
                           ))}
@@ -536,10 +536,10 @@ useEffect(() => {
                 />
               </button>
               <div
-                className={`absolute left-0 top-full mt-2 min-w-[220px] max-h-[65vh] overflow-y-auto bg-white text-[#c67c54] shadow-2xl ring-1 ring-black/5 rounded-lg z-50 transition-all duration-150 ${
+                className={`absolute left-0 top-full mt-3 w-72 max-h-[60vh] overflow-y-auto overflow-x-hidden bg-white/95 backdrop-blur-md text-gray-800 shadow-[0_20px_50px_rgba(0,0,0,0.15)] border border-[#e8d5c8] rounded-2xl p-2 z-50 transition-all duration-200 ease-out [&::-webkit-scrollbar]:w-1.5 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-[#c67c54]/30 [&::-webkit-scrollbar-thumb]:rounded-full ${
                   hemoDesktopOpen
                     ? "opacity-100 visible translate-y-0"
-                    : "opacity-0 invisible -translate-y-1"
+                    : "opacity-0 invisible -translate-y-2"
                 }`}
                 onMouseEnter={() => {
                   if (hemoTimer.current) clearTimeout(hemoTimer.current);
@@ -557,9 +557,9 @@ useEffect(() => {
                   <a
                     key={item.label}
                     href={item.href}
-                    className="px-4 py-2 hover:bg-[#f6e8e0] flex items-center justify-between"
+                    className="px-4 py-2.5 my-0.5 rounded-xl hover:bg-[#faf0e8] hover:text-[#c67c54] flex items-center justify-between transition-all duration-150 text-sm font-medium"
                   >
-                    <span>{item.label}</span>
+                    <span className="truncate pr-2">{item.label}</span>
                   </a>
                 ))}
               </div>
