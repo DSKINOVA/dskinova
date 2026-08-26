@@ -43,9 +43,35 @@ export default function Dashboard() {
     const authStatus = localStorage.getItem("adminAuthenticated");
     if (!authStatus) {
       navigate("/admin-login");
-    } else {
-      setIsAuthenticated(true);
+      return;
     }
+    // Verify session with backend
+    async function verifyAuth() {
+      try {
+        const res = await fetch(`${SERVER_URL}/admin/profile`, {
+          credentials: "include",
+        });
+        if (!res.ok) {
+          // Token/session invalid — force re-login
+          localStorage.removeItem("adminAuthenticated");
+          localStorage.removeItem("admin.username");
+          navigate("/admin-login");
+          return;
+        }
+        const data = await res.json();
+        if (!data?.success) {
+          localStorage.removeItem("adminAuthenticated");
+          localStorage.removeItem("admin.username");
+          navigate("/admin-login");
+          return;
+        }
+        setIsAuthenticated(true);
+      } catch {
+        // Network error — still allow if localStorage says authenticated
+        setIsAuthenticated(true);
+      }
+    }
+    verifyAuth();
   }, [navigate]);
 
   useEffect(() => {
