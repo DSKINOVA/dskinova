@@ -63,13 +63,15 @@ function injectMeta(html, { title, description, keywords, canonical }) {
     `$1${escapeHtml(description)}"`
   );
 
-  // 3.5. Replace meta name="keywords" with page-specific keywords
-  if (keywords) {
-    html = html.replace(
-      /(<meta\s+name="keywords"\s+content=")[^"]*"/gi,
-      `$1${escapeHtml(keywords)}"`
-    );
-  }
+  // 3.5. Replace meta name="keywords" with page-specific keywords (unconditional fallback)
+  const kwToUse = (keywords && keywords.trim())
+    ? keywords
+    : `${title.replace(/^Meta Title:\s*/i, "").split("|")[0].trim()}, DSkinova, Skin Specialist in Jaipur`;
+
+  html = html.replace(
+    /(<meta\s+name="keywords"\s+content=")[^"]*"/gi,
+    `$1${escapeHtml(kwToUse)}"`
+  );
 
   // 4. Replace og:title
   html = html.replace(
@@ -77,7 +79,7 @@ function injectMeta(html, { title, description, keywords, canonical }) {
     `$1${escapeHtml(title)}"`
   );
   html = html.replace(
-    /(<meta\s[^>]*content="[^"]*"\s*[^>]*property="og:title"[^>]*\/?>/gi,
+    /(<meta\s[^>]*content="[^"]*"\s*[^>]*property="og:title"[^>]*\/>)/gi,
     (match) => match.replace(/content="[^"]*"/, `content="${escapeHtml(title)}"`)
   );
 

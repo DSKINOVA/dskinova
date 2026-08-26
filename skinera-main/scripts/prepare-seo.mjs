@@ -36,6 +36,15 @@ function cleanDesc(desc, fallback) {
   return desc.trim();
 }
 
+function cleanKeywords(kw, title) {
+  if (kw && typeof kw === "string" && kw.trim()) return kw.trim();
+  if (title) {
+    const cleanT = title.replace(/^Meta Title:\s*/i, "").split("|")[0].trim();
+    return `${cleanT}, DSkinova, Skin Specialist in Jaipur`;
+  }
+  return "DSkinova, Skin Specialist in Jaipur";
+}
+
 // ── Static pages SEO meta ─────────────────────────────────────────────────────
 const STATIC_META = {
   "/": {
@@ -398,13 +407,16 @@ async function main() {
     // Add static fallbacks
     for (const [slug, data] of Object.entries(STATIC_SERVICES)) {
       const routeKey = `/${slug.replace(/^\//, "")}`;
+      const title = cleanTitle(data.title, "Skin Specialist in Jaipur | DSkinova");
+      const description = cleanDesc(
+        data.description,
+        "Expert skincare and cosmetology treatments in Jaipur at DSkinova."
+      );
+      const keywords = cleanKeywords(data.keywords, title);
       SEO_META[routeKey] = {
-        title: cleanTitle(data.title, "Skin Specialist in Jaipur | DSkinova"),
-        description: cleanDesc(
-          data.description,
-          "Expert skincare and cosmetology treatments in Jaipur at DSkinova."
-        ),
-        keywords: data.keywords || "",
+        title,
+        description,
+        keywords,
         canonical: `${BASE_URL}${routeKey}`,
       };
     }
@@ -444,7 +456,7 @@ async function main() {
               "Expert skincare & cosmetology clinic in Jaipur. Book your appointment at DSkinova today!"
             );
 
-            const keywords = (item.seo?.focus_keyphrase || "").trim();
+            const keywords = cleanKeywords(item.seo?.focus_keyphrase, title);
 
             // Add main slug
             if (item.slug) {
@@ -470,25 +482,25 @@ async function main() {
 
             // Create clean alias routes (e.g. if slug is microneedling-treatment-jaipur, also map micro-needling-prp)
             if (item.slug?.includes("microneedling")) {
-              SEO_META["/micro-needling-prp"] = { title, description, canonical: `${BASE_URL}/micro-needling-prp` };
+              SEO_META["/micro-needling-prp"] = { title, description, keywords, canonical: `${BASE_URL}/micro-needling-prp` };
             }
             if (item.slug?.includes("mnrf")) {
-              SEO_META["/mnrf"] = { title, description, canonical: `${BASE_URL}/mnrf` };
+              SEO_META["/mnrf"] = { title, description, keywords, canonical: `${BASE_URL}/mnrf` };
             }
             if (item.slug?.includes("chemical-peel")) {
-              SEO_META["/chemical-peel"] = { title, description, canonical: `${BASE_URL}/chemical-peel` };
+              SEO_META["/chemical-peel"] = { title, description, keywords, canonical: `${BASE_URL}/chemical-peel` };
             }
             if (item.slug?.includes("carbon-facial")) {
-              SEO_META["/carbon-facial"] = { title, description, canonical: `${BASE_URL}/carbon-facial` };
+              SEO_META["/carbon-facial"] = { title, description, keywords, canonical: `${BASE_URL}/carbon-facial` };
             }
             if (item.slug?.includes("vampire-facial")) {
-              SEO_META["/vampire-facial"] = { title, description, canonical: `${BASE_URL}/vampire-facial` };
+              SEO_META["/vampire-facial"] = { title, description, keywords, canonical: `${BASE_URL}/vampire-facial` };
             }
             if (item.slug?.includes("hair-prp")) {
-              SEO_META["/hair-prp"] = { title, description, canonical: `${BASE_URL}/hair-prp` };
+              SEO_META["/hair-prp"] = { title, description, keywords, canonical: `${BASE_URL}/hair-prp` };
             }
             if (item.slug?.includes("tattoo")) {
-              SEO_META["/laser-tattoo-removal"] = { title, description, canonical: `${BASE_URL}/laser-tattoo-removal` };
+              SEO_META["/laser-tattoo-removal"] = { title, description, keywords, canonical: `${BASE_URL}/laser-tattoo-removal` };
             }
           }
         }

@@ -10,9 +10,9 @@
     "start": "vite",
     "dev": "vite",
     "prebuild": "node scripts/prepare-seo.mjs",
-    "build": "vite build",
+    "build": "npm run prebuild && vite build && node scripts/inject-meta.mjs",
     "preview": "vite preview",
-    "vercel-build": "npm run prebuild && vite build && node scripts/inject-meta.mjs"
+    "vercel-build": "npm run build"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.4.2",
