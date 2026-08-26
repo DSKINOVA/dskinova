@@ -2,31 +2,37 @@
   "/": {
     "title": "Skin Specialist in Jaipur | Trusted Dermatologist for Healthy Skin",
     "description": "Skin Doctor in Jaipur, Dskinova provides expert skincare, acne, and anti-aging treatments for glowing skin. Book your consultation today!",
+    "keywords": "skin specialist jaipur, dermatologist jaipur, skin doctor jaipur, skincare clinic jaipur, dskinova",
     "canonical": "https://www.dskinova.com/"
   },
   "/about": {
     "title": "About Us | DSkinova — Skin Specialist in Jaipur",
     "description": "Meet DSkinova's expert skin specialists and cosmetologists in Jaipur. Learn about our mission, advanced skincare treatments, and how we work.",
+    "keywords": "about dskinova, skin specialist jaipur, cosmetologist jaipur, skin clinic team",
     "canonical": "https://www.dskinova.com/about"
   },
   "/contact": {
     "title": "Contact Us | DSkinova Skin Clinic Jaipur",
     "description": "Contact DSkinova skin clinic in Jaipur. Book your appointment, get directions, or reach us by phone or email for expert skincare consultations.",
+    "keywords": "contact dskinova, skin clinic jaipur address, book appointment jaipur",
     "canonical": "https://www.dskinova.com/contact"
   },
   "/gallery": {
     "title": "Gallery | DSkinova Skin Clinic Jaipur",
     "description": "Explore DSkinova's gallery — real results, clinic moments, and before & after transformations from Jaipur's trusted skin specialist.",
+    "keywords": "dskinova gallery, before after skin treatment, clinic photos jaipur",
     "canonical": "https://www.dskinova.com/gallery"
   },
   "/wellness": {
     "title": "Wellness Programs | DSkinova — Skin Health Jaipur",
     "description": "Discover DSkinova's wellness programs designed for long-term skin health. Evidence-backed treatments, personalised care plans, and expert guidance in Jaipur.",
+    "keywords": "wellness programs jaipur, skin health, holistic skincare dskinova",
     "canonical": "https://www.dskinova.com/wellness"
   },
   "/news": {
     "title": "News & Updates | DSkinova Skin Clinic Jaipur",
     "description": "Stay updated with the latest skincare news, tips, and clinic updates from DSkinova — Jaipur's trusted skin specialist.",
+    "keywords": "skincare news, dskinova blog, skin care tips jaipur",
     "canonical": "https://www.dskinova.com/news"
   },
   "/micro-needling-prp": {
@@ -37,16 +43,18 @@
   "/microneedling-treatment-jaipur": {
     "title": "Micro Needling with PRP in Jaipur | Dskinova Skin Clinic",
     "description": "Get Micro Needling with PRP treatment in Jaipur at Dskinova. Stimulate collagen naturally, reduce acne scars, and achieve youthful glowing skin.",
+    "keywords": "micro needling with PRP Jaipur",
     "canonical": "https://www.dskinova.com/microneedling-treatment-jaipur"
   },
   "/mnrf": {
-    "title": "MNRF Treatment in Jaipur | Micro Needling RF | Dskinova",
-    "description": "Advanced MNRF (Micro Needling Radio Frequency) treatment in Jaipur at Dskinova. Best for acne scars, skin tightening and collagen remodelling.",
+    "title": "MNRF Treatment in Jaipur | Micro Needling RF | Dskinova Clinic",
+    "description": "Get Advanced MNRF (Micro Needling Radio Frequency) treatment in Jaipur at Dskinova. Best for acne scars, skin tightening and collagen remodelling.",
     "canonical": "https://www.dskinova.com/mnrf"
   },
   "/mnrf-treatment-jaipur": {
-    "title": "MNRF Treatment in Jaipur | Micro Needling RF | Dskinova",
-    "description": "Advanced MNRF (Micro Needling Radio Frequency) treatment in Jaipur at Dskinova. Best for acne scars, skin tightening and collagen remodelling.",
+    "title": "MNRF Treatment in Jaipur | Micro Needling RF | Dskinova Clinic",
+    "description": "Get Advanced MNRF (Micro Needling Radio Frequency) treatment in Jaipur at Dskinova. Best for acne scars, skin tightening and collagen remodelling.",
+    "keywords": "MNRF treatment Jaipur, Clinic",
     "canonical": "https://www.dskinova.com/mnrf-treatment-jaipur"
   },
   "/chemical-peel": {
@@ -57,6 +65,7 @@
   "/chemical-peel-treatment-jaipur": {
     "title": "Chemical Peel Treatment in Jaipur | Skin Brightening | DSkinova",
     "description": "Get expert Chemical Peel Treatment in Jaipur at DSkinova. Improve acne scars, pigmentation, tanning, and dull skin with dermatologist-led care.",
+    "keywords": "chemical peel treatment in jaipur",
     "canonical": "https://www.dskinova.com/chemical-peel-treatment-jaipur"
   },
   "/carbon-facial": {
@@ -67,261 +76,316 @@
   "/carbon-facial-jaipur": {
     "title": "Carbon Laser Facial in Jaipur | Dskinova Skin Clinic",
     "description": "Get instant skin brightening and pore refinement with the Carbon Laser Peel at Dskinova Jaipur. Zero downtime!",
+    "keywords": "carbon facial jaipur",
     "canonical": "https://www.dskinova.com/carbon-facial-jaipur"
   },
   "/vampire-facial": {
-    "title": "Vampire Facial in Jaipur | Dskinova Skin Clinic",
-    "description": "Platelet rich plasma microneedling for collagen boost and natural skin rejuvenation at Dskinova.",
+    "title": "Vampire Facial | Dskinova",
+    "description": "Platelet rich plasma microneedling for collagen boost.",
     "canonical": "https://www.dskinova.com/vampire-facial"
   },
   "/vampire-facial-jaipur": {
-    "title": "Vampire Facial in Jaipur | Dskinova Skin Clinic",
-    "description": "Platelet rich plasma microneedling for collagen boost and natural skin rejuvenation at Dskinova.",
+    "title": "Vampire Facial | Dskinova",
+    "description": "Platelet rich plasma microneedling for collagen boost.",
+    "keywords": "vampire facial jaipur",
     "canonical": "https://www.dskinova.com/vampire-facial-jaipur"
   },
   "/hair-prp": {
-    "title": "Hair PRP & GFC Therapy | Dskinova Skin Clinic Jaipur",
-    "description": "Concentrated platelet growth factors to revive hair follicles and treat hair fall in Jaipur at Dskinova.",
+    "title": "Hair PRP & GFC Therapy | Dskinova",
+    "description": "Concentrated platelet growth factors to revive follicles.",
     "canonical": "https://www.dskinova.com/hair-prp"
   },
   "/hair-prp-therapy-jaipur": {
-    "title": "Hair PRP & GFC Therapy | Dskinova Skin Clinic Jaipur",
-    "description": "Concentrated platelet growth factors to revive hair follicles and treat hair fall in Jaipur at Dskinova.",
+    "title": "Hair PRP & GFC Therapy | Dskinova",
+    "description": "Concentrated platelet growth factors to revive follicles.",
+    "keywords": "hair prp jaipur",
     "canonical": "https://www.dskinova.com/hair-prp-therapy-jaipur"
   },
   "/laser-tattoo-removal": {
-    "title": "Laser Tattoo Removal Treatment in Jaipur | Dskinova",
-    "description": "Dskinova offers the best Laser Tattoo Removal Treatment in Jaipur with Q-Switched laser technology.",
+    "title": "Laser-Tattoo Removal Treatment in Jaipur | Dskinova Skin Specialists",
+    "description": "Dskinova offers the best Laser-Tattoo Removal Treatment in Jaipur. Book now!",
     "canonical": "https://www.dskinova.com/laser-tattoo-removal"
   },
   "/laser-tattoo-removal-jaipur": {
     "title": "Laser Tattoo Removal Treatment in Jaipur | Dskinova",
     "description": "Dskinova offers the best Laser Tattoo Removal Treatment in Jaipur with Q-Switched laser technology.",
+    "keywords": "",
     "canonical": "https://www.dskinova.com/laser-tattoo-removal-jaipur"
   },
   "/lazer-tattoo-removal-in-jaipur": {
-    "title": "Laser Tattoo Removal Treatment in Jaipur | Dskinova",
-    "description": "Dskinova offers the best Laser Tattoo Removal Treatment in Jaipur with Q-Switched laser technology.",
+    "title": "Laser-Tattoo Removal Treatment in Jaipur | Dskinova Skin Specialists",
+    "description": "Dskinova offers the best Laser-Tattoo Removal Treatment in Jaipur. Book now!",
+    "keywords": "Laser-Tattoo Removal Treatment in Jaipur",
     "canonical": "https://www.dskinova.com/lazer-tattoo-removal-in-jaipur"
   },
   "/pigmentation-solutions": {
     "title": "Pigmentation Treatment Doctor in Jaipur | Dskinova Skin Clinic",
     "description": "Expert treatment for melasma, dark spots, and pigmentation in Jaipur at Dskinova. Book your consultation today!",
+    "keywords": "",
     "canonical": "https://www.dskinova.com/pigmentation-solutions"
   },
   "/pigmentation-treatment-doctor-in-jaipur": {
     "title": "Pigmentation Treatment Doctor in Jaipur | Dskinova Skin Clinic",
     "description": "Expert treatment for melasma, dark spots, and pigmentation in Jaipur at Dskinova. Book your consultation today!",
+    "keywords": "pigmentation treatment doctor in jaipur",
     "canonical": "https://www.dskinova.com/pigmentation-treatment-doctor-in-jaipur"
   },
   "/cosmologist-in-jaipur": {
     "title": "Advanced Cosmetologist in Jaipur | Dskinova Skin Specialists",
     "description": "Find the best Cosmetologist in Jaipur at Dskinova for expert skin & hair treatments. Book your appointment now!",
+    "keywords": "Cosmetologist in Jaipur",
     "canonical": "https://www.dskinova.com/cosmologist-in-jaipur"
   },
   "/cosmeologist-in-jaipur": {
     "title": "Advanced Cosmetologist in Jaipur | Dskinova Skin Specialists",
     "description": "Find the best Cosmetologist in Jaipur at Dskinova for expert skin & hair treatments. Book your appointment now!",
+    "keywords": "",
     "canonical": "https://www.dskinova.com/cosmeologist-in-jaipur"
   },
   "/skin-clinic-in-jaipur": {
     "title": "Skin Clinic in Jaipur | Dskinova – Book Your Appointment Today",
     "description": "Skin clinic in Jaipur – Dskinova offers expert skincare treatments and personalized care. Book your consultation today for healthy skin.",
+    "keywords": "skin clinic in jaipur",
     "canonical": "https://www.dskinova.com/skin-clinic-in-jaipur"
   },
   "/skin-doctor-in-jaipur": {
     "title": "Skin Doctor in Jaipur | Expert Dermatologist for All Skin Issues",
     "description": "Skin doctor in Jaipur offering advanced acne, pigmentation & laser treatments at Dskinova. Book your appointment now!",
+    "keywords": "skin doctor in jaipur",
     "canonical": "https://www.dskinova.com/skin-doctor-in-jaipur"
   },
   "/anti-aging": {
     "title": "Anti-Aging Treatment in Jaipur | Dskinova Skin Specialists",
     "description": "Dskinova offers the best Anti-Aging Treatment in Jaipur. Reduce wrinkles and fine lines with expert care.",
+    "keywords": "",
     "canonical": "https://www.dskinova.com/anti-aging"
   },
   "/anti-aging-in-jaipur": {
     "title": "Anti-Aging Treatment in Jaipur | Dskinova Skin Specialists",
-    "description": "Dskinova offers the best Anti-Aging Treatment in Jaipur. Reduce wrinkles and fine lines with expert care.",
+    "description": "Dskinova offers the best Anti-Aging Treatment in Jaipur. Book now!",
+    "keywords": "Anti-Aging Treatment in Jaipur",
     "canonical": "https://www.dskinova.com/anti-aging-in-jaipur"
   },
   "/srf": {
     "title": "SRF Treatment in Jaipur | DSkinova Skin Clinic",
     "description": "SRF (Skin Radio Frequency) treatment in Jaipur for skin tightening and rejuvenation. Non-invasive procedure at DSkinova.",
+    "keywords": "",
     "canonical": "https://www.dskinova.com/srf"
   },
   "/korean-facial": {
-    "title": "Korean Facial in Jaipur | DSkinova Skin Clinic",
-    "description": "Achieve luminous, dewy glass skin with deep active infusion at DSkinova Jaipur.",
+    "title": "Korean Facial | Dskinova",
+    "description": "Achieve luminous, dewy glass skin with deep active infusion.",
+    "keywords": "korean facial jaipur",
     "canonical": "https://www.dskinova.com/korean-facial"
   },
   "/korean-skin-treatment": {
     "title": "Korean Skin Treatment in Jaipur | DSkinova",
     "description": "Korean skin treatment and glass skin facials in Jaipur. Experience K-beauty inspired skincare at DSkinova skin clinic.",
+    "keywords": "",
     "canonical": "https://www.dskinova.com/korean-skin-treatment"
   },
   "/hydrafacial": {
     "title": "HydraFacial Treatment in Jaipur | DSkinova",
     "description": "3-in-1 deep cleansing, exfoliation, and vortex hydration at DSkinova Jaipur.",
+    "keywords": "",
     "canonical": "https://www.dskinova.com/hydrafacial"
   },
   "/hydrafacial-jaipur": {
-    "title": "HydraFacial Treatment in Jaipur | DSkinova",
-    "description": "3-in-1 deep cleansing, exfoliation, and vortex hydration at DSkinova Jaipur.",
+    "title": "Hydrafacial | Dskinova",
+    "description": "3-in-1 deep cleansing, exfoliation, and vortex hydration.",
+    "keywords": "hydrafacial jaipur",
     "canonical": "https://www.dskinova.com/hydrafacial-jaipur"
   },
   "/oxygeneo-facial": {
     "title": "Oxygeneo Facial in Jaipur | DSkinova",
     "description": "Oxygeneo 3-in-1 super facial treatment in Jaipur for oxygenation, exfoliation, and nourishment.",
+    "keywords": "",
     "canonical": "https://www.dskinova.com/oxygeneo-facial"
   },
   "/photo-facial": {
     "title": "Photo Facial in Jaipur | DSkinova",
     "description": "IPL Photo Facial treatment in Jaipur for sun damage, redness, and collagen stimulation.",
+    "keywords": "",
     "canonical": "https://www.dskinova.com/photo-facial"
   },
   "/acne-scar": {
-    "title": "Acne Scar Treatment in Jaipur | DSkinova",
-    "description": "Target stubborn acne scars with laser, chemical peels, and microneedling at DSkinova.",
+    "title": "Acne Scar Treatment | Dskinova",
+    "description": "Target stubborn acne scars with laser, chemical peels, and microneedling.",
+    "keywords": "acne scar treatment jaipur",
     "canonical": "https://www.dskinova.com/acne-scar"
   },
   "/laser-skin-therapy": {
     "title": "Laser Skin Therapy in Jaipur | DSkinova",
     "description": "Advanced laser skin therapy in Jaipur for skin rejuvenation, pigmentation, acne scars, and more.",
+    "keywords": "",
     "canonical": "https://www.dskinova.com/laser-skin-therapy"
   },
   "/laser-hair-removal": {
     "title": "Laser Hair Removal in Jaipur | DSkinova",
     "description": "Laser hair removal in Jaipur at Dskinova – safe, effective, long-lasting, and dermatologist-supervised.",
+    "keywords": "",
     "canonical": "https://www.dskinova.com/laser-hair-removal"
   },
   "/laser-hair-removal-treatment-in-jaipur": {
-    "title": "Laser Hair Removal in Jaipur | DSkinova",
-    "description": "Laser hair removal in Jaipur at Dskinova – safe, effective, long-lasting, and dermatologist-supervised.",
+    "title": "Laser Hair Removal in Jaipur – Safe & Professional Treatment",
+    "description": "Laser hair removal in Jaipur at Dskinova – safe, effective, long-lasting, and dermatologist-supervised. Book your session today!",
+    "keywords": "laser hair removal in jaipur",
     "canonical": "https://www.dskinova.com/laser-hair-removal-treatment-in-jaipur"
   },
   "/hair-regrowth-laser": {
-    "title": "Hair Regrowth Laser Treatment in Jaipur | DSkinova",
-    "description": "Red light photobiomodulation for dormant hair follicles at DSkinova.",
+    "title": "Hair Regrowth Laser | Dskinova",
+    "description": "Red light photobiomodulation for dormant hair follicles.",
+    "keywords": "laser hair regrowth jaipur",
     "canonical": "https://www.dskinova.com/hair-regrowth-laser"
   },
   "/regrowth": {
     "title": "Hair Regrowth Treatment in Jaipur | DSkinova",
     "description": "Comprehensive hair regrowth solutions and scalp therapy at DSkinova Jaipur.",
+    "keywords": "",
     "canonical": "https://www.dskinova.com/regrowth"
   },
   "/scales": {
     "title": "Scales & Skin Condition Treatment in Jaipur | DSkinova",
     "description": "Homeopathic and dermatological treatment for skin scaling and irritation at DSkinova.",
+    "keywords": "",
     "canonical": "https://www.dskinova.com/scales"
   },
   "/dandruff": {
-    "title": "Dandruff Treatment in Jaipur | DSkinova",
-    "description": "Clear flaky scalp and seborrheic dermatitis at DSkinova.",
+    "title": "Dandruff Treatment | Dskinova",
+    "description": "Clear flaky scalp and seborrheic dermatitis.",
+    "keywords": "dandruff treatment jaipur",
     "canonical": "https://www.dskinova.com/dandruff"
   },
   "/intralesional-injection": {
-    "title": "Intralesional Injection in Jaipur | DSkinova",
-    "description": "Targeted steroid injection for Alopecia patch recovery and keloids at DSkinova.",
+    "title": "Intralesional Injection | Dskinova",
+    "description": "Targeted steroid injection for Alopecia patch recovery.",
+    "keywords": "alopecia treatment jaipur",
     "canonical": "https://www.dskinova.com/intralesional-injection"
   },
   "/hairfall": {
-    "title": "Hair Fall Treatment in Jaipur | DSkinova",
-    "description": "Diagnose and control hair loss with medical therapy at DSkinova.",
+    "title": "Hairfall Treatment | Dskinova",
+    "description": "Diagnose and control hair loss with medical therapy.",
+    "keywords": "hairfall treatment jaipur",
     "canonical": "https://www.dskinova.com/hairfall"
   },
   "/cryo-fat-freezing": {
-    "title": "Cryotherapy Fat Freezing in Jaipur | DSkinova",
-    "description": "Non-invasive fat reduction using targeted cooling technology at DSkinova.",
+    "title": "Cryotherapy Fat Freezing | Dskinova",
+    "description": "Non-invasive fat reduction using targeted cooling technology.",
+    "keywords": "cryo fat freezing jaipur",
     "canonical": "https://www.dskinova.com/cryo-fat-freezing"
   },
   "/skin-lightening-and-whitening": {
-    "title": "Skin Lightening & Whitening in Jaipur | DSkinova",
-    "description": "Glutathione and vitamin boost for radiant skin tone at DSkinova.",
+    "title": "Skin Lightening & Whitening | Dskinova",
+    "description": "Glutathione and vitamin boost for radiant tone.",
+    "keywords": "skin whitening jaipur",
     "canonical": "https://www.dskinova.com/skin-lightening-and-whitening"
   },
   "/skin-tightening": {
-    "title": "Skin Tightening Treatment in Jaipur | DSkinova",
-    "description": "Stimulate collagen for firmer, lifted facial contours at DSkinova.",
+    "title": "Skin Tightening Treatment | Dskinova",
+    "description": "Stimulate collagen for firmer, lifted facial contours.",
+    "keywords": "skin tightening jaipur",
     "canonical": "https://www.dskinova.com/skin-tightening"
   },
   "/skin-allergy": {
-    "title": "Homeopathic Skin Allergy Treatment | DSkinova",
-    "description": "Root-cause natural homeopathic cure for persistent skin allergies in Jaipur.",
+    "title": "Homeopathic Skin Allergy | Dskinova",
+    "description": "Root-cause natural homeopathic cure for persistent skin allergies.",
+    "keywords": "homeopathic skin doctor jaipur",
     "canonical": "https://www.dskinova.com/skin-allergy"
   },
   "/psoriasis": {
-    "title": "Homeopathic Psoriasis Treatment | DSkinova",
-    "description": "Natural relief for silver scales, itching, and skin inflammation in Jaipur.",
+    "title": "Homeopathic Psoriasis Treatment | Dskinova",
+    "description": "Natural relief for silver scales, itching, and skin inflammation.",
+    "keywords": "psoriasis homeopathic jaipur",
     "canonical": "https://www.dskinova.com/psoriasis"
   },
   "/eczema": {
-    "title": "Homeopathic Eczema Treatment | DSkinova",
-    "description": "Soothe dry, itchy, inflamed eczema patches naturally at DSkinova.",
+    "title": "Homeopathic Eczema Treatment | Dskinova",
+    "description": "Soothe dry, itchy, inflamed eczema patches naturally.",
+    "keywords": "eczema doctor jaipur",
     "canonical": "https://www.dskinova.com/eczema"
   },
   "/urticaria": {
     "title": "Urticaria Treatment in Jaipur | DSkinova",
     "description": "Effective treatment for chronic hives and skin allergies at DSkinova.",
+    "keywords": "",
     "canonical": "https://www.dskinova.com/urticaria"
   },
   "/fungal": {
     "title": "Fungal Infection Treatment in Jaipur | DSkinova",
     "description": "Fast relief from fungal skin and nail infections at DSkinova.",
+    "keywords": "",
     "canonical": "https://www.dskinova.com/fungal"
   },
   "/scabies": {
     "title": "Scabies Treatment in Jaipur | DSkinova",
     "description": "Relieve intense itching and eliminate scabies infestation at DSkinova.",
+    "keywords": "",
     "canonical": "https://www.dskinova.com/scabies"
   },
   "/vitiligo-white-spot": {
     "title": "Vitiligo & White Patch Treatment in Jaipur | DSkinova",
     "description": "Advanced repigmentation therapy for vitiligo and white patches at DSkinova.",
+    "keywords": "",
     "canonical": "https://www.dskinova.com/vitiligo-white-spot"
   },
   "/alopecia-areata": {
     "title": "Alopecia Areata Treatment in Jaipur | DSkinova",
     "description": "Specialized treatment to stimulate hair regrowth in patchy alopecia.",
+    "keywords": "",
     "canonical": "https://www.dskinova.com/alopecia-areata"
   },
   "/stretch-marks": {
     "title": "Stretch Marks Treatment in Jaipur | DSkinova",
     "description": "Reduce visibility of stretch marks with advanced laser and microneedling.",
+    "keywords": "",
     "canonical": "https://www.dskinova.com/stretch-marks"
   },
   "/pre-bridal-specials": {
     "title": "Pre-Bridal Skincare Packages in Jaipur | DSkinova",
     "description": "Customised pre-bridal facial and body glowing packages at DSkinova.",
+    "keywords": "",
     "canonical": "https://www.dskinova.com/pre-bridal-specials"
   },
   "/medical-spa-facials": {
     "title": "Medical Spa Facials in Jaipur | DSkinova",
     "description": "Rejuvenating medical grade spa facials tailored for all skin types.",
+    "keywords": "",
     "canonical": "https://www.dskinova.com/medical-spa-facials"
   },
   "/mesotherapy": {
     "title": "Mesotherapy Treatment in Jaipur | DSkinova",
     "description": "Nutrient and vitamin infusion for skin hydration and scalp health.",
+    "keywords": "",
     "canonical": "https://www.dskinova.com/mesotherapy"
   },
   "/microdermabrasion": {
     "title": "Microdermabrasion in Jaipur | DSkinova",
     "description": "Exfoliate dead skin cells for smoother texture and radiant complexion.",
+    "keywords": "",
     "canonical": "https://www.dskinova.com/microdermabrasion"
   },
   "/deep-peelings": {
     "title": "Deep Peelings Treatment in Jaipur | DSkinova",
     "description": "Intense skin resurfacing for deep pigmentation and stubborn marks.",
+    "keywords": "",
     "canonical": "https://www.dskinova.com/deep-peelings"
   },
   "/facials": {
     "title": "Customised Facial Treatments in Jaipur | DSkinova",
     "description": "Deep cleansing and hydrating facials by certified aestheticians.",
+    "keywords": "",
     "canonical": "https://www.dskinova.com/facials"
   },
   "/botox-treatment": {
     "title": "Botox Treatment in Jaipur | DSkinova",
     "description": "Smoothen forehead lines, crow's feet, and wrinkles with expert Botox.",
+    "keywords": "",
     "canonical": "https://www.dskinova.com/botox-treatment"
+  },
+  "/test-service": {
+    "title": "Test Service",
+    "description": "Expert skincare & cosmetology clinic in Jaipur. Book your appointment at DSkinova today!",
+    "keywords": "",
+    "canonical": "https://www.dskinova.com/test-service"
   }
 }

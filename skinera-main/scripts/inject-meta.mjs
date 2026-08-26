@@ -43,7 +43,7 @@ const seoMeta = JSON.parse(readFileSync(seoMetaJson, "utf8"));
  * Inject title + description + canonical into HTML string.
  * Uses simple string replace — works reliably on the Vite-generated index.html.
  */
-function injectMeta(html, { title, description, canonical }) {
+function injectMeta(html, { title, description, keywords, canonical }) {
   // 1. Replace <title>
   html = html.replace(
     /<title>[^<]*<\/title>/i,
@@ -63,13 +63,21 @@ function injectMeta(html, { title, description, canonical }) {
     `$1${escapeHtml(description)}"`
   );
 
+  // 3.5. Replace meta name="keywords" with page-specific keywords
+  if (keywords) {
+    html = html.replace(
+      /(<meta\s+name="keywords"\s+content=")[^"]*"/gi,
+      `$1${escapeHtml(keywords)}"`
+    );
+  }
+
   // 4. Replace og:title
   html = html.replace(
     /(<meta\s[^>]*property="og:title"\s*[^>]*content=")[^"]*"/gi,
     `$1${escapeHtml(title)}"`
   );
   html = html.replace(
-    /(<meta\s[^>]*content="[^"]*"\s*[^>]*property="og:title"[^>]*\/?>)/gi,
+    /(<meta\s[^>]*content="[^"]*"\s*[^>]*property="og:title"[^>]*\/?>/gi,
     (match) => match.replace(/content="[^"]*"/, `content="${escapeHtml(title)}"`)
   );
 

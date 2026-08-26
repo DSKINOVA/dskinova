@@ -42,36 +42,42 @@ const STATIC_META = {
     title: "Skin Specialist in Jaipur | Trusted Dermatologist for Healthy Skin",
     description:
       "Skin Doctor in Jaipur, Dskinova provides expert skincare, acne, and anti-aging treatments for glowing skin. Book your consultation today!",
+    keywords: "skin specialist jaipur, dermatologist jaipur, skin doctor jaipur, skincare clinic jaipur, dskinova",
     canonical: `${BASE_URL}/`,
   },
   "/about": {
     title: "About Us | DSkinova — Skin Specialist in Jaipur",
     description:
       "Meet DSkinova's expert skin specialists and cosmetologists in Jaipur. Learn about our mission, advanced skincare treatments, and how we work.",
+    keywords: "about dskinova, skin specialist jaipur, cosmetologist jaipur, skin clinic team",
     canonical: `${BASE_URL}/about`,
   },
   "/contact": {
     title: "Contact Us | DSkinova Skin Clinic Jaipur",
     description:
       "Contact DSkinova skin clinic in Jaipur. Book your appointment, get directions, or reach us by phone or email for expert skincare consultations.",
+    keywords: "contact dskinova, skin clinic jaipur address, book appointment jaipur",
     canonical: `${BASE_URL}/contact`,
   },
   "/gallery": {
     title: "Gallery | DSkinova Skin Clinic Jaipur",
     description:
       "Explore DSkinova's gallery — real results, clinic moments, and before & after transformations from Jaipur's trusted skin specialist.",
+    keywords: "dskinova gallery, before after skin treatment, clinic photos jaipur",
     canonical: `${BASE_URL}/gallery`,
   },
   "/wellness": {
     title: "Wellness Programs | DSkinova — Skin Health Jaipur",
     description:
       "Discover DSkinova's wellness programs designed for long-term skin health. Evidence-backed treatments, personalised care plans, and expert guidance in Jaipur.",
+    keywords: "wellness programs jaipur, skin health, holistic skincare dskinova",
     canonical: `${BASE_URL}/wellness`,
   },
   "/news": {
     title: "News & Updates | DSkinova Skin Clinic Jaipur",
     description:
       "Stay updated with the latest skincare news, tips, and clinic updates from DSkinova — Jaipur's trusted skin specialist.",
+    keywords: "skincare news, dskinova blog, skin care tips jaipur",
     canonical: `${BASE_URL}/news`,
   },
 };
@@ -398,6 +404,7 @@ async function main() {
           data.description,
           "Expert skincare and cosmetology treatments in Jaipur at DSkinova."
         ),
+        keywords: data.keywords || "",
         canonical: `${BASE_URL}${routeKey}`,
       };
     }
@@ -437,12 +444,15 @@ async function main() {
               "Expert skincare & cosmetology clinic in Jaipur. Book your appointment at DSkinova today!"
             );
 
+            const keywords = (item.seo?.focus_keyphrase || "").trim();
+
             // Add main slug
             if (item.slug) {
               const routeKey = `/${item.slug.replace(/^\//, "")}`;
               SEO_META[routeKey] = {
                 title,
                 description,
+                keywords,
                 canonical: `${BASE_URL}${routeKey}`,
               };
             }
@@ -453,6 +463,7 @@ async function main() {
               SEO_META[idRouteKey] = {
                 title,
                 description,
+                keywords,
                 canonical: `${BASE_URL}${idRouteKey}`,
               };
             }
