@@ -41,8 +41,10 @@ export default function Dashboard() {
 
   useEffect(() => {
     const authStatus = localStorage.getItem("adminAuthenticated");
-    if (!authStatus) {
-      navigate("/admin-login");
+    if (!authStatus || authStatus !== "true") {
+      localStorage.removeItem("adminAuthenticated");
+      localStorage.removeItem("admin.username");
+      navigate("/admin-login", { replace: true });
       return;
     }
     // Verify session with backend
@@ -52,23 +54,24 @@ export default function Dashboard() {
           credentials: "include",
         });
         if (!res.ok) {
-          // Token/session invalid — force re-login
           localStorage.removeItem("adminAuthenticated");
           localStorage.removeItem("admin.username");
-          navigate("/admin-login");
+          navigate("/admin-login", { replace: true });
           return;
         }
         const data = await res.json();
         if (!data?.success) {
           localStorage.removeItem("adminAuthenticated");
           localStorage.removeItem("admin.username");
-          navigate("/admin-login");
+          navigate("/admin-login", { replace: true });
           return;
         }
         setIsAuthenticated(true);
       } catch {
-        // Network error — still allow if localStorage says authenticated
-        setIsAuthenticated(true);
+        // If error or unauthenticated, redirect to login
+        localStorage.removeItem("adminAuthenticated");
+        localStorage.removeItem("admin.username");
+        navigate("/admin-login", { replace: true });
       }
     }
     verifyAuth();

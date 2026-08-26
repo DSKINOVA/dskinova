@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import HomePage from "./components/HomePage.jsx";
 import AboutUsPage from "./components/AboutUsPage.jsx";
 import ServiceDetail from "./components/ServiceDetail.jsx";
@@ -21,6 +21,14 @@ import TimedPopup from "./components/TimedPopup.jsx";
 // import SkinClinic from "./components/SkinClinic.jsx";
 import NotFound from "./components/NotFound.jsx";
 
+function ProtectedAdminRoute({ children }) {
+  const isAuth = localStorage.getItem("adminAuthenticated") === "true";
+  if (!isAuth) {
+    return <Navigate to="/admin-login" replace />;
+  }
+  return children;
+}
+
 export default function App() {
   return (
     <Router>
@@ -32,7 +40,14 @@ export default function App() {
         <Route path="/newstemplate" element={<NewsTemplate />} />
         <Route path="/news/:slug" element={<NewsTemplate />} />
         <Route path="/admin-login" element={<AdminLogin />} />
-        <Route path="/admin-dashboard" element={<Dashboard />} />
+        <Route
+          path="/admin-dashboard"
+          element={
+            <ProtectedAdminRoute>
+              <Dashboard />
+            </ProtectedAdminRoute>
+          }
+        />
         <Route path="/gallery" element={<GalleryPage />} />
         <Route path="/reviews-demo" element={<ReviewsDemo />} />
         <Route path="/wellness" element={<Wellness />} />
