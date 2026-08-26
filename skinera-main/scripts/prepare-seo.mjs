@@ -1,6 +1,6 @@
 /**
  * prepare-seo.mjs
- *
+ * Build timestamp: 2026-08-26T16:25:00
  * Runs BEFORE vite build (npm run prebuild).
  *
  * What it does:
