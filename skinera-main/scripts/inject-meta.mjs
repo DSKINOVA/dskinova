@@ -116,9 +116,17 @@ function escapeHtml(str) {
     .replace(/>/g, "&gt;");
 }
 
-// Process all routes
+// Fixed static pages that should have build-time static HTML
+const fixedStaticRoutes = ["/", "/about", "/contact", "/gallery", "/wellness", "/news"];
+
+// Process routes
 let count = 0;
 for (const [route, meta] of Object.entries(seoMeta)) {
+  // Service routes are handled dynamically by api/ssr.js for 100% real-time SEO updates!
+  if (!fixedStaticRoutes.includes(route)) {
+    continue;
+  }
+
   if (route === "/") {
     // Update root index.html directly
     const html = injectMeta(baseHtml, meta);
@@ -128,8 +136,8 @@ for (const [route, meta] of Object.entries(seoMeta)) {
     continue;
   }
 
-  // For /about → dist/about/index.html
-  const slug = route.replace(/^\//, ""); // remove leading slash
+  // For fixed static pages like /about → dist/about/index.html
+  const slug = route.replace(/^\//, "");
   const dirPath = join(distDir, slug);
   const filePath = join(dirPath, "index.html");
 
