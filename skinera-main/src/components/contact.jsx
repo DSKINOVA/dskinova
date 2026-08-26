@@ -1,4 +1,5 @@
 import React from "react";
+import { Helmet } from "react-helmet-async";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faPhone,
@@ -115,6 +116,14 @@ const ContactCard = ({ loc }) => (
 
 const ContactPage = () => (
   <>
+    <Helmet>
+      <title>Contact Us | DSkinova Skin Clinic Jaipur</title>
+      <meta name="description" content="Contact DSkinova skin clinic in Jaipur. Book your appointment, get directions, or reach us by phone or email for expert skincare consultations." />
+      <link rel="canonical" href="https://www.dskinova.com/contact" />
+      <meta property="og:title" content="Contact Us | DSkinova Skin Clinic Jaipur" />
+      <meta property="og:description" content="Contact DSkinova skin clinic in Jaipur. Book your appointment, get directions, or reach us by phone or email for expert skincare consultations." />
+      <meta property="og:url" content="https://www.dskinova.com/contact" />
+    </Helmet>
     <Header />
     <main className="bg-white">
       <HeroThree title={content.title} introPara={content.introPara} />

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Helmet } from "react-helmet-async";
 import Header from "./Header.jsx";
 import HeroTwo from "./HeroTwo.jsx";
 import DoctorBio from "./DoctorBio.jsx";
@@ -19,6 +20,14 @@ export default function AboutUsPage() {
 
   return (
     <div className="min-h-screen bg-[#e0a075]">
+      <Helmet>
+        <title>About Us | DSkinova — Skin Specialist in Jaipur</title>
+        <meta name="description" content="Meet Dr. DSkinova's expert team of skin specialists and cosmetologists in Jaipur. Learn about our mission, advanced skincare treatments, and how we work." />
+        <link rel="canonical" href="https://www.dskinova.com/about" />
+        <meta property="og:title" content="About Us | DSkinova — Skin Specialist in Jaipur" />
+        <meta property="og:description" content="Meet Dr. DSkinova's expert team of skin specialists and cosmetologists in Jaipur. Learn about our mission, advanced skincare treatments, and how we work." />
+        <meta property="og:url" content="https://www.dskinova.com/about" />
+      </Helmet>
       <Header onBookAppointment={openAppointment} />
       <HeroTwo />
       <DoctorBio />

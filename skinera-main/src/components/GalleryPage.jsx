@@ -1,4 +1,5 @@
 import React, { useMemo, useRef, useState } from "react";
+import { Helmet } from "react-helmet-async";
 import Header from "./Header.jsx";
 import Footer from "./Footer.jsx";
 import HeroTwo from "./HeroTwo.jsx";
@@ -197,6 +198,14 @@ export default function GalleryPage() {
 
   return (
     <div className="min-h-screen bg-white">
+      <Helmet>
+        <title>Gallery | DSkinova Skin Clinic Jaipur</title>
+        <meta name="description" content="Explore DSkinova's gallery — real results, clinic moments, and before & after transformations from Jaipur's trusted skin specialist." />
+        <link rel="canonical" href="https://www.dskinova.com/gallery" />
+        <meta property="og:title" content="Gallery | DSkinova Skin Clinic Jaipur" />
+        <meta property="og:description" content="Explore DSkinova's gallery — real results, clinic moments, and before & after transformations from Jaipur's trusted skin specialist." />
+        <meta property="og:url" content="https://www.dskinova.com/gallery" />
+      </Helmet>
       <Header />
       <HeroTwo
         title="Gallery"

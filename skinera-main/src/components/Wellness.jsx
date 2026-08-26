@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import Header from "./Header.jsx";
 import Footer from "./Footer.jsx";
@@ -50,6 +51,14 @@ export default function Wellness() {
 
   return (
     <div className="min-h-screen bg-[#e0a075]">
+      <Helmet>
+        <title>Wellness Programs | DSkinova — Skin Health Jaipur</title>
+        <meta name="description" content="Discover DSkinova's wellness programs designed for long-term skin health. Evidence-backed treatments, personalised care plans, and expert guidance in Jaipur." />
+        <link rel="canonical" href="https://www.dskinova.com/wellness" />
+        <meta property="og:title" content="Wellness Programs | DSkinova — Skin Health Jaipur" />
+        <meta property="og:description" content="Discover DSkinova's wellness programs designed for long-term skin health. Evidence-backed treatments, personalised care plans, and expert guidance in Jaipur." />
+        <meta property="og:url" content="https://www.dskinova.com/wellness" />
+      </Helmet>
       {/* Same header as homepage */}
       <Header onBookAppointment={openAppointment} />
 
